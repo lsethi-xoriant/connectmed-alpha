@@ -1,13 +1,24 @@
-Myapp::Application.routes.draw do
+ConnectMed::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
-  root to: 'dashboards#dashboard_1'
+  root to: 'welcome#index'
+
+  namespace :patient do
+    get '/signin', to: "sessions#new", as: 'signin'
+    get '/signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
+    resources :sessions, only: [:new, :create, :destroy]
+  end
+
+  resources :patients
+
+
+  #For Contact Form
+  resources "contacts", only: [:new, :create]
 
   # All routes
   get "dashboards/dashboard_1"
   get "dashboards/dashboard_2"
   get "dashboards/dashboard_3"
-  get "dashboards/dashboard_4"
   get "dashboards/dashboard_4_1"
 
   get "layoutsoptions/index"
