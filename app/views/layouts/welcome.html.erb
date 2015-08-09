@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ConnectMed (connectmed.co.za) is an online medical practice optimized to Africa’s technical, medical, and cultural context where our certified doctors provide convenient, low cost, and high quality medical consultations to patients over video & text, additionally supported by machine learning-based tools.">
+    <meta name="author" content="ConnectMed South Africa">
+
+    <title>ConnectMed</title>
+    <!-- Main css styles -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'welcome', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</head>
+
+<body class="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-header page-scroll" href="index"><%= image_tag "logos/WhiteLogoMont.png", size: "270x49" %></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="row">
+                    <ul class="nav navbar-nav navbar-right">
+                      <% if patient_signed_in? %>
+                          <li>Logged in as <strong><%= current_patient.email %></strong></li>
+                          <li><%= link_to 'Signout', patient_signout_path %></li>
+                          <li><%= link_to 'Edit Profile', edit_patient_path(@patient) %></li>
+                          <li><%= link_to 'Contact Us', new_contact_path %></li>
+                        <% else %>
+                          <li><%= link_to 'Signin', patient_signin_path %></li>
+                          <li><%= link_to 'Signup', new_patient_path %></li>
+                          <li><%= link_to 'Contact Us', new_contact_path %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Main view  -->
+    <%= yield %>
+
+
+    <!-- Footer -->
+    <footer class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; ConnectMed 2015</span>
+                </div>
+                <div class="col-md-3 col-md-offset-5">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/ConnectMedZA"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/ConnectMedZA"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main javascript files -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
+    <!-- Include javascript per-view -->
+    <%= yield :javascript %>
+
+</body>
+</html>
