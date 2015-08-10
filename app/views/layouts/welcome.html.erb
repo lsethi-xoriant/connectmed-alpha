@@ -27,22 +27,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            <a class="navbar-header page-scroll" href="index"><%= image_tag "logos/WhiteLogoMont.png", size: "270x49" %></a>
+            <a class="navbar-header page-scroll" href="/"><%= image_tag "logos/WhiteLogoMont.png", size: "270x49" %></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="row">
                     <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
                       <% if patient_signed_in? %>
                           <li>Logged in as <strong><%= current_patient.email %></strong></li>
-                          <li><%= link_to 'Signout', patient_signout_path %></li>
+                          <li><%= link_to 'Signout', patients_signout_path %></li>
                           <li><%= link_to 'Edit Profile', edit_patient_path(@patient) %></li>
-                          <li><%= link_to 'Contact Us', new_contact_path %></li>
                         <% else %>
-                          <li><%= link_to 'Signin', patient_signin_path %></li>
+                          <li><%= link_to 'Signin', patients_signin_path %></li>
                           <li><%= link_to 'Signup', new_patient_path %></li>
-                          <li><%= link_to 'Contact Us', new_contact_path %></li>
+                          <li><a class="page-scroll" href="#contact">Contact</a></li>
                         <% end %>
                     </ul>
                 </div>
