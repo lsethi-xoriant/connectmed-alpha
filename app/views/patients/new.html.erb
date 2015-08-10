@@ -1,0 +1,32 @@
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <% if flash[:error_messages] %>
+            <p><%= flash[:error_messages]%></p>
+        <% end %>
+        <div>
+            <a class="navbar-header page-scroll" href="/"><%= image_tag "logos/CMLogoVertical5.png", width: '80%', style: "margin-bottom:10px;" %></a>
+             <%= form_for(@patient) do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :name, :required => true, :class => 'form-control', :placeholder => 'Name', :type => 'text'  %>
+                </div>
+                <div class="form-group">
+                    <%= f.text_field :email, :required => true, :class => 'form-control', :placeholder => 'Email', :type => 'email' %>
+                </div>
+                <div class="form-group">
+                    <%= f.text_field :phone, :class => 'form-control', :placeholder => 'Your Phone', :type => 'text' %>
+                </div>
+                <div class="form-group">
+                    <%= f.password_field :password, :required => true, :class => 'form-control', :placeholder => 'Password', :type => 'password', :minlength => '6' %>
+                </div>
+                <div class="form-group">
+                    <%= f.password_field :password_confirmation, :required => true, :class => 'form-control', :placeholder => 'Confirm Password', :type => 'password', equalTo: "#patient_password" %>
+                </div>
+                <div class="checkbox"><label> <input type="checkbox" required><i></i> Agree the terms and policy </label></div>
+                </div>
+                <%= f.submit "Register", :class => 'btn btn-primary block full-width m-b' %>
+<!--                 <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+ -->            <% end %>
+            <p class="text-muted text-center"><small>Already have an account?</small></p>
+            <a class="btn btn-sm btn-white btn-block" href="#">Login</a>
+            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+        </div>
+    </div>
