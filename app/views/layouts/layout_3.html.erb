@@ -2,8 +2,12 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSPINIA | Responsive admin theme</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ConnectMed (connectmed.co.za) is an online medical practice optimized to Africa’s technical, medical, and cultural context where our certified doctors provide convenient, low cost, and high quality medical consultations to patients over video & text, additionally supported by machine learning-based tools.">
+    <meta name="author" content="ConnectMed South Africa">
+
+    <title>ConnectMed</title>
 
     <!-- Include style per-controller - vendor plugins -->
     <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %>
@@ -14,9 +18,6 @@
     <!-- Main javascript files -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-
-
 </head>
 <body class="fixed-sidebar no-skin-config full-height-layout">
 
