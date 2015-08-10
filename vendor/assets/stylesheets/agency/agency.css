@@ -229,6 +229,12 @@ fieldset[disabled] .btn-xl.active {
     background-color: transparent;
 }
 
+.navbar-default .nav li.active {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+}
+
 .navbar-default .nav li a:focus {
     outline: 0;
     color: #fff;
