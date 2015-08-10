@@ -80,6 +80,11 @@
     <%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
     <!-- Include javascript per-view -->
     <%= yield :javascript %>
+    <script type="text/javascript">
+    $(function() {
+        $("#contact").validate();
+    });
+    </script>
 
 </body>
 </html>
