@@ -11,6 +11,4 @@
 //= require pace/pace.min.js
 //= require peity/jquery.peity.min.js
 //= require slimscroll/jquery.slimscroll.min.js
-//= require validate/jquery.validate.min.js
 //= require inspinia.js
-
