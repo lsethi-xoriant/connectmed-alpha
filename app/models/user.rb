@@ -1,12 +1,8 @@
 class User < ActiveRecord::Base
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  ONLY_NUMBERS = /\A[0-9]+\z/
+  has_many :consults
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }
-  validates :email, presence:   true,
-                    format:     { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
-  validates :phone, format: { with: ONLY_NUMBERS, message:"should only have numeric values." }, allow_nil: true, allow_blank: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
 
   has_secure_password
   before_create :create_remember_token
