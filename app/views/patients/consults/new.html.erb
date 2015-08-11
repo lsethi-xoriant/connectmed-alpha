@@ -1,0 +1,71 @@
+
+<div class="wrapper wrapper-content">
+<div class="row animated fadeInLeft">
+    <div class="row">
+        <% if flash[:error_messages] %>
+            <p><%= flash[:error_messages]%></p>
+        <% end %>
+    <%= form_for(:consults, url: {action: "create"}) do |f| %>
+        <div class="col-lg-8 col-lg-offset-2">
+            <%= image_tag "doctor_circle.png", width: '10%', style: "margin:20px; text-align:center;", class: 'img-responsive' %>
+                <div class="form-group">
+                    <%= label_tag(:purpose_descrip, "What is the purpose of your visit?") %>
+                    <p><small>Please describe briefly below</small></p>
+                    <%= f.text_area :purpose_descrip, :required => true, :class => 'form-control', :placeholder => 'Name', :type => 'text'  %>
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-2">
+            <div class="form-group">
+                <%= label_tag(:duration, "When did you start feeling this way?") %>
+                <select name="consult[duration]" id="consult_duration" class="form-control m-b" placeholder="Select...">
+                  <option value="today">Today</option>
+                  <option value="yesterday">Yesterday</option>
+                  <option value="the past week">The past week</option>
+                  <option value="the past month">The past month</option>
+                  <option value="the past year">The past year</option>
+                  <option value="more than a year">More than a year</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <%= label_tag(:medications, "Please tell us if you are currently taking any medications:") %>
+                <%= f.text_field :medications, :class => 'form-control', :placeholder => 'Enter all separated by commas' %>
+            </div>
+            <div class="form-group">
+                <%= label_tag(:allergies, "Please tell us any allergies you have:") %>
+                <%= f.text_field :allergies, :class => 'form-control', :placeholder => 'Enter all separated by commas', :type => 'text' %>
+            </div>
+            <%= label_tag(:symptoms, "Do you have any of these symptoms?") %>
+            <p><small>Check all that apply:</small></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-lg-offset-2">
+            <div class="form-group">
+                <h4>General Symptoms</h4>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Fever </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Weight loss / gain </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Difficulty sleeping </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Loss of Appetite </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Foreign Travel </label></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+                <h4>Chest</h4>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Fever </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Weight loss / gain </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Difficulty sleeping </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Loss of Appetite </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> Foreign Travel </label></div>
+        </div>
+    </div>
+    <div class="row text-right">
+        <div class="col-lg-10 col-lg-offset-2">
+            <%= f.submit "Next", :class => 'btn btn-primary block m-b' %>
+        </div>
+    </div>
+    <% end %>
+</div>
+</div>
+

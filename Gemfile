@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'mail_form'
 gem 'simple_form'
 
+# For VideoChat
+gem 'opentok'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
