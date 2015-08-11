@@ -24,6 +24,7 @@ class Doctors::ConsultsController < ApplicationController
     def config_opentok
       if @opentok.nil?
       @opentok = OpenTok::OpenTokSDK.new 45307712, 'a9bca2feffb7331786dbe53c02f28ef48ce92e98'
+      end
     end
 
 end
