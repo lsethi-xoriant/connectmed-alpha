@@ -3,7 +3,7 @@ class CreateConsults < ActiveRecord::Migration
     create_table :consults do |t|
       t.date :date
       t.time :time
-      t.integer :sessionId
+      t.text :sessionId
       t.text :purpose_descrip
       t.text :duration
       t.text :medications

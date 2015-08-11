@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150808025510) do
   create_table "consults", force: true do |t|
     t.date     "date"
     t.time     "time"
-    t.integer  "sessionId"
+    t.text     "sessionId"
     t.text     "purpose_descrip"
     t.text     "duration"
     t.text     "medications"

@@ -149,7 +149,7 @@ DEPENDENCIES
   foreman
   jbuilder (~> 1.2)
   mail_form
-  opentok
+  opentok (~> 2.3)
   pg
   rails (= 4.0.2)
   rails_12factor

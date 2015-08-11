@@ -1,5 +1,5 @@
 class Doctors::ConsultsController < ApplicationController
-  before_filter :config_opentok,:except => [:index]
+  # before_filter :config_opentok,:except => [:index]
   def index
     @consults = Consult.where(:public => true).order(“created_at DESC”)
     @new_consult = Consult.new
@@ -21,10 +21,10 @@ class Doctors::ConsultsController < ApplicationController
 
   private
 
-    def config_opentok
-      if @opentok.nil?
-      @opentok = OpenTok::OpenTokSDK.new 45307712, 'a9bca2feffb7331786dbe53c02f28ef48ce92e98'
-      end
-    end
+    # def config_opentok
+    #   if @opentok.nil?
+    #   @opentok = OpenTok::OpenTokSDK.new 45307712, 'a9bca2feffb7331786dbe53c02f28ef48ce92e98'
+    #   end
+    # end
 
 end

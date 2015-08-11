@@ -5,7 +5,7 @@
         <% if flash[:error_messages] %>
             <p><%= flash[:error_messages]%></p>
         <% end %>
-    <%= form_for(:consults, url: {action: "create"}) do |f| %>
+    <%= form_for(:consult, url: {action: "create"}) do |f| %>
         <div class="col-lg-8 col-lg-offset-2">
             <%= image_tag "doctor_circle.png", width: '10%', style: "margin:20px; text-align:center;", class: 'img-responsive' %>
                 <div class="form-group">

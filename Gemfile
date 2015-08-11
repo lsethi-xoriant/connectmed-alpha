@@ -32,7 +32,7 @@ gem 'mail_form'
 gem 'simple_form'
 
 # For VideoChat
-gem 'opentok'
+gem 'opentok', '~> 2.3'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
