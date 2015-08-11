@@ -38,12 +38,12 @@
                             <a href="#page-top"></a>
                         </li>
                       <% if patient_signed_in? %>
-                          <li>Logged in as <strong><%= current_patient.email %></strong></li>
-                          <li><%= link_to 'Signout', patients_signout_path %></li>
-                          <li><%= link_to 'Edit Profile', edit_patient_path(@patient) %></li>
+                          <li><a href="<%= url_for patients_dashboard_path %>"><i class="fa fa-home"></i>Welcome Back, <strong><%= current_patient.name %></strong></a></li>
+                          <li><a href="<%= url_for patients_signout_path %>">
+                            <i class="fa fa-sign-out"></i>Log Out</a></li>
                         <% else %>
-                          <li><%= link_to 'Signin', patients_signin_path %></li>
-                          <li><%= link_to 'Signup', new_patient_path %></li>
+                          <li><%= link_to 'Log In', patients_signin_path %></li>
+                          <li><%= link_to 'Sign Up', new_patient_path %></li>
                           <li><a class="page-scroll" href="#contact">Contact</a></li>
                         <% end %>
                     </ul>

@@ -1,4 +1,4 @@
 class Consult < ActiveRecord::Base
   belongs_to :patient
-  belogns_to :doctor
+  belongs_to :doctor
 end

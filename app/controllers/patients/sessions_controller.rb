@@ -8,10 +8,10 @@ class Patients::SessionsController < ApplicationController
     @patient = Patient.find_by(email: params[:session][:email].downcase)
     if @patient && @patient.authenticate(params[:session][:password])
       patient_sign_in(@patient)
-      redirect_to patient_dashboard_path
+      redirect_to patients_dashboard_path
     else
-      flash[:error] = 'Invalid email/password combination'
-      redirect_to patient_signin_path
+      flash[:error_messages] = 'Invalid email/password combination'
+      redirect_to patients_signin_path
     end
   end
 

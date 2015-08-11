@@ -11,8 +11,9 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @provider = Patient.create!(patient_params)
-      redirect_to patients_dashboard_path
+    @patient = Patient.create!(patient_params)
+    patient_sign_in(@patient)
+    redirect_to patients_dashboard_path
     rescue ActiveRecord::RecordInvalid => invalid
       flash[:error_messages] = invalid.record.errors.full_messages
       redirect_to new_patient_path
