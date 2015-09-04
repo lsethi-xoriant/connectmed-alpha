@@ -1,0 +1,215 @@
+
+<div class="wrapper wrapper-content">
+    <div id="selfVideobox" style="background-color:white;"></div>
+    <div id="patientVideobox" style="background-color:white;"></div>
+    <button type="button" id="finish">Finish</button>
+</div>
+<script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+<script type="text/javascript">
+    var apiKey = 45307712;
+    var sessionId = "<%= @consult.sessionId %>";
+    var token = "<%= @tok_token %>";
+    var session;
+    var publisher;
+    var connectionCount = 0;
+
+    OT.setLogLevel(TB.DEBUG);
+    if (OT.checkSystemRequirements() == 1) {
+        // Initiate SEssion
+        session = OT.initSession(apiKey, sessionId);
+        // Connect to Session
+        session.connect(token, function (error) {
+            if (session.capabilities.publish == 1) {
+                session.publish(publisher);
+            } else {
+                console.log("You cannot publish an audio-video stream.");
+            }
+        });
+        // Create stream & publish
+        publisher = OT.initPublisher("selfVideobox");
+        publisher.on({
+            streamCreated: function (event) {
+                console.log("Publisher started streaming.");
+            },
+            streamDestroyed: function (event) {
+                console.log("Publisher stopped streaming. Reason: "
+                   + event.reason);
+            }
+        });
+        // Detect other streams & subscribe
+        session.on("streamCreated", function (event) {
+            console.log("New stream in the session: " + event.stream.streamId);
+            var subscriberProperties = {insertMode: 'append'};
+            var drSubscriber = session.subscribe(event.stream,
+                'patientVideobox', subscriberProperties,
+                function (error) {
+                  if (error) {
+                    console.log(error);
+                  } else {
+                    console.log('Doctor added.');
+                  }
+                });
+        });
+    } else {
+        console.log("The client does not support WebRTC.");
+    }
+
+</script>
+
+
+<!-- <div class="wrapper wrapper-content">
+    <div id="videobox" style="background-color:white;">
+    </div>
+    <button type="button" id="finish">Finish</button>
+</div>
+<script src="https://static.opentok.com/v2/js/opentok.min.js"></script> -->
+ <script type="text/javascript">
+    var apiKey = 45307712;
+    var sessionID = "<%= @consult.sessionId %>";
+    var token = "<%= @tok_token %>";
+
+    var session;
+    var publisher;
+
+    // OT.setLogLevel(TB.DEBUG);
+    if (OT.checkSystemRequirements() == 1) {
+
+        //Initiate Session
+        var session = OT.initSession(sessionId);
+        session.addEventListener("sessionConnected", sessionConnectedHandler);
+        session.addEventListener("streamCreated", streamCreatedHandler);
+
+        //Connect To Session
+        session.connect(apiKey, token);
+
+        //Create & Publish Stream to Session
+        var publisher;
+        function sessionConnectedHandler(event) {
+            publisher = OT.initPublisher(apiKey, "videobox");
+            publisher.on({
+                streamCreated: function (event) {
+                    console.log("Publisher started streaming.");
+                },
+                streamDestroyed: function (event) {
+                    console.log("Publisher stopped streaming. Reason: "
+                       + event.reason);
+                }
+            });
+            session.publish(publisher);
+            // Subscribe to streams that were in the session when we connected
+            subscribeToStreams(event.streams);
+        }
+
+        //Subscribe To Other Streams in Session
+        function streamCreatedHandler(event) {
+            subscribeToStreams(event.streams);
+        }
+        function subscribeToStreams(streams) {
+            for (var i = 0; i < streams.length; i++) {
+                // Make sure we don"t subscribe to ourself
+                if (streams[i].connection.connectionId == session.connection.connectionId) {
+                return;
+                }
+                // Create the div to put the subscriber element in to
+                var div = document.createElement("div");
+                div.setAttribute("id", "stream" + streams[i].streamId);
+                document.body.appendChild(div);
+                // Subscribe to the stream
+                session.subscribe(streams[i], div.id);
+            }
+        }
+
+        // Disconnect from Session when user specifies
+        $("#finish").on(function(){
+            session.disconnect();
+        })
+
+        // Try to reconnect if session ended by network,not user
+        session.on(sessionDisconnected, function sessionDisconnectHandler(event) {
+            if (event.reason == "networkDisconnected") {
+            alert("Your network connection terminated.")
+            session.connect(token);
+          }
+        });
+
+        //Detect when doctor signs on
+        var connectionCount;
+        session.on({
+          connectionCreated: function (event) {
+            connectionCount++;
+            if (event.connection.connectionId != session.connection.connectionId) {
+              console.log('Another client connected. ' + connectionCount + ' total.');
+            }
+          },
+          connectionDestroyed: function connectionDestroyedHandler(event) {
+            connectionCount--;
+            console.log('A client disconnected. ' + connectionCount + ' total.');
+          }
+        });
+    } else {
+        console.log("The client does not support WebRTC.");
+    }
+
+    var apiKey = 45307712;
+    var sessionID = "<%= @consult.sessionId %>";
+    var token = "<%= @tok_token %>";
+
+    var session;
+    var publisher;
+
+    if (OT.checkSystemRequirements() == 1) {
+        // Publish Stream:
+        publisher = OT.initPublisher("videobox");
+        publisher.on({
+            streamCreated: function (event) {
+                console.log("Publisher started streaming.");
+            },
+            streamDestroyed: function (event) {
+                console.log("Publisher stopped streaming. Reason: "
+                   + event.reason);
+            }
+        });
+
+        // Initiate Session:
+        session = OT.initSession(apiKey, sessionID);
+        session.connect(token, function (error) {
+            if (session.capabilities.publish == 1) {
+                session.publish(publisher);
+            } else {
+                console.log("You cannot publish an audio-video stream.");
+            }
+        });
+
+        // Disconnect from Session when user specifies
+        $("#finish").on(function(){
+            session.disconnect();
+        })
+
+        // Try to reconnect if session ended by network,not user
+        session.on(sessionDisconnected, function sessionDisconnectHandler(event) {
+            if (event.reason == "networkDisconnected") {
+            alert("Your network connection terminated.")
+            session.connect(token);
+          }
+        });
+
+        //Detect when doctor signs on
+        var connectionCount;
+        session.on({
+          connectionCreated: function (event) {
+            connectionCount++;
+            if (event.connection.connectionId != session.connection.connectionId) {
+              console.log('Another client connected. ' + connectionCount + ' total.');
+            }
+          },
+          connectionDestroyed: function connectionDestroyedHandler(event) {
+            connectionCount--;
+            console.log('A client disconnected. ' + connectionCount + ' total.');
+          }
+        });
+
+    } else {
+        console.log("The client does not support WebRTC.");
+    }
+</script>
+
