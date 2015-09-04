@@ -16,7 +16,7 @@
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid $navy;
+  border: 2px solid #898AA6;
   border-radius: 2px;
 }
 
@@ -47,7 +47,7 @@
 .onoffswitch-inner:before {
   content: "ON";
   padding-left: 10px;
-  background-color: $navy;
+  background-color: #898AA6;
   color: white;
 }
 
@@ -63,7 +63,7 @@
   width: 20px;
   margin: 0px;
   background: white;
-  border: 2px solid $navy;
+  border: 2px solid #898AA6;
   border-radius: 2px;
   position: absolute;
   top: 0;
@@ -224,8 +224,8 @@
 }
 
 .fc-state-active {
-  background-color: $navy;
-  border-color: $navy;
+  background-color: #898AA6;
+  border-color: #898AA6;
   color: white;
 }
 
@@ -263,8 +263,8 @@
 .fc-agenda .fc-event-time,
 .fc-event a {
   padding: 4px 6px;
-  background-color: $navy;
-  border-color: $navy;
+  background-color: #898AA6;
+  border-color: #898AA6;
 }
 
 .fc-event-time, .fc-event-title {
@@ -382,8 +382,8 @@
 /* LIST GROUP */
 
 a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
-  background-color: $navy;
-  border-color: $navy;
+  background-color: #898AA6;
+  border-color: #898AA6;
   color: white;
   z-index: 2;
 }
@@ -681,7 +681,7 @@ table.dataTable thead .sorting:after {
 }
 
 .pace .pace-progress {
-  background: $navy;
+  background: #898AA6;
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -837,11 +837,11 @@ table.dataTable thead .sorting:after {
 }
 
 .form-control:focus, .single-line:focus {
-  border-color: $navy !important;
+  border-color: #898AA6 !important;
 }
 
 .has-success .form-control {
-  border-color: $navy;
+  border-color: #898AA6;
 }
 
 .has-warning .form-control {
@@ -853,7 +853,7 @@ table.dataTable thead .sorting:after {
 }
 
 .has-success .control-label {
-  color: $navy;
+  color: #898AA6;
 }
 
 .has-warning .control-label {
@@ -885,7 +885,7 @@ table.dataTable thead .sorting:after {
 }
 
 .noUi-connect {
-  background: none repeat scroll 0 0 $navy;
+  background: none repeat scroll 0 0 #898AA6;
   box-shadow: none;
 }
 
@@ -927,7 +927,7 @@ table.dataTable thead .sorting:after {
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid #1ab394;
+  border: 2px solid #898AA6;
   border-radius: 3px;
 }
 
@@ -960,7 +960,7 @@ table.dataTable thead .sorting:after {
 .onoffswitch-inner:before {
   content: "ON";
   padding-left: 7px;
-  background-color: #1ab394;
+  background-color: #898AA6;
   color: white;
 }
 
@@ -977,7 +977,7 @@ table.dataTable thead .sorting:after {
   width: 18px;
   margin: 0px;
   background: white;
-  border: 2px solid #1ab394;
+  border: 2px solid #898AA6;
   border-radius: 3px;
   position: absolute;
   top: 0;
@@ -1517,11 +1517,11 @@ label.error {
 }
 
 .toast {
-  background-color: $navy
+  background-color: #898AA6
 }
 
 .toast-success {
-  background-color: $navy
+  background-color: #898AA6
 }
 
 .toast-error {
@@ -1568,7 +1568,7 @@ label.error {
 }
 
 .inspinia-notify.alert-info {
-  border-left: 6px solid $navy;
+  border-left: 6px solid #898AA6;
 }
 
 /* Image cropper style */
@@ -1705,11 +1705,11 @@ a.forum-item-title:hover {
   color: #9b9b9b;
 }
 .forum-item.active .fa {
-  color: $navy;
+  color: #898AA6;
 }
 
 .forum-item.active a.forum-item-title {
-  color: $navy;
+  color: #898AA6;
 }
 
 @media (max-width: 992px) {
@@ -1906,7 +1906,7 @@ a.forum-item-title:hover {
 }
 
 .vertical-date small {
-  color: $navy;
+  color: #898AA6;
   font-weight: 400;
 }
 
@@ -2160,7 +2160,7 @@ a.forum-item-title:hover {
   position: absolute;
   left: 10px;
   border-radius: 3px;
-  background: $navy;
+  background: #898AA6;
   padding: 3px;
   color: white;
   cursor: pointer;

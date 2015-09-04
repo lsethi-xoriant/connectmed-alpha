@@ -147,7 +147,7 @@
 }
 
 .nav > li.active {
-  border-left: 4px solid darken($navy, 2%);
+  border-left: 4px solid darken(#898AA6, 2%);
   background: darken($nav-bg, 3%);
 }
 
@@ -275,7 +275,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 
 .navbar-default .special_link a {
-  background: $navy;
+  background: #898AA6;
   color: white;
 }
 
@@ -286,22 +286,22 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 
 .navbar-default .special_link a span.label {
   background: white;
-  color: $navy;
+  color: #898AA6;
 }
 
 .navbar-default .landing_link a {
-  background: lighten($navy, 3%);
+  background: lighten(#898AA6, 3%);
   color: white;
 }
 
 .navbar-default .landing_link a:hover {
-  background: $navy !important;
+  background: #898AA6 !important;
   color: white;
 }
 
 .navbar-default .landing_link a span.label {
   background: white;
-  color: lighten($navy, 3%);
+  color: lighten(#898AA6, 3%);
 }
 
 .logo-element {
@@ -379,7 +379,7 @@ body.canvas-menu .logo-element {
 
 body.mini-navbar .nav-header {
   padding: 0;
-  background-color: $navy;
+  background-color: #898AA6;
 }
 
 body.canvas-menu .nav-header {

@@ -5,7 +5,7 @@
 
 .top-navigation .navbar-nav .dropdown-menu > .active > a {
   background: white;
-  color: $navy;
+  color: #898AA6;
   font-weight: bold;
 }
 
@@ -25,7 +25,7 @@
 
 .top-navigation .nav > li a:hover, .top-navigation .nav > li a:focus {
   background: #fff;
-  color: $navy;
+  color: #898AA6;
 }
 
 .top-navigation .nav > li.active {
@@ -33,7 +33,7 @@
   border: none;
 }
 .top-navigation .nav > li.active > a {
-  color: $navy;
+  color: #898AA6;
 }
 .top-navigation .navbar-right {
   margin-right: 10px;
@@ -54,7 +54,7 @@
 }
 
 .top-navigation .navbar-brand {
-  background: $navy;
+  background: #898AA6;
   color: #fff;
   padding: 15px 25px;
   height: 50px;
@@ -89,7 +89,7 @@
 }
 
 .navbar-toggle {
-  background-color: $navy;
+  background-color: #898AA6;
   color: #fff;
   padding: 6px 12px;
   font-size: 14px;

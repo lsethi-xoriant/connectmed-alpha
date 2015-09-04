@@ -11,7 +11,7 @@
 }
 
 .btn-primary.btn-outline {
-  color: $navy;
+  color: #898AA6;
 }
 
 .btn-success.btn-outline {
@@ -39,14 +39,14 @@
 }
 
 .btn-primary {
-  background-color: $navy;
-  border-color: $navy;
+  background-color: #898AA6;
+  border-color: #898AA6;
   color: white;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
-  background-color: darken($navy, 3%);
-  border-color: darken($navy, 3%);
+  background-color: darken(#898AA6, 3%);
+  border-color: darken(#898AA6, 3%);
   color: white;
 }
 
@@ -55,8 +55,8 @@
 }
 
 .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary.active[disabled], fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-  background-color: lighten($navy, 4%);
-  border-color: lighten($navy, 4%);
+  background-color: lighten(#898AA6, 4%);
+  border-color: lighten(#898AA6, 4%);
 }
 
 .btn-success {
@@ -169,7 +169,7 @@
 }
 
 .btn-link:hover, .btn-link:focus, .btn-link:active, .btn-link.active, .open .dropdown-toggle.btn-link {
-  color: $navy;
+  color: #898AA6;
   text-decoration: none;
 }
 
@@ -244,11 +244,11 @@ button.dim:active {
 }
 
 button.btn-primary.dim {
-  box-shadow: inset 0px 0px 0px darken($navy, 6%), 0px 5px 0px 0px darken($navy, 6%), 0px 10px 5px #999999;
+  box-shadow: inset 0px 0px 0px darken(#898AA6, 6%), 0px 5px 0px 0px darken(#898AA6, 6%), 0px 10px 5px #999999;
 }
 
 button.btn-primary.dim:active {
-  box-shadow: inset 0px 0px 0px darken($navy, 6%), 0px 2px 0px 0px darken($navy, 6%), 0px 5px 3px #999999;
+  box-shadow: inset 0px 0px 0px darken(#898AA6, 6%), 0px 2px 0px 0px darken(#898AA6, 6%), 0px 5px 3px #999999;
 }
 
 button.btn-default.dim {

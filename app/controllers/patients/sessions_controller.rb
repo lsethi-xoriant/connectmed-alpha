@@ -17,7 +17,7 @@ class Patients::SessionsController < ApplicationController
 
   def destroy
     patient_sign_out
-    redirect_to patient_signin_path
+    redirect_to '/'
   end
 
 end
