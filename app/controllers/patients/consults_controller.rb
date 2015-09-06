@@ -43,8 +43,6 @@ class Patients::ConsultsController < ApplicationController
     end
   end
 
-  def finish
-  end
 
   private
 

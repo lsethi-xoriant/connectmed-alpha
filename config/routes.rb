@@ -9,7 +9,8 @@ ConnectMed::Application.routes.draw do
     get '/signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
     resources :sessions, only: [:new, :create, :destroy]
     resources :consults
-    get '/consults/finish', to: "consults#finish", as: 'consults_finish'
+    get '/consults/:id/select_pharmacy', to: "consults#select_pharmacy", as: "consults_select_pharmacy"
+    get '/consults/:id/finish', to: "consults#finish", as: 'consults_finish'
     resources :pharmacies
   end
   resources :patients
