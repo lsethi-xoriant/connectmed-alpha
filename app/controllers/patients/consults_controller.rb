@@ -8,9 +8,13 @@ class Patients::ConsultsController < ApplicationController
     # current_patient.consults << @consult
   end
 
+  def select_pharmacy
+    @consult = Consult.find(params[:id])
+  end
+
   def show
     @consult = Consult.find(params[:id])
-    @opentok = OpenTok::OpenTok.new("45307712","a9bca2feffb7331786dbe53c02f28ef48ce92e98")
+    @opentok = OpenTok::OpenTok.new("45334072","49403b241d18e0d4d3c4da37d89e3577d25a83e0")
     puts "Inside Show"
     puts @consult.sessionId
     # role = :moderator #or :publisher
@@ -24,7 +28,7 @@ class Patients::ConsultsController < ApplicationController
   end
 
   def create
-    @opentok = OpenTok::OpenTok.new("45307712","a9bca2feffb7331786dbe53c02f28ef48ce92e98")
+    @opentok = OpenTok::OpenTok.new("45334072","49403b241d18e0d4d3c4da37d89e3577d25a83e0")
     session = @opentok.create_session :media_mode => :routed #(request.remote_addr)
     puts "Inside create"
     puts session.session_id
