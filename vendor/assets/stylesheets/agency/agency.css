@@ -225,7 +225,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a:hover {
     outline: 0;
-    color: #898AA6;
+    color: #BBBDDB;
     background-color: transparent;
 }
 
@@ -254,13 +254,13 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-nav>.activeNav>a {
-    color: #898AA6;
+    color: #BBBDDB;
     background-color: transparent;
 }
 
 .navbar-default .navbar-nav>.activeNav>a:hover,
 .navbar-default .navbar-nav>.activeNav>a:focus {
-    color: #898AA6;
+    color: #BBBDDB;
     background-color: transparent;
     border-radius: 3px;
     border-color: #fff;
@@ -268,7 +268,7 @@ fieldset[disabled] .btn-xl.active {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        padding: 5px 0;
         border: 0;
         background-color: transparent;
         -webkit-transition: padding .3s;
@@ -306,7 +306,7 @@ header {
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    background-size: cover;
+    background-size: cover;navbar-header
     -o-background-size: cover;
 }
 
