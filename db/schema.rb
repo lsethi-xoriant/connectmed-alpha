@@ -11,39 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904021411) do
+ActiveRecord::Schema.define(version: 20150908070855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "consults", force: true do |t|
-    t.date     "date"
-    t.time     "time"
     t.text     "sessionId"
     t.text     "purpose_descrip"
     t.text     "duration"
     t.text     "medications"
     t.text     "allergies"
     t.text     "symptoms"
+    t.text     "prescribed_treatment"
+    t.text     "recording"
     t.integer  "doctor_id"
     t.integer  "patient_id"
+    t.integer  "pharmacy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pharmacies", force: true do |t|
     t.string   "name"
-    t.string   "country"
-    t.string   "state"
-    t.string   "city"
-    t.string   "postalcode"
-    t.string   "telephone"
-    t.string   "email"
+    t.string   "place_id"
     t.text     "note"
-    t.float    "latitude"
-    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "prescriptions", force: true do |t|
+    t.string   "name"
+    t.string   "dosage"
+    t.text     "notes"
+    t.integer  "consult_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: true do |t|
