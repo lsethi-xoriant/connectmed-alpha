@@ -1,0 +1,49 @@
+<div class="wrapper wrapper-content">
+  <div class="row animated fadeInLeft">
+    <div class="ibox">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="ibox-title">
+                    <h1>Update Your Account Details</h1>
+        </div>
+        <div class="ibox-content">
+          <%= form_for(current_patient, url: {action: "update"}) do |f| %>
+                <div class="form-group">
+                    <%= label_tag(:name) %>
+                    <%= f.text_field :name, :class => 'form-control', :required => true, :placeholder => current_patient.name, :type => 'text'  %>
+                </div>
+                <div class="form-group">
+                    <%= label_tag(:email) %>
+                    <%= f.text_field :email, :class => 'form-control', :required => true, :placeholder => current_patient.email, :type => 'email'  %>
+                </div>
+                <div class="form-group">
+                    <%= label_tag(:phone) %>
+                    <%= f.text_field :phone, :class => 'form-control', :placeholder => current_patient.phone, :type => 'text'  %>
+                </div>
+                <div class="form-group">
+                    <%= label_tag(:password) %>
+                    <%= f.password_field :password, :class => 'form-control', :placeholder => '**************', :type => 'password', :minlength => '6'  %>
+                </div>
+                <div class="form-group">
+                    <%= label_tag(:password_confirmation) %>
+                    <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => '**************', :type => 'password',:minlength => '6', equalTo: "#current_patient_password"  %>
+                </div>
+                <%= f.submit "Update", :class => 'btn btn-primary block m-b' %>
+                <% if flash[:error_messages] %>
+                  <% for m in flash[:error_messages] %>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <%= m %>
+                    </div>
+                  <% end %>
+                <% elsif flash[:success_messages] %>
+                  <div class="alert alert-success alert-dismissable">
+                      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                      <%= flash[:success_messages]%>
+                  </div>
+                <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

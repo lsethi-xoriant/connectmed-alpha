@@ -1,0 +1,61 @@
+<div class="wrapper wrapper-content">
+<div class="row animated fadeInLeft">
+  <div class="col-lg-10 col-lg-offset-1">
+    <div class="ibox-title">
+      <h1>My Pharmacies</h1>
+    </div>
+    <div id="map"></div>
+    <div class="ibox-content">
+      <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Search in table">
+      <table class="footable table table-stripped default footable-loaded" data-page-size="8" data-filter="#filter">
+          <thead>
+            <tr>
+                <th class="footable-visible footable-first-column footable-sortable">Name<span class="footable-sort-indicator"></span></th>
+                <th class="footable-visible footable-sortable">Address<span class="footable-sort-indicator"></span></th>
+                <th class="footable-visible footable-sortable">Phone<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-last-column footable-sortable">Website<span class="footable-sort-indicator"></span></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+          <tr>
+              <td colspan="5" class="footable-visible">
+              </td>
+          </tr>
+          </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSSYY9c-fpjfoFuHoVlTtb_QFMw0wTx2o&libraries=places"></script>
+<script>
+$(document).ready(function() {
+
+  var pharmacies_json = <%= current_patient.pharmacies.to_json.to_s.html_safe %>;
+  for(i=0; i<pharmacies_json.length; i++) {
+    var request = {placeId: pharmacies_json[i].place_id};
+    //Had to Create because needed by PlacesService
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 5,
+      center: {lat:-30.559482, lng:22.937},
+    });
+    service = new google.maps.places.PlacesService(map);
+    service.getDetails(request, callback);
+    function callback(placeDetails) {
+      console.log(placeDetails)
+        var trPharm = $('<tr></tr>').addClass('gradeX footable-even').attr({ style:'display: table-row;'});
+        var tdName = $('<td></td>').addClass('footable-visible footable-first-column').text(placeDetails.name);
+        var tdAddress = $('<td></td>').addClass('footable-visible').text(placeDetails.formatted_address);
+        var tdPhone = $('<td></td>').addClass('footable-visible').text(placeDetails.formatted_phone_number);
+        var tdWebsite = $('<td></td>').addClass('footable-visible').html('<a href="'+placeDetails.url+'">Click Here</a>');
+        trPharm.append(tdName); trPharm.append(tdAddress); trPharm.append(tdPhone);  trPharm.append(tdWebsite);
+        $('tbody').append(trPharm)
+    }
+  }
+
+
+});
+</script>
+

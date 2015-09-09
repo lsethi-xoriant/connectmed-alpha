@@ -1,0 +1,180 @@
+
+<div class="wrapper wrapper-content">
+<div class="row animated fadeInLeft">
+    <div class="row">
+        <% if flash[:error_messages] %>
+            <p><%= flash[:error_messages]%></p>
+        <% end %>
+    <%= form_for(:consult, url: {action: "create"}) do |f| %>
+        <div class="col-lg-8 col-lg-offset-2">
+            <%= image_tag "doctor_circle.png", width: '10%', style: "margin:20px; text-align:center;", class: 'img-responsive' %>
+                <div class="form-group">
+                    <%= label_tag(:purpose_descrip, "What is the purpose of your visit?") %>
+                    <p><small>Please describe briefly below</small></p>
+                    <%= f.text_area :purpose_descrip, :required => true, :class => 'form-control', :placeholder => 'Name', :type => 'text'  %>
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-2">
+            <div class="form-group">
+                <%= label_tag(:duration, "When did you start feeling this way?") %>
+                <select name="consult[duration]" id="consult_duration" class="form-control m-b" placeholder="Select...">
+                  <option value="today">Today</option>
+                  <option value="yesterday">Yesterday</option>
+                  <option value="the past week">The Past Week</option>
+                  <option value="the past month">The Past Month</option>
+                  <option value="the past year">The Past Year</option>
+                  <option value="more than a year">More Than a Year</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <%= label_tag(:medications, "Please tell us if you are currently taking any medications:") %>
+                <%= f.text_field :medications, :class => 'form-control', :placeholder => 'Enter all separated by commas' %>
+            </div>
+            <div class="form-group">
+                <%= label_tag(:allergies, "Please tell us any allergies you have:") %>
+                <%= f.text_field :allergies, :class => 'form-control', :placeholder => 'Enter all separated by commas', :type => 'text' %>
+            </div>
+            <%= label_tag(:symptoms, "Do you have any of these symptoms?") %>
+            <%= hidden_field_tag(:symptoms, "",onchange: "alert('Input collected!')") %>
+            <p>Check all that apply:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-lg-offset-2">
+            <div class="form-group">
+                <h4>General Symptoms</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="fever" class="symptom"> <i></i> Fever </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="weight_change" class="symptom"> <i></i> Weight Change </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="difficulty_sleeping" class="symptom"> <i></i> Difficulty Sleeping </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="loss_of_appetite" class="symptom"> <i></i> Loss of Appetite </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="mood_changes" class="symptom"> <i></i> Mood Changes </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="fatigue_or_weakness" class="symptom"> <i></i> Fatigue or Weakness </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="foreign_travel_past_month" class="symptom"> <i></i> Foreign Travel (Past Month)</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="hospitalized_past_sixth_months" class="symptom"> <i></i> Hospitalized (Past Six Months) </label></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <h4>Chest</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="chest_pressure_or_pain" class="symptom"> <i></i> Chest Pressure or Pain </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="palpitations" class="symptom"> <i></i> Palpitations </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="cough" class="symptom"> <i></i> Cough </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="sputum" class="symptom"> <i></i> Sputum </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="shortness_of_breath" class="symptom"> <i></i> Shortness of Breath </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="decreased_exercise_tolerance" class="symptom"> <i></i> Decreased Exercise Tolerance </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="history_of_smoking" class="symptom"> <i></i> History of Smoking</label></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <h4>Digestive Track</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="sore_throat" class="symptom"> <i></i> Sore Throat </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="nausea_or_vomiting" class="symptom"> <i></i> Nausea or Vomiting </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="difficulty_or_pain_swallowing" class="symptom"> <i></i> Difficulty or Pain Swallowing </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="heartburn_or_reflux" class="symptom"> <i></i> Heartburn or Reflux</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="diarrhea" class="symptom"> <i></i> Diarrhea </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="constipation" class="symptom"> <i></i> Constipation </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="abd_pain_or_discomfort" class="symptom"> <i></i> Abdominal pain or discomfort</label></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-lg-offset-2">
+             <div class="form-group">
+                <h4>Medical Conditions</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="cancer" class="symptom"> <i></i> Cancer</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="diabetes" class="symptom"> <i></i> Diabetes </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="heart_disease_chf_mi" class="symptom"> <i></i> Heart Disease (CHF, MI)</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="stroke" class="symptom"> <i></i> Stroke </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="high_blood_pressure" class="symptom"> <i></i> High Blood Pressure </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="high_cholesterol" class="symptom"> <i></i> High Cholesterol </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="asthma_copd" class="symptom"> <i></i> Asthma or COPD</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="depression" class="symptom"> <i></i> Depression</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="arthritis" class="symptom"> <i></i> Arthritis</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="abnormal_thyroid" class="symptom"> <i></i> Abnormal Thyroid</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="pregnant" class="symptom"> <i></i> Pregnant</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="other_medical_condition" class="symptom"> <i></i> Other</label></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <h4>Head/Neck Symptoms</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="headache" class="symptom"> <i></i> Headache </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="dizzy_or_lightheaded" class="symptom"> <i></i> Dizzy or Lightheaded </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="vision_changes" class="symptom"> <i></i> Vision Changes</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="hearing_loss_or_ringing" class="symptom"> <i></i> Hearing Loss or Ringing </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="ear_drainage" class="symptom"> <i></i> Ear Drainage </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="nasal_discharge" class="symptom"> <i></i> Nasal Discharge </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="congestion_or_sinus_problem" class="symptom"> <i></i> Congestion or Sinus Problem</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="allergies" class="symptom"> <i></i> Allergies</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="numbness_or_tingling" class="symptom"> <i></i> Numbness or Tingling</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="history_of_fainting_or_seizure" class="symptom"> <i></i> History of Fainting or Seizure</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="memory_loss" class="symptom"> <i></i> Memory Loss</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="history_of_stroke" class="symptom"> <i></i> History of Stroke</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="history_of_falls" class="symptom"> <i></i> History of Falls</label></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <h4>Pelvis</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="flank_pain" class="symptom"> <i></i> Flank Pain </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="discomfort_or_burning_with_urination" class="symptom"> <i></i> Discomfort or Burning with Urination </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="history_of_STDs" class="symptom"> <i></i> History of Sexually Transmitted Infections</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="irregular_periods" class="symptom"> <i></i> Irregular Periods (Female Only)</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="vaginal_bleeding" class="symptom"> <i></i> Vaginal Bleeding (Female Only)</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="vaginal_discharge" class="symptom"> <i></i> Vaginal Discharge (Female Only)</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="penile_discharge" class="symptom"> <i></i> Penile Discharge (Male Only)</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="testicular_swelling" class="symptom"> <i></i> Testicular Swelling (Male Only)</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="testicular_pain" class="symptom"> <i></i> Testicular Pain (Male Only)</label></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-lg-offset-2">
+            <div class="form-group">
+                <h4>Skin</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="skin_bleeding" class="symptom"> <i></i> Bleeding </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="skin_itching" class="symptom"> <i></i> Itching </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="skin_swelling" class="symptom"> <i></i> Swelling </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="skin_rashes_or_bumps" class="symptom"> <i></i> Skin Rashes or Bumps</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="skin_bruising_or_discoloration" class="symptom"> <i></i> Bruising or Discoloration </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="skin_sores" class="symptom"> <i></i> Sores </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="skin_bites" class="symptom"> <i></i> Bites</label></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <h4>Muscles & Joints</h4>
+                <div class="i-checks"><label> <input type="checkbox" value="muscle_pain" class="symptom"> <i></i> Muscle Pain </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="limited_motion_or_mobility" class="symptom"> <i></i> Limited Motion or Mobility</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="muscle_weakness" class="symptom"> <i></i> Muscle Weakness </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="back_pain" class="symptom"> <i></i> Back Pain</label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="muscle_swelling" class="symptom"> <i></i> Swelling </label></div>
+                <div class="i-checks"><label> <input type="checkbox" value="joint_replacements" class="symptom"> <i></i> Joint Replacements </label></div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-right">
+        <div class="col-lg-10 col-lg-offset-2">
+            <%= f.submit "Next", :class => 'btn btn-primary block m-b' %>
+        </div>
+    </div>
+    <% end %>
+</div>
+</div>
+<script>
+    $(function(){
+        $('form').submit(function() {
+           var symptomsString = "";
+           $checkedSymptoms = $('input[class=symptom]:checked');
+           $checkedSymptoms.each(function() {
+                symptomsString = symptomsString.concat($(this).val(),",");
+           });
+           $("#symptoms").val(symptomsString);
+            return true; // return false to cancel form action
+        });
+    });
+</script>
+

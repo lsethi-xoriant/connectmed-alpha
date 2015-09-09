@@ -1,0 +1,62 @@
+<div class="wrapper wrapper-content">
+<div class="row animated fadeInLeft">
+  <div class="col-lg-12">
+    <div class="ibox-title">
+      <h1>My Past Constulations</h1>
+    </div>
+    <div class="ibox-content">
+      <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Search in Table & Press Enter">
+      <table class="footable table table-stripped default footable-loaded" data-page-size="8" data-filter="#filter" style="overflow-y: auto; width: 100%; height: 350px;">
+          <thead>
+            <tr>
+                <th class="footable-visible footable-first-column footable-sortable">Date<span class="footable-sort-indicator"></span></th>
+                <th class="footable-visible footable-sortable">Time<span class="footable-sort-indicator"></span></th>
+                <th class="footable-visible footable-sortable">Your Doctor<span class="footable-sort-indicator"></span></th>
+                <th class="footable-visible footable-sortable">Reason For Visit<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-sortable">Treatment Recommendation<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-sortable">Prescriptions<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-sortable">Chosen Pharmacy<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-last-column footable-sortable">Recording<span class="footable-sort-indicator"></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for consult in @consults %>
+              <tr class="gradeX footable-even" style="display: table-row;">
+                <td class="footable-visible footable-first-column"><span class="footable-toggle"></span><%= consult.created_at.strftime("%m/%d/%Y") %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.created_at.strftime("%I:%M%p") %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.doctor  ==  nil ? "Doctor Not Seen" : consult.doctor %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.purpose_descrip %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%=
+                  if consult.doctor  ==  nil
+                    "Doctor Not Seen"
+                  elsif consult.prescribed_treatment == nil
+                    "Waiting For Doctor's Submission"
+                  else
+                    consult.prescribed_treatment
+                  end
+                %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%=
+                   if consult.doctor  ==  nil
+                    "Doctor Not Seen"
+                  elsif consult.prescriptions.empty?
+                    "Waiting For Doctor's Submission"
+                  else
+                    consult.prescriptions.each {|script| puts script.name}
+                  end
+                %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><a href="/patient/pharmacies"><%= consult.pharmacy.name %></a></td>
+                <td class="center footable-visible footable-last-column"><span class="footable-toggle"></span>Coming Soon</td>
+              </tr>
+            <% end %>
+           </tbody>
+           <tfoot>
+          <tr>
+              <td colspan="8" class="footable-visible">
+              </td>
+          </tr>
+          </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
