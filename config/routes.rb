@@ -3,19 +3,28 @@ ConnectMed::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'welcome#index'
 
-  get '/patients/dashboard', to: 'patients#dashboard', as: 'patients_dashboard'
-  namespace :patients do
-    get '/signin', to: "sessions#new", as: 'signin'
-    get '/signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
+# Scopes Routes & Controllers to Patient
+  namespace :patient do
+    get 'signin', to: "sessions#new", as: 'signin'
+    get 'signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
+    get 'signup', to: "patients#new", as: "signup"
+    post 'patients', to: "patients#create"
+    get 'my_account', to: "patients#edit", as: "edit"
+    patch 'my_account', to: "patients#update"
+    get 'dashboard', to: "patients#dashboard", as: "dashboard"
+    get 'privacy_policy', to: "patients#privacy_policy", as: "privacy_policy"
     resources :sessions, only: [:new, :create, :destroy]
-    resources :consults
-    get '/consults/:id/select_pharmacy', to: "consults#select_pharmacy", as: "consults_select_pharmacy"
-    get '/consults/:id/finish', to: "consults#finish", as: 'consults_finish'
     resources :pharmacies
+    resources :consults do
+      resources :pharmacies
+      member do
+        get 'finish'
+      end
+    end
   end
-  resources :patients
 
-  resources :doctors
+
+
   get '/doctors/dashboard', to: 'doctors#dashboard', as: 'doctors_dashboard'
   namespace :doctors do
     get '/signin', to: "sessions#new", as: 'signin'
@@ -23,6 +32,7 @@ ConnectMed::Application.routes.draw do
     resources :sessions, only: [:new, :create, :destroy]
     resources :consults
   end
+  resources :doctors
 
 
 
