@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150908070855) do
     t.text     "symptoms"
     t.text     "prescribed_treatment"
     t.text     "recording"
+    t.boolean  "patient_waiting"
     t.integer  "doctor_id"
     t.integer  "patient_id"
     t.integer  "pharmacy_id"
@@ -58,6 +59,8 @@ ActiveRecord::Schema.define(version: 20150908070855) do
     t.string   "name",            null: false
     t.string   "email",           null: false
     t.string   "phone"
+    t.string   "age"
+    t.string   "gender"
     t.string   "password_digest", null: false
     t.string   "remember_token"
     t.datetime "created_at"

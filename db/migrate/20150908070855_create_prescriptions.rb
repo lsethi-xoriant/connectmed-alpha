@@ -4,6 +4,7 @@ class CreatePrescriptions < ActiveRecord::Migration
       t.string :name
       t.string :dosage
       t.text :notes
+      t.string :result
       t.integer :consult_id
       t.timestamps
     end
