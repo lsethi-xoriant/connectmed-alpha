@@ -1,7 +1,7 @@
 <div class="middle-box text-center loginscreen  animated fadeInDown">
     <div>
         <a class="" href="/"><%= image_tag "logos/CMLogoVertical5.png", width: '80%', style: "margin-bottom:10px;" %></a>
-         <%= form_for(:session, url: patient_sessions_path) do |f| %>
+         <%= form_for(:session, url: doctor_sessions_path) do |f| %>
             <div class="form-group">
                 <%= f.text_field :email, :required => true, :class => 'form-control', :placeholder => 'Email', :type => 'email' %>
             </div>
@@ -17,7 +17,7 @@
             <% end %>
         <% end %>
         <p class="text-muted text-center"><br>Don't have an account yet?</p>
-        <%= link_to 'Create an Account', patient_signup_path, :class =>"btn btn-sm btn-white" %>
+        <%= link_to 'Create an Account', doctor_signup_path, :class =>"btn btn-sm btn-white" %>
         <p class="m-t"> <small>ConnectMed &copy; 2015</small> </p>
     </div>
 </div>

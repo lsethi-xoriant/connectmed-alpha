@@ -15,23 +15,70 @@
     <!-- Main css styles -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
+    <!--Maps Css-->
+    <style>
+    table {
+        font-size: 12px;
+      }
+
+      #controls {
+        position: absolute;
+        left: 300px;
+        width: 140px;
+        top: 0px;
+        z-index: 5;
+        background-color: #fff;
+      }
+      #autocomplete {
+        width: 100%;
+      }
+
+      .placeIcon {
+        width: 20px;
+        height: 34px;
+        margin: 4px;
+      }
+      .hotelIcon {
+        width: 24px;
+        height: 24px;
+      }
+      #resultsTable {
+        border-collapse: collapse;
+        width: 100%;
+        height: 350px;
+        overflow:auto;
+      }
+      #rating {
+        font-size: 13px;
+        font-family: Arial Unicode MS;
+      }
+      .iw_table_row {
+        height: 10px;
+      }
+      .iw_attribute_name {
+        font-weight: bold;
+        text-align: right;
+      }
+      .iw_table_icon {
+        text-align: right;
+      }
+
+    </style>
+
     <!-- Main javascript files -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
-<body class="fixed-sidebar no-skin-config full-height-layout">
+<body class="top-navigation">
 
     <!-- Wrapper-->
     <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
-
-        <!-- Navigation -->
-        <%= render 'layouts/navigation' %>
 
         <!-- Page wraper -->
         <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
 
             <!-- Page wrapper -->
-            <%= render 'layouts/topnavbar' %>
+            <%= render 'layouts/doctor_topnavbar' %>
 
             <!-- Main view  -->
             <%= yield %>
@@ -41,9 +88,6 @@
 
         </div>
         <!-- End page wrapper-->
-
-        <!-- Right sidebar -->
-        <%= render 'layouts/rightsidebar' %>
 
     </div>
     <!-- End wrapper-->

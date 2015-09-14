@@ -1,7 +1,7 @@
 require 'opentok'
 
 class Patient::ConsultsController < ApplicationController
-  layout 'layout_2'
+  layout 'patient_layout'
   before_filter :require_patient_signin
   # before_filter :config_opentok,:except => [:index, :show]
   def new
@@ -11,6 +11,7 @@ class Patient::ConsultsController < ApplicationController
 
   def show
     @consult = Consult.find(params[:id])
+    @consult.update_attributes(:patient_waiting => true)
     @opentok = OpenTok::OpenTok.new("45334072","49403b241d18e0d4d3c4da37d89e3577d25a83e0")
     puts "Inside Show"
     puts @consult.sessionId
@@ -32,6 +33,8 @@ class Patient::ConsultsController < ApplicationController
     end
     temp_params = consult_params
     temp_params[:sessionId] = session.session_id
+    temp_params[:symptoms] = params[:symptoms]
+    puts temp_params
     @consult = Consult.new(temp_params)
     current_patient.consults << @consult
     if @consult.save
@@ -45,6 +48,6 @@ class Patient::ConsultsController < ApplicationController
   private
 
     def consult_params
-      params.require(:consult).permit(:date, :time, :purpose_descrip, :duration, :medications, :allergies, :symptoms)
+      params.require(:consult).permit(:date, :time, :purpose_descrip, :duration, :medications, :allergies)
     end
 end

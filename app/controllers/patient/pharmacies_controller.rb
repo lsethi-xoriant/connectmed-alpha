@@ -1,10 +1,11 @@
 class Patient::PharmaciesController < ApplicationController
-  layout 'layout_2'
+  layout 'patient_layout'
   skip_before_action :verify_authenticity_token
   before_filter :require_patient_signin
 
   def new
     @consult = Consult.find(params[:consult_id])
+    @consult.update_attributes(:patient_waiting => false)
     @pharmacy = Pharmacy.new
   end
 

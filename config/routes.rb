@@ -26,14 +26,24 @@ ConnectMed::Application.routes.draw do
 
 
   get '/doctors/dashboard', to: 'doctors#dashboard', as: 'doctors_dashboard'
-  namespace :doctors do
-    get '/signin', to: "sessions#new", as: 'signin'
-    get '/signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
+  get '/doctor', to: "welcome#doctor_index"
+  namespace :doctor do
+    get 'signin', to: "sessions#new", as: 'signin'
+    get 'signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
+    get 'signup', to: "doctors#new", as: "signup"
+    post 'doctors', to: "doctors#create"
+    get 'my_account', to: "doctors#edit", as: "edit"
+    patch 'my_account', to: "doctors#update"
+    get 'dashboard', to: "doctors#dashboard", as: "dashboard"
+    get 'privacy_policy', to: "doctors#privacy_policy", as: "privacy_policy"
     resources :sessions, only: [:new, :create, :destroy]
-    resources :consults
+    resources :consults do
+      resources :prescriptions
+      member do
+        get 'finish'
+      end
+    end
   end
-  resources :doctors
-
 
 
   #For Contact Form

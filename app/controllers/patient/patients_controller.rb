@@ -1,5 +1,5 @@
 class Patient::PatientsController < ApplicationController
-  layout "layout_2"
+  layout "patient_layout"
   before_filter :require_patient_signin, :except => [:new, :create]
 
   def dashboard
@@ -55,7 +55,7 @@ class Patient::PatientsController < ApplicationController
   private
 
   def patient_params
-    params.require(:patient).permit(:name, :email, :phone, :password, :password_confirmation, :password_digest, :remember_token)
+    params.require(:patient).permit(:name, :email, :phone, :age, :gender, :password, :password_confirmation, :password_digest, :remember_token)
   end
 
 

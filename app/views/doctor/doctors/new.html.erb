@@ -1,7 +1,7 @@
     <div class="middle-box text-center loginscreen   animated fadeInDown">
         <div>
             <a class="" href="/"><%= image_tag "logos/CMLogoVertical5.png", width: '80%', style: "margin-bottom:10px;" %></a>
-             <%= form_for [:patient, @patient] do |f| %>
+             <%= form_for [:doctor, @doctor] do |f| %>
                 <div class="form-group">
                     <%= f.text_field :name, :required => true, :class => 'form-control', :placeholder => 'Name', :type => 'text'  %>
                 </div>
@@ -12,20 +12,10 @@
                     <%= f.text_field :phone, :class => 'form-control', :placeholder => 'Your Phone', :type => 'text' %>
                 </div>
                 <div class="form-group">
-                    <%= f.password_field :password,  :required => true, :required => true, :class => 'form-control', :placeholder => 'Password', :type => 'password', :minlength => '6' %>
+                    <%= f.password_field :password, :required => true, :class => 'form-control', :placeholder => 'Password', :type => 'password', :minlength => '6' %>
                 </div>
                 <div class="form-group">
-                    <%= f.password_field :password_confirmation, :required => true, :class => 'form-control', :placeholder => 'Confirm Password', :type => 'password', equalTo: "#patient_password" %>
-                </div>
-                <div class="form-group" style="float:left;margin-left:30px;">
-                    <%= label_tag(:age, "Age") %>
-                    <%= select_tag(:age, options_for_select([['18', 18], ['19', 19], ['20', 20], ['21', 21], ['22', 22], ['23', 23], ['24', 24], ['25', 25], ['26', 26], ['27', 27], ['28', 28], ['29', 29], ['30', 30], ['31', 31], ['32', 32], ['33', 33], ['34', 34], ['35', 35], ['36', 36], ['37', 37], ['38', 38], ['39', 39], ['40', 40], ['41', 41], ['42', 42], ['43', 43], ['44', 44], ['45', 45], ['46', 46], ['47', 47], ['48', 48], ['49', 49], ['50', 50], ['51', 51], ['52', 52], ['53', 53], ['54', 54], ['55', 55], ['56', 56], ['57', 57], ['58', 58], ['59', 59], ['60', 60], ['61', 61], ['62', 62], ['63', 63], ['64', 64], ['65', 65], ['66', 66], ['67', 67], ['68', 68], ['69', 69], ['70', 70], ['71', 71], ['72', 72], ['73', 73], ['74', 74], ['75', 75],], 18)) %>
-                </div>
-                <div class="form-group">
-                    <%= radio_button_tag(:gender, "female") %>
-                    <%= label_tag(:gender_female, "Female") %>
-                    <%= radio_button_tag(:gender, "male") %>
-                    <%= label_tag(:gender_male, "Male") %>
+                    <%= f.password_field :password_confirmation, :required => true, :class => 'form-control', :placeholder => 'Confirm Password', :type => 'password', equalTo: "#doctor_password" %>
                 </div>
                 <div class="checkbox" style="padding-bottom:10px;"><label><i></i><input type="checkbox" required><button type="button" class="btn btn-link" data-toggle="modal" data-target="#termsModal" style="padding:0px;">Agree to the Terms & Conditions</button></label></div>
                 <div class="modal inmodal" id="termsModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -34,7 +24,7 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                             <i class="fa fa-clock-o modal-icon"></i>
-                            <h4 class="modal-title">ConnectMed Patient Terms & Conditions</h4>
+                            <h4 class="modal-title">ConnectMed Doctor Terms & Conditions</h4>
                             <small>PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY
 
                             </small>
@@ -60,7 +50,7 @@
                   <% end %>
               <% end %>
             <p class="text-muted text-center"><small>Already have an account?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="<%= url_for patient_signin_path %>">Login</a>
+            <a class="btn btn-sm btn-white btn-block" href="<%= url_for doctor_signin_path %>">Login</a>
             <p class="m-t"> <small>ConnectMed &copy; 2015</small> </p>
         </div>
     </div>

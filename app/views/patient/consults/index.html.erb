@@ -29,10 +29,10 @@
                 <td class="footable-visible"><span class="footable-toggle"></span><%=
                   if consult.doctor  ==  nil
                     "Doctor Not Seen"
-                  elsif consult.prescribed_treatment == nil
+                  elsif consult.prescription == nil
                     "Waiting For Doctor's Submission"
                   else
-                    consult.prescribed_treatment
+                    consult.prescriptions[1].notes
                   end
                 %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%=
@@ -44,7 +44,7 @@
                     consult.prescriptions.each {|script| puts script.name}
                   end
                 %></td>
-                <td class="footable-visible"><span class="footable-toggle"></span><a href="/patient/pharmacies"><%= consult.pharmacy.name %></a></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><a href="/patient/pharmacies"><%= consult.pharmacy ==  nil ? "" : consult.pharmacy.name %></a></td>
                 <td class="center footable-visible footable-last-column"><span class="footable-toggle"></span>Coming Soon</td>
               </tr>
             <% end %>

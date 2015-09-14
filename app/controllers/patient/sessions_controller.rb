@@ -21,9 +21,4 @@ class Patient::SessionsController < ApplicationController
     redirect_to '/'
   end
 
-  def privacy_policy
-     def privacy_policy
-  end
-  end
-
 end

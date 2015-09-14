@@ -1,16 +1,16 @@
 <div class="wrapper wrapper-content">
     <div class="row text-center">
         <div class="col-lg-6 col-lg-offset-3">
-            <div id="drVideobox" style="background-color:white;width:100%;height:400px;">
+            <div id="patientVideoBox" style="background-color:white;width:100%;height:400px;">
                 <br><br><br><br><br><br><br><br>
-                <h1>A Doctor Will Be With You Shortly.</h1>
+                <h1>Your Patient will Enter Shortly.</h1>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-1 col-lg-offset-3">
             <p><br></p>
-            <%= link_to 'Finish', new_patient_consult_pharmacy_path(@consult), :class =>"btn btn-primary" %>
+            <%= link_to 'Finish', new_doctor_consult_prescription_path(@consult), :class =>"btn btn-primary" %>
         </div>
         <div class="col-lg-2 col-lg-offset-3">
             <div id="selfVideobox" style="background-color:white;margin-top:20px;width:100%,height:150px"></div>
@@ -55,12 +55,12 @@
                 console.log("New stream in the session: " + event.stream.streamId);
                 var subscriberProperties = {insertMode:"replace", width:"100%",height:400};
                 var drSubscriber = session.subscribe(event.stream,
-                    'drVideobox', subscriberProperties,
+                    'patientVideoBox', subscriberProperties,
                     function (error) {
                       if (error) {
                         console.log(error);
                       } else {
-                        console.log('Doctor added.');
+                        console.log('Patient added.');
                       }
                     });
             },

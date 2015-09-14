@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <%= label_tag(:purpose_descrip, "What is the purpose of your visit?") %>
                     <p><small>Please describe briefly below</small></p>
-                    <%= f.text_area :purpose_descrip, :required => true, :class => 'form-control', :placeholder => 'Name', :type => 'text'  %>
+                    <%= f.text_area :purpose_descrip, :required => true, :class => 'form-control', :type => 'text'  %>
                 </div>
         </div>
     </div>
@@ -36,8 +36,10 @@
                 <%= label_tag(:allergies, "Please tell us any allergies you have:") %>
                 <%= f.text_field :allergies, :class => 'form-control', :placeholder => 'Enter all separated by commas', :type => 'text' %>
             </div>
+            <div class="form-group">
             <%= label_tag(:symptoms, "Do you have any of these symptoms?") %>
             <%= hidden_field_tag(:symptoms, "",onchange: "alert('Input collected!')") %>
+            </div>
             <p>Check all that apply:</p>
         </div>
     </div>

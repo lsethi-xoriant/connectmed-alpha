@@ -1,5 +1,5 @@
 class Patient::PrescriptionsController < ApplicationController
-  layout 'layout_2'
+  layout 'patient_layout'
   skip_before_action :verify_authenticity_token
   before_filter :require_patient_signin
 
