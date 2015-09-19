@@ -29,10 +29,8 @@
                 <td class="footable-visible"><span class="footable-toggle"></span><%=
                   if consult.doctor  ==  nil
                     "Doctor Not Seen"
-                  elsif consult.prescription == nil
-                    "Waiting For Doctor's Submission"
                   else
-                    consult.prescriptions[1].notes
+                    consult.prescribed_treatment
                   end
                 %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%=
