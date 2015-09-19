@@ -33,7 +33,6 @@ class Patient::ConsultsController < ApplicationController
     end
     temp_params = consult_params
     temp_params[:sessionId] = session.session_id
-    temp_params[:symptoms] = params[:symptoms]
     puts temp_params
     @consult = Consult.new(temp_params)
     current_patient.consults << @consult
@@ -48,6 +47,6 @@ class Patient::ConsultsController < ApplicationController
   private
 
     def consult_params
-      params.require(:consult).permit(:date, :time, :purpose_descrip, :duration, :medications, :allergies)
+      params.require(:consult).permit(:date, :time, :purpose_descrip, :symptoms, :duration, :medications, :allergies)
     end
 end
