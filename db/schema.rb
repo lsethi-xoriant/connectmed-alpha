@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150908070855) do
     t.string   "name"
     t.string   "dosage"
     t.text     "notes"
+    t.string   "result"
     t.integer  "consult_id"
     t.datetime "created_at"
     t.datetime "updated_at"
