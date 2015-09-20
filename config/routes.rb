@@ -18,6 +18,8 @@ ConnectMed::Application.routes.draw do
     resources :consults do
       resources :pharmacies
       member do
+        get 'left'
+        get 'enter'
         get 'finish'
       end
     end

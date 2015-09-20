@@ -43,6 +43,17 @@ class Patient::ConsultsController < ApplicationController
     end
   end
 
+  def left
+    @consult = Consult.find(params[:id])
+    @consult.update_attributes(:patient_waiting => false)
+    render :json => {:data => "success"}
+  end
+
+  def enter
+    @consult = Consult.find(params[:id])
+    @consult.update_attributes(:patient_waiting => true)
+    render :json => {:data => "success"}
+  end
 
   private
 

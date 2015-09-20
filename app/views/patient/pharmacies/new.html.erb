@@ -2,6 +2,7 @@
     <div class="row text-center">
         <h1><strong>Choose Your Pharmacy</strong></h1>
         <h3>If your doctor prescribed you a script, it will be sent to your chosen pharmacy.</h3>
+        <%= link_to 'OR Continue Without Pharmacy Selection', finish_patient_consult_path(@consult), :class =>"btn btn-primary", :style => "margin-bottom:20px" %>
         <br>
         <div class="col-lg-3 text-center">
             <div class="ibox">

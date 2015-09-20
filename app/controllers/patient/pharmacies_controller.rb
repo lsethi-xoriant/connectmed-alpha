@@ -5,7 +5,7 @@ class Patient::PharmaciesController < ApplicationController
 
   def new
     @consult = Consult.find(params[:consult_id])
-    @consult.update_attributes(:patient_waiting => false)
+    @consult.update_attributes(:patient_waiting => false) # While this update should have happened when patient leaves page via an AJAX request, I left it to be extra sure
     @pharmacy = Pharmacy.new
   end
 

@@ -1,19 +1,40 @@
 <div class="wrapper wrapper-content">
     <div class="row text-center">
-        <div class="col-lg-6 col-lg-offset-3">
-            <div id="patientVideoBox" style="background-color:white;width:100%;height:400px;">
-                <br><br><br><br><br><br><br><br>
-                <h1>Your Patient will Enter Shortly.</h1>
+        <div class="col-xs-9 col-md-8">
+            <div id="patientVideoBoxContainer" style="background-color:white;width:100%;height:400px;">
+                <div id="patientVideoBox">
+                    <br><br><br><br><br><br><br><br>
+                    <h1>Your Patient will Enter Shortly.</h1>
+                </div>
             </div>
+        </div>
+        <div class="col-xs-3 col-md-3 text-left">
+        <h2>Consult Details</h2>
+            <ul>
+              <li><p><strong>Patient Name: </strong><%=@consult.patient.name%></p></li>
+              <li><p><strong>Patient Age: </strong><%=@consult.patient.age%></p></li>
+              <li><p><strong>Patient Gender: </strong><%=@consult.patient.gender%></p></li>
+              <li><p><strong>Chief Complaint: </strong><%=@consult.purpose_descrip%></p></li>
+              <li><p><strong>Duration Experiencing CC: </strong><%=@consult.duration%></p></li>
+              <li><p><strong>Symptoms: </strong><%=@consult.symptoms%></p></li>
+              <li><p><strong>Medications: </strong><%=@consult.medications%></p></li>
+              <li><p><strong>Allergies: </strong><%=@consult.allergies%></p></li>
+            </ul>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-1 col-lg-offset-3">
-            <p><br></p>
-            <%= link_to 'Finish', new_doctor_consult_prescription_path(@consult), :class =>"btn btn-primary" %>
+        <div class="col-xs-6 col-md-2">
+            <div id="selfVideobox" style="background-color:white;margin:30px 0px;width:100%;height:150px"></div>
         </div>
-        <div class="col-lg-2 col-lg-offset-3">
-            <div id="selfVideobox" style="background-color:white;margin-top:20px;width:100%,height:150px"></div>
+        <div class="col-xs-6 col-md-8 col-md-offset-1">
+            <%= form_for(@consult, url: {action: "update"}) do |f| %>
+                <div class="form-group">
+                    <h2>Consult Notes (For Your Own Use; Not Seen By Patient)</h2>
+                    <%= f.text_area :internal_notes, :class => 'form-control', :type => 'text', :style => 'min-height:100px' %>
+                </div>
+                <%= f.submit 'Finish', :class =>"btn btn-primary", :style => "margin-bottom:10px;" %>
+            <% end %>
+        </div>
     </div>
 </div>
 <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
@@ -50,7 +71,7 @@
         });
 
         session.on({
-            // Detect other streams & subscribe
+            // Detect patient stream & subscribe
             streamCreated: function (event) {
                 console.log("New stream in the session: " + event.stream.streamId);
                 var subscriberProperties = {insertMode:"replace", width:"100%",height:400};
@@ -64,11 +85,16 @@
                       }
                     });
             },
+            // Detect patient stream lost & replace with original box
+            streamDestroyed: function(event) {
+                console.log("Patient stream disconnected");
+                $( "#patientVideoBoxContainer" ).html( "<div id='patientVideoBox'><br><br><br><br><br><br><br><br><h1>Your Patient has left the Consultion. Please wait while we try to reconnect him or her.</h1></div>" );
+            },
             // Try to reconnect if session ended by network,not user
             sessionDisconnected: function(event) {
                 if (event.reason == "networkDisconnected") {
-                alert("Your network connection terminated.")
-                session.connect(token);
+                    alert("Your network connection terminated. We're trying to reconnect you. After 10 seconds, try refreshing the page.")
+                    session.connect(token);
                 }
             }
         });

@@ -21,6 +21,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <%= puts @consults_waiting %>
                                 <% for consult in @consults_waiting %>
                                     <tr>
                                         <td><strong>Consult #<%= consult.id %></strong></td>
@@ -30,7 +31,7 @@
                                         <td><%= consult.symptoms %></td>
                                         <td><%= consult.patient.age %></td>
                                         <td><%= consult.patient.gender %></td>
-                                        <td><%= link_to 'Enter Consult', doctor_consult_path(consult), :class =>"btn btn-primary", :style =>"margin-left:30%" %></td>
+                                        <td><%= link_to 'Enter Consult', doctor_consult_path(consult), :class =>"btn btn-primary" %></td>
                                     </tr>
                                 <% end %>
                             </tbody>

@@ -1,20 +1,21 @@
 <div class="wrapper wrapper-content">
     <div class="row text-center">
-        <div class="col-lg-6 col-lg-offset-3">
-            <div id="drVideobox" style="background-color:white;width:100%;height:400px;">
+        <div class="col-md-8 col-md-offset-2">
+            <div id="doctorVideoBoxContainer" style="background-color:white;width:100%;height:400px;">
+            <div id="drVideoBox">
                 <br><br><br><br><br><br><br><br>
                 <h1>A Doctor Will Be With You Shortly.</h1>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-1 col-lg-offset-3">
+        <div class="col-md-1 col-md-offset-2 col-xs-1 col-xs-offset-1">
             <p><br></p>
             <%= link_to 'Finish', new_patient_consult_pharmacy_path(@consult), :class =>"btn btn-primary" %>
         </div>
-        <div class="col-lg-2 col-lg-offset-3">
-            <div id="selfVideobox" style="background-color:white;margin-top:20px;width:100%,height:150px"></div>
-    </div>
+        <div class="col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-3">
+            <div id="selfVideobox" style="background-color:white;margin:20px 0px;width:100%,height:150px"></div>
+        </div>
 </div>
 <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 <script type="text/javascript">
@@ -55,7 +56,7 @@
                 console.log("New stream in the session: " + event.stream.streamId);
                 var subscriberProperties = {insertMode:"replace", width:"100%",height:400};
                 var drSubscriber = session.subscribe(event.stream,
-                    'drVideobox', subscriberProperties,
+                    'drVideoBox', subscriberProperties,
                     function (error) {
                       if (error) {
                         console.log(error);
@@ -64,11 +65,16 @@
                       }
                     });
             },
+            // Detect doctor stream lost & replace with original box
+            streamDestroyed: function(event) {
+                console.log("Doctor stream disconnected");
+                $( "#doctorVideoBoxContainer" ).html( "<div id='patientVideoBox'><br><br><br><br><br><br><br><br><h1>Your doctor has left the consultation. Please wait while we try to reconnect him or her.</h1></div>" );
+            },
             // Try to reconnect if session ended by network,not user
             sessionDisconnected: function(event) {
                 if (event.reason == "networkDisconnected") {
-                alert("Your network connection terminated.")
-                session.connect(token);
+                    alert("Your network connection terminated. We're trying to reconnect you. After 10 seconds, try refreshing the page.")
+                    session.connect(token);
                 }
             }
         });
@@ -81,6 +87,23 @@
     } else {
         console.log("The client does not support WebRTC.");
     }
+
+    window.onbeforeunload = function(e) {
+        $.ajax({
+            url: window.location.href + "/left",
+          }).done(function(data) {
+            console.log("Patient Left" + data)
+          });
+    };
+
+    window.onload = function(e) {
+        $.ajax({
+            url: window.location.href + "/enter",
+          }).done(function(data) {
+            console.log("Patient Enter" + data)
+          });
+    };
+
 
 </script>
 
