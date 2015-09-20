@@ -1,0 +1,26 @@
+<div class="wrapper wrapper-content">
+  <div class="row animated fadeInLeft">
+    <div class="ibox">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="ibox-title">
+          <h1>View & Edit Consult #<%= @consult.id %></h1>
+        </div>
+        <div class="ibox-content">
+        <h2>Consult Details</h2>
+        <ul>
+          <li><p><strong>Patient Name: </strong><%=@consult.patient.name%></p></li>
+          <li><p><strong>Patient Age: </strong><%=@consult.patient.age%></p></li>
+          <li><p><strong>Patient Gender: </strong><%=@consult.patient.gender%></p></li>
+          <li><p><strong>Chief Complaint: </strong><%=@consult.purpose_descrip%></p></li>
+          <li><p><strong>Duration Experiencing CC: </strong><%=@consult.duration%></p></li>
+          <li><p><strong>Symptoms: </strong><%=@consult.symptoms%></p></li>
+          <li><p><strong>Medications: </strong><%=@consult.medications%></p></li>
+          <li><p><strong>Allergies: </strong><%=@consult.allergies%></p></li>
+        </ul>
+        <h2>Consult Results</h2>
+            <%= render 'doctor/prescriptions/edit' %>
+
+        </div>
+    </div>
+  </div>
+</div>
