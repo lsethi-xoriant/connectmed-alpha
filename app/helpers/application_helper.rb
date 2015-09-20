@@ -28,7 +28,6 @@ module ApplicationHelper
   end
 
   def patient_sign_out
-    patient_has_left #just in case AJAX to designate patient has left doesn't work
     current_patient.update_attribute(:remember_token, Patient.digest(Patient.new_remember_token))
     cookies.delete(:remember_token)
     self.current_patient = nil
@@ -38,10 +37,6 @@ module ApplicationHelper
     unless patient_signed_in?
       redirect_to root_path
     end
-  end
-
-  def patient_has_left
-    current_patient.consults.last.update_attributes(:patient_waiting => false);
   end
 
   def doctor_sign_in(doctor)
