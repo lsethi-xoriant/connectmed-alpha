@@ -172,7 +172,7 @@
            var symptomsString = "";
            $checkedSymptoms = $('input[class=symptom]:checked');
            $checkedSymptoms.each(function() {
-                symptomsString = symptomsString.concat($(this).val(),",");
+                symptomsString = symptomsString.concat($(this).val(),", ");
            });
            $("#consult_symptoms").val(symptomsString);
             return true; // return false to cancel form action

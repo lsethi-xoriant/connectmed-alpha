@@ -7,7 +7,9 @@ class CreateConsults < ActiveRecord::Migration
       t.text :medications
       t.text :allergies
       t.text :symptoms
-      t.text :prescribed_treatment
+      t.text :internal_notes
+      t.string :treatment_result
+      t.text :treatment_descrip
       t.text :recording
       t.boolean :patient_waiting
       t.integer :doctor_id

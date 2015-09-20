@@ -25,13 +25,24 @@
               <tr class="gradeX footable-even" style="display: table-row;">
                 <td class="footable-visible footable-first-column"><span class="footable-toggle"></span><%= consult.created_at.strftime("%m/%d/%Y") %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%= consult.created_at.strftime("%I:%M%p") %></td>
-                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.doctor  ==  nil ? "Doctor Not Seen" : consult.doctor %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.doctor  ==  nil ? "Doctor Not Seen" : "Dr. "+consult.doctor.name %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%= consult.purpose_descrip %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%=
                   if consult.doctor  ==  nil
                     "Doctor Not Seen"
+                  elsif consult.treatment_result == nil
+                    "Waiting For Doctor's Submission"
                   else
-                    consult.prescribed_treatment
+                    consult.treatment_result
+                  end
+                %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%=
+                  if consult.doctor  ==  nil
+                    "Doctor Not Seen"
+                  elsif consult.treatment_descrip == nil
+                    "Waiting For Doctor's Submission"
+                  else
+                    consult.treatment_descrip
                   end
                 %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%=
@@ -40,7 +51,7 @@
                   elsif consult.prescriptions.empty?
                     "Waiting For Doctor's Submission"
                   else
-                    consult.prescriptions.each {|script| puts script.name}
+                    consult.prescriptions.first.name+", "+consult.prescriptions.first.dosage+", "+consult.prescriptions.first.notes #change to "consult.prescriptions.each {|script| puts script.name}" once implement multiple prescriptions
                   end
                 %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><a href="/patient/pharmacies"><%= consult.pharmacy ==  nil ? "" : consult.pharmacy.name %></a></td>

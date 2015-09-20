@@ -2,29 +2,26 @@
 <div class="wrapper wrapper-content">
 <div class="row animated fadeInLeft">
     <div class="row">
-        <% if flash[:error_messages] %>
-            <p><%= flash[:error_messages]%></p>
-        <% end %>
-    <%= form_for(:prescription, url: {action: "create"}) do |f| %>
+    <%= form_for [:doctor, @consult, @prescription] do |f| %>
         <div class="col-lg-8 col-lg-offset-2">
             <%= image_tag "doctor_circle.png", width: '10%', style: "margin:20px; text-align:center;", class: 'img-responsive' %>
-                <div class="form-group">
-                    <%= label_tag(:notes, "Notes on Session") %>
-                    <p><small>Please describe briefly below</small></p>
-                    <%= f.text_area :notes, :required => true, :class => 'form-control', :placeholder => 'Notes', :type => 'text'  %>
-                </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col-lg-6 col-lg-offset-2">
-            <div class="form-group">
-                <%= label_tag(:result, "What course of action was taken?") %>
-                <select name="prescription[result]" id="prescription_duration" class="form-control m-b" placeholder="Select...">
-                  <option value="today">Self Care</option>
-                  <option value="yesterday">Prescription</option>
-                  <option value="the past week">Advise to see Physical Doctor</option>
-                </select>
-            </div>
+             <%= fields_for(@consult) do |u| %>
+                <div class="form-group">
+                    <%= u.label(:treatment_descrip, "Treatment Recommendation (Seen by Patient)") %>
+                    <p><small>Please describe briefly below</small></p>
+                    <%= u.text_area :treatment_descrip, :required => true, :class => 'form-control', :placeholder => 'Notes', :type => 'text'  %>
+                </div>
+                <div class="form-group">
+                    <%= u.label(:treatment_result, "What course of action did you recommend?") %>
+                    <select name="consult[treatment_result]" id="consult[treatment_result]" class="form-control m-b" placeholder="Select...">
+                      <option value="Advise Self Care">Advise Self Care</option>
+                      <option value="Given Prescription">Given Prescription</option>
+                      <option value="Advise to see Physical Doctor">Advise to see Physical Doctor</option>
+                    </select>
+                </div>
+            <% end %>
             <div class="form-group">
                 <%= label_tag(:name, "Prescription Name") %>
                 <%= f.text_field :name, :class => 'form-control', :placeholder => 'Enter all separated by commas' %>
@@ -33,11 +30,24 @@
                 <%= label_tag(:dosage, "Prescription Dosage") %>
                 <%= f.text_field :dosage, :class => 'form-control', :placeholder => 'Enter all separated by commas', :type => 'text' %>
             </div>
+            <div class="form-group">
+                <%= label_tag(:notes, "Prescription Notes") %>
+                <p><small>For Patient's Understanding</small></p>
+                <%= f.text_area :notes, :required => true, :class => 'form-control', :placeholder => 'Notes', :type => 'text'  %>
+            </div>
         </div>
     </div>
     <div class="row text-right">
         <div class="col-lg-10 col-lg-offset-2">
             <%= f.submit "Next", :class => 'btn btn-primary block m-b' %>
+            <% if flash[:error_messages] %>
+              <% for m in flash[:error_messages] %>
+                <div class="alert alert-danger alert-dismissable">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    <%= m %>
+                </div>
+              <% end %>
+            <% end %>
         </div>
     </div>
     <% end %>

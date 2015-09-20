@@ -5,7 +5,7 @@ class Doctor::PrescriptionsController < ApplicationController
 
   def new
     @consult = Consult.find(params[:consult_id])
-    @parmacy = Prescription.new
+    @prescription = Prescription.new
   end
 
   def show
@@ -16,6 +16,7 @@ class Doctor::PrescriptionsController < ApplicationController
 
   def create
     @consult = Consult.find(params[:consult_id])
+    @consult.update_attributes!(consult_params)
     @prescription = Prescription.create!(prescription_params)
     @consult.prescriptions << @prescription
     redirect_to finish_doctor_consult_path(@consult)
@@ -24,7 +25,6 @@ class Doctor::PrescriptionsController < ApplicationController
       redirect_to new_doctor_consult_prescription_path(@consult)
   end
 
-
   protected
     def json_request?
       request.format.json?
@@ -32,7 +32,11 @@ class Doctor::PrescriptionsController < ApplicationController
 
   private
     def prescription_params
-      params.permit(:notes, :result, :name, :dosage)
+      params.require(:prescription).permit(:notes, :result, :name, :dosage)
+    end
+
+    def consult_params
+      params.require(:consult).permit(:internal_notes,:treatment_result,:treatment_descrip)
     end
 
 end

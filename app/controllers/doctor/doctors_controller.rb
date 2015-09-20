@@ -1,10 +1,9 @@
 class Doctor::DoctorsController < ApplicationController
   layout "doctor_layout"
-  before_filter :require_doctor_signin, :except => [:new, :create]
+  before_filter :require_doctor_signin, except: [:new, :create]
 
   def dashboard
-    @consults_waiting = Consult.where(patient_waiting: true);
-    puts 'consults waiting'
+    @consults_waiting = Consult.where(patient_waiting: true).order("created_at ASC");
   end
 
   def privacy_policy
