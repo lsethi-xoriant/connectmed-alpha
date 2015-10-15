@@ -12,7 +12,7 @@ class Patient::ConsultsController < ApplicationController
   def show
     @consult = Consult.find(params[:id])
     @consult.update_attributes(:patient_waiting => true)
-    @opentok = OpenTok::OpenTok.new("45334072","49403b241d18e0d4d3c4da37d89e3577d25a83e0")
+    @opentok = OpenTok::OpenTok.new("45376712","1306cff952b849c1278422a388436d9cd8440e77")
     # role = :moderator #or :publisher
     #Store session ID in consults database when time to write code
     @tok_token = @opentok.generate_token @consult.sessionId #, {role: role}
@@ -23,7 +23,7 @@ class Patient::ConsultsController < ApplicationController
   end
 
   def create
-    @opentok = OpenTok::OpenTok.new("45334072","49403b241d18e0d4d3c4da37d89e3577d25a83e0")
+    @opentok = OpenTok::OpenTok.new("45376712","1306cff952b849c1278422a388436d9cd8440e77")
     begin
       session = @opentok.create_session :archive_mode => :always, :media_mode => :routed
     rescue
