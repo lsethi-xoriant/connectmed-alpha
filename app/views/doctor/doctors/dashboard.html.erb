@@ -25,7 +25,7 @@
                                 <% for consult in @consults_waiting %>
                                     <tr>
                                         <td><strong>Consult #<%= consult.id %></strong></td>
-                                        <td><strong><%= consult.created_at.strftime("%I:%M%p")%></strong></td>
+                                        <td><strong><%= consult.created_at.strftime("%I:%M%p")%>, <%= consult.created_at.strftime("%b %d") %></strong></td>
                                         <td><%= consult.purpose_descrip %></td>
                                         <td><%= consult.duration %></td>
                                         <td><%= consult.symptoms %></td>
