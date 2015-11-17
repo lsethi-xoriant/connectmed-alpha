@@ -39,7 +39,7 @@ class Doctor::ConsultsController < ApplicationController
   def show
     @consult = Consult.find(params[:id])
     current_doctor.consults << @consult
-    @opentok = OpenTok::OpenTok.new("45376712","1306cff952b849c1278422a388436d9cd8440e77")
+    @opentok = OpenTok::OpenTok.new("45411972","283b1c3573e55fd0fa620c4bd77ea9d000d6a5ff")
     @tok_token = @opentok.generate_token @consult.sessionId
   end
 
