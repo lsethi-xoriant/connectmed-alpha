@@ -31,8 +31,6 @@ ConnectMed::Application.routes.draw do
   end
 
 
-
-
   get '/doctors/dashboard', to: 'doctors#dashboard', as: 'doctors_dashboard'
   get '/doctor', to: "welcome#doctor_index"
   namespace :doctor do

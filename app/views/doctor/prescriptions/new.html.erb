@@ -42,8 +42,8 @@
                       <div class="form-group">
                         <%= f.file_field :image, :class => 'btn btn-primary' %>
                       </div>
-                      <p><a id="photo-popover" rel="popover" data-img="<%= image_url 'example_photo.png' %>">See how to line it up.</a></p>
-                      <p>You will need to allow this site access to the camera in your browser.</p>
+<!--                       <p><a id="photo-popover" rel="popover" data-img="<%= image_url 'example_photo.png' %>">See how to line it up.</a></p>
+ -->                      <p>You will need to allow this site access to the camera in your browser.</p>
                       <select id="videoSource" style="display: none;"></select>
                       <div class="video-box">
                         <div id="video-filler"></div>
@@ -59,8 +59,8 @@
                       <a id="camera" class="btn btn-primary"><i class="fa fa-exchange"></i>&ensp;Change Camera</a>
                       <a id="snap" class="btn btn-success"><i class="fa fa-camera"></i>&ensp;Take Photo</a>
                       <a id="retake" style="display: none !important;" class="btn btn-primary"><i class="fa fa-camera"></i>&ensp;Retake Photo</a>
-<!--                         <%= f.hidden_field(:image, onchange: "alert('Input collected!')") %>
- -->                    </div>
+                     <!--  <%= f.hidden_field(:image, onchange: "alert('Input collected!')") %> -->
+                    </div>
                 <div class="row text-center">
                       <p id="submit-photo" style="display: none !important;"><br><i class="fa fa-arrow-down"></i>&ensp;If Satisfied, press Next below.</p>
                 </div>
