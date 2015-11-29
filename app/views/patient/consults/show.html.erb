@@ -88,13 +88,20 @@
         console.log("The client does not support WebRTC.");
     }
 
-    window.onbeforeunload = confirmExit;
-    function confirmExit()
-    {
-        return "Are you sure that you'd like to exit your consultaation?";
-    }
+    // window.onbeforeunload = confirmExit;
+    // function confirmExit()
+    // {
+    //     return "Are you sure that you'd like to exit your consultation?";
+    // }
 
-    window.onunload = function(e) {
+    window.addEventListener("beforeunload", function (e) {
+      var confirmationMessage = "Are you sure you want to end your consultation?";
+
+      (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+      return confirmationMessage;                            //Webkit, Safari, Chrome
+    });
+
+    window.onbeforeunload = function(e) {
         $.ajax({
             url: window.location.href + "/left",
           }).done(function(data) {
