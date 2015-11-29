@@ -1,0 +1,18 @@
+<div class="wrapper wrapper-content">
+  <div class="row animated fadeInLeft">
+    <div class="col-sm-8 col-sm-offset-2">
+    <div class="ibox">
+        <div class="ibox-title">
+           <h1>Prescription</h1>
+           <p>For your consulation with <%= @consult.patient.name %> on <%= @consult.created_at.strftime("%m/%d/%Y") %></p>
+            <%= link_to 'Download', download_doctor_consult_prescription_path(@consult.id, @prescription.id), :class =>"btn btn-primary"  %>
+        </div>
+        <div class="ibox-content">
+          <div class="row text-center">
+            <%= image_tag @prescription.image %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
