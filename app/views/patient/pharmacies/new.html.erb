@@ -153,8 +153,18 @@ function initMap() {
 
   autocomplete.addListener('place_changed', onPlaceChanged);
 
-
+  //Add listener and callback function for change map
+  map.addListener('dragend', function() {
+    search();
+    console.log("bounds_changed")
+  });
+  map.addListener('zoom_changed', function() {
+    search();
+    console.log("zoom_changed")
+  });
 }
+
+
 
 // When the user selects a city, get the place details for the city and
 // zoom the map in on the city.
@@ -175,7 +185,7 @@ function search() {
     bounds: map.getBounds(),
     types: ['pharmacy']
   };
-
+  // console.log(search.bounds);
   places.nearbySearch(search, function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       clearResults();
@@ -218,7 +228,7 @@ function dropMarker(i) {
 }
 
 function addResult(result, i) {
-  console.log(result)
+  // console.log(result)
   var results = document.getElementById('results');
   var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
   var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -244,7 +254,7 @@ function addResult(result, i) {
     btn.type = "button";
     btn.className = "btn btn-secondary";
     btn.value = "Select";
-    console.log(result.name);
+    // console.log(result.name);
     btn.onclick = (function(event) {
         $('#pharmModal').modal('show');
         $('#pharmBody').html("<h3 class='chosen_pharm' id="+result.place_id+"><strong>"+result.name+"</strong></h3>");
