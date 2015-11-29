@@ -222,11 +222,11 @@ $(document).ready(function() {
     });
 
     // Add event listener to next button
-    $("#next").click(function() {
+    $("#next").one("click", function() {
       if($(".upload").val() == "") {
         $(".upload").remove()
         var dataURL = canvas.toDataURL();
-        $("#prescription_image").val(dataURL);
+        $(".webcam").val(dataURL);
       } else {
         $(".webcam").remove()
       }
