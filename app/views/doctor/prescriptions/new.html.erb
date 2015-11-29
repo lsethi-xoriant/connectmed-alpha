@@ -35,12 +35,39 @@
                 <p><small>For Patient's Understanding</small></p>
                 <%= f.text_area :notes, :required => true, :class => 'form-control', :placeholder => 'Notes', :type => 'text'  %>
             </div>
+            <div class="ibox-content m-b-lg">
+                <div class="row" id="photo-row">
+                    <div class="col-md-12">
+                      <h2>Take Photo of the Patient's Prescription</h2>
+                      <p><a id="photo-popover" rel="popover" data-img="<%= image_url 'example_photo.png' %>">See how to line it up.</a></p>
+                      <p>You will need to allow this site access to the camera in your browser.</p>
+                      <select id="videoSource" style="display: none;"></select>
+                      <div class="video-box">
+                        <div id="video-filler"></div>
+                        <video id="video" autoplay></video>
+                        <img id="photo" class="img-responsive img-center" style="margin:10px 0;" />
+                        <object id="video-overlay" data="<%= image_url 'photo_target.svg' %>"></object>
+                      </div>
+                      <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+                    </div>
+                </div>
+                <div class="row text-center" id="button-row">
+                    <div class="col-md-12">
+                      <a id="camera" class="btn btn-primary"><i class="fa fa-exchange"></i>&ensp;Change Camera</a>
+                      <a id="snap" class="btn btn-success"><i class="fa fa-camera"></i>&ensp;Take Photo</a>
+                      <a id="retake" style="display: none !important;" class="btn btn-primary"><i class="fa fa-camera"></i>&ensp;Retake Photo</a>
+                        <%= f.hidden_field(:image, onchange: "alert('Input collected!')") %>
+                    </div>
+                <div class="row text-center">
+                      <p id="submit-photo" style="display: none !important;"><br><i class="fa fa-arrow-down"></i>&ensp;If Satisfied, press Next below.</p>
+                </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <div class="row text-right">
         <div class="col-lg-10 col-lg-offset-2">
-            <%= f.submit "Next", :class => 'btn btn-primary block m-b' %>
+            <%= f.submit "Next", :id => "next", :class => 'btn btn-primary block m-b' %>
             <% if flash[:error_messages] %>
               <% for m in flash[:error_messages] %>
                 <div class="alert alert-danger alert-dismissable">
@@ -54,4 +81,154 @@
     <% end %>
 </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // Grab elements, create settings, etc.
+    var canvas = document.getElementById("canvas"),
+        context = canvas.getContext("2d"),
+        video = document.getElementById("video"),
+        videoObj = { "video": true },
+        snap = document.getElementById("snap"),
+        camera = document.getElementById("camera"),
+        retake = document.getElementById("retake"),
+        photo = document.getElementById("photo"),
+        submitPhoto = document.getElementById("submit-photo"),
+        localStream,
+        errBack = function(error) {
+          console.log("Video capture error: ", error.code);
+        };
+    'use strict';
+    var videoElement = document.querySelector('video');
+    var videoSelect = document.querySelector('select#videoSource');
+    navigator.getUserMedia = navigator.getUserMedia ||
+        navigator.webkitGetUserMedia || navigator.mozGetUserMedia ||
+                           navigator.msGetUserMedia;
+
+    //Verify if User's device/browser allows video
+    // function gotSources(sourceInfos) {
+    //   for (var i = 0; i !== sourceInfos.length; ++i) {
+    //     var sourceInfo = sourceInfos[i];
+    //     var option = document.createElement('option');
+    //     option.value = sourceInfo.id;
+    //     if (sourceInfo.kind === 'video') {
+    //       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+    //       videoSelect.appendChild(option);
+    //     }
+    //   }
+    // }
+    // if (typeof MediaStreamTrack.getSources === 'undefined'){
+    //   alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
+    // } else {
+    //   MediaStreamTrack.getSources(gotSources);
+    //   console.log("This broswer supports MediaStreamTrack.");
+    // }
+
+    //Start Video
+    function successCallback(stream) {
+        if (navigator.mozGetUserMedia) {
+          videoElement.mozSrcObject = stream; //Allows use in Firefox
+        } else {
+          window.stream = stream; // make stream available to console
+          videoElement.src = window.URL.createObjectURL(stream);
+        }
+        videoElement.play();
+    }
+
+    function errorCallback(error){
+      console.log('navigator.getUserMedia error: ', error);
+    }
+
+    function startVideo(){
+      if (!!window.stream) {
+        videoElement.src = null;
+        window.stream.stop();
+      }
+      var videoSource = videoSelect.value;
+      var constraints = {
+        video: {
+          optional: [{sourceId: videoSource}]
+        }
+      };
+      navigator.getUserMedia(constraints, successCallback, errorCallback);
+      // Flip video as necessary
+      var videoVals = $.map(videoSelect.options, function(x, i) {
+        return x.value;
+      });
+      if ($.inArray(videoSelect.value, videoVals) % 2 == 0) {
+        $('#video').addClass('flipped');
+      } else {
+        $('#video').removeClass('flipped');
+      }
+    }
+
+    // TODO: Add back in but prevent on initial load
+    videoSelect.onchange = startVideo();
+
+    // Add Click event listerner to camera change button (useful if using mobile device with 2 cameras)
+    camera.addEventListener('click', function() {
+      var opts = videoSelect.options;
+      var val = videoSelect.value;
+      for(var opt, j = 0; opt = opts[j]; j++) {
+        if(opt.value == val) {
+          videoSelect.selectedIndex = j;
+          videoSelect.selectedIndex = (j+1) % opts.length;
+          break;
+        }
+      }
+      // Flip video as necessary
+      var videoVals = $.map(videoSelect.options, function(x, i) {
+        return x.value;
+      });
+      if ($.inArray(videoSelect.value, videoVals) % 2 == 0) {
+        $('#video').addClass('flipped');
+      } else {
+        $('#video').removeClass('flipped');
+      }
+    });
+
+    // Add click event listener to take photo button
+    snap.addEventListener("click", function() {
+      // Get current frame from video, show, hide video
+      context.drawImage(video, 0, 0);
+      photo.src = canvas.toDataURL("image/jpg");
+      //var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+      //console.log(imageData);
+      video.pause();
+      video.style.display = "none";
+      photo.style.display = "block";
+      ///Hide take photo & camera change buttons
+      snap.setAttribute('style', 'display:none !important');
+      camera.setAttribute('style', 'display:none !important');
+      //Show retake and submit buttons
+      retake.setAttribute('style', 'display:inline-block !important');
+      submitPhoto.setAttribute('style', 'display:inline-block !important');
+    });
+
+    // Add event listener to retake photo button
+    retake.addEventListener("click", function() {
+        console.log("inside retake")
+      video.play();
+      video.style.display = 'block';
+      photo.style.display = "none";
+      snap.setAttribute('style', 'display:inline-block !important');
+      camera.setAttribute('style', 'display:inline-block !important');
+      retake.setAttribute('style', 'display:none !important');
+      submitPhoto.setAttribute('style', 'display:none !important');
+    });
+
+    // Add event listener to next button
+    $("#next").click(function() {
+        // if (navigator.mozGetUserMedia) {
+        // } else {
+        //   window.stream.getTracks()[0].stop();
+        // }
+      var dataURL = canvas.toDataURL();
+      $("#prescription_image").val(dataURL);
+    });
+
+    //TODO: Change all javascript to jquery - the mix is too confusing!
+
+ });
+</script>
 

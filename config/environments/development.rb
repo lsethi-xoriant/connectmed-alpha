@@ -36,4 +36,8 @@ ConnectMed::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # For using paperclip in development
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
 end

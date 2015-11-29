@@ -17,6 +17,7 @@ ConnectMed::Application.routes.draw do
     resources :pharmacies
     resources :consults do
       resources :pharmacies
+      resources :prescriptions
       member do
         get 'left'
         get 'enter'

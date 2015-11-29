@@ -32,7 +32,7 @@ class Doctor::PrescriptionsController < ApplicationController
 
   private
     def prescription_params
-      params.require(:prescription).permit(:notes, :result, :name, :dosage)
+      params.require(:prescription).permit(:notes, :result, :name, :dosage, :image)
     end
 
     def consult_params
