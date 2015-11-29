@@ -25,7 +25,7 @@ class Patient::ConsultsController < ApplicationController
   def create
     @opentok = OpenTok::OpenTok.new("45411972","283b1c3573e55fd0fa620c4bd77ea9d000d6a5ff")
     begin
-      session = @opentok.create_session :archive_mode => :always, :media_mode => :relayed
+      session = @opentok.create_session :archive_mode => :always, :media_mode => :routed
     rescue
       session = @opentok.create_session
     end
