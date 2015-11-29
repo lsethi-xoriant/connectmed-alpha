@@ -15,6 +15,9 @@ class Patient::PrescriptionsController < ApplicationController
   def create
   end
 
+  def edit
+  end
+
 
   protected
     def json_request?
