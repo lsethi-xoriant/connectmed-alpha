@@ -9,8 +9,6 @@ class Patient::PrescriptionsController < ApplicationController
   def show
     @consult = Consult.find(params[:consult_id])
     @prescription = Prescription.find(params[:id])
-    puts "this is prescription"
-    puts @prescription.image
   end
 
   def index

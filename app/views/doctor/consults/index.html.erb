@@ -16,7 +16,8 @@
                 <th data-hide="phone,tablet" class="footable-visible footable-sortable">Consult Notes<span class="footable-sort-indicator"></span></th>
                 <th data-hide="phone,tablet" class="footable-visible footable-sortable">Treatment Recommendation<span class="footable-sort-indicator"></span></th>
                 <th data-hide="phone,tablet" class="footable-visible footable-sortable">Treatment Description<span class="footable-sort-indicator"></span></th>
-                <th data-hide="phone,tablet" class="footable-visible footable-sortable">Prescriptions<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-sortable">Prescription Info<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-sortable"><span class="footable-sort-indicator"></span></th>
                 <th data-hide="phone,tablet" class="footable-visible footable-sortable">Recording<span class="footable-sort-indicator"></span></th>
                 <th data-hide="phone,tablet" class="footable-visible footable-last-column footable-sortable"><span class="footable-sort-indicator"></span></th>
             </tr>
@@ -64,6 +65,17 @@
                     consult.prescriptions.first.name+", "+consult.prescriptions.first.dosage+", "+consult.prescriptions.first.notes #change to "consult.prescriptions.each {|script| puts script.name}" once implement multiple prescriptions
                   end
                 %></td>
+                <td class="center footable-visible footable-last-column"><span class="footable-toggle"></span>
+                  <%=  if consult.prescriptions.first !=  nil
+                      if consult.prescriptions.first.image.url != "/images/original/missing.png"
+                        link_to 'View Script',doctor_consult_prescription_path(consult.id,consult.prescriptions.first.id), :class =>"btn btn-primary"
+                      else
+                        "No Prescription"
+                      end
+                    else
+                      "No Prescription"
+                    end %>
+                </td>
                 <td class="center footable-visible"><span class="footable-toggle"></span>Coming Soon</td>
                 <td class="center footable-visible footable-last-column"><span class="footable-toggle"></span><%= link_to 'Edit', edit_doctor_consult_path(consult), :class =>"btn btn-primary" %></td>
               </tr>

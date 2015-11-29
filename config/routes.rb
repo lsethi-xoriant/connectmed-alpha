@@ -46,7 +46,11 @@ ConnectMed::Application.routes.draw do
     get 'privacy_policy', to: "doctors#privacy_policy", as: "privacy_policy"
     resources :sessions, only: [:new, :create, :destroy]
     resources :consults do
-      resources :prescriptions
+      resources :prescriptions do
+        member do
+          get '/download' => 'prescriptions#download', :as => :download
+        end
+      end
       member do
         get 'finish'
       end

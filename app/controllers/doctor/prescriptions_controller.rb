@@ -9,6 +9,8 @@ class Doctor::PrescriptionsController < ApplicationController
   end
 
   def show
+    @consult = Consult.find(params[:consult_id])
+    @prescription = Prescription.find(params[:id])
   end
 
   def index
@@ -23,6 +25,15 @@ class Doctor::PrescriptionsController < ApplicationController
     rescue ActiveRecord::RecordInvalid => invalid
       flash[:error_messages] = invalid.record.errors.full_messages
       redirect_to new_doctor_consult_prescription_path(@consult)
+  end
+
+  def download
+    @prescription = Prescription.find(params[:id])
+    img = Magick::Image.read(@prescription.image.path).first {format="png"}
+    send_data img.to_blob,
+              :filename => 'Prescription '+@prescription.name,
+              :type => @prescription.image_content_type,
+              :disposition => 'attachment'
   end
 
   protected

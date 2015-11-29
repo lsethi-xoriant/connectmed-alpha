@@ -4,7 +4,7 @@
     <div class="ibox">
         <div class="ibox-title">
            <h1>Your Prescription</h1>
-           <p>For your consulation with Dr.<%= @consult.doctor.name %> on <%= @consult.created_at.strftime("%m/%d/%Y") %></p>
+           <p>For your consulation with Dr. <%= @consult.doctor.name %> on <%= @consult.created_at.strftime("%m/%d/%Y") %></p>
             <%= link_to 'Download', download_patient_consult_prescription_path(@consult.id, @prescription.id), :class =>"btn btn-primary"  %>
         </div>
         <div class="ibox-content">
