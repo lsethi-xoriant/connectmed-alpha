@@ -88,7 +88,13 @@
         console.log("The client does not support WebRTC.");
     }
 
-    window.onbeforeunload = function(e) {
+    window.onbeforeunload = confirmExit;
+    function confirmExit()
+    {
+        return "Are you sure that you'd like to exit your consultaation?";
+    }
+
+    window.onunload = function(e) {
         $.ajax({
             url: window.location.href + "/left",
           }).done(function(data) {

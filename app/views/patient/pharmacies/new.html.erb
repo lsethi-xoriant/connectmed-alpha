@@ -82,6 +82,7 @@
 
 <% content_for :javascript do %>
 <script>
+
 // Pass Chosen Pharmacy Result to Hidden Fields
 $('form').submit(function() {
   $('#name').val($('.chosen_pharm').text());
@@ -133,7 +134,7 @@ function initMap() {
           initialLocation = siberia;
         }
         map.setCenter(initialLocation);
-      }
+  }
 
 
   infoWindow = new google.maps.InfoWindow({
