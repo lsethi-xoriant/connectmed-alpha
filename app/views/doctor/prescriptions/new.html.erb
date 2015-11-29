@@ -38,9 +38,10 @@
             <div class="ibox-content m-b-lg">
                 <div class="row" id="photo-row">
                     <div class="col-md-12">
-                      <h2>Upload or Take Photo the Patient's Prescription</h2>
+                      <h2>Upload OR Take Photo the Patient's Prescription</h2>
                       <div class="form-group">
-                        <%= f.file_field :image, :class => 'btn btn-primary' %>
+                        <%= f.file_field :image, :class => 'btn btn-primary upload' %>
+                        <p>File must be of png, jpg, jpeg, or gif file type.</p>
                       </div>
 <!--                       <p><a id="photo-popover" rel="popover" data-img="<%= image_url 'example_photo.png' %>">See how to line it up.</a></p>
  -->                      <p>You will need to allow this site access to the camera in your browser.</p>
@@ -59,7 +60,7 @@
                       <a id="camera" class="btn btn-primary"><i class="fa fa-exchange"></i>&ensp;Change Camera</a>
                       <a id="snap" class="btn btn-success"><i class="fa fa-camera"></i>&ensp;Take Photo</a>
                       <a id="retake" style="display: none !important;" class="btn btn-primary"><i class="fa fa-camera"></i>&ensp;Retake Photo</a>
-                     <!--  <%= f.hidden_field(:image, onchange: "alert('Input collected!')") %> -->
+                     <%= f.hidden_field(:image, onchange: "alert('Input collected!')", class: "webcam") %>
                     </div>
                 <div class="row text-center">
                       <p id="submit-photo" style="display: none !important;"><br><i class="fa fa-arrow-down"></i>&ensp;If Satisfied, press Next below.</p>
@@ -222,12 +223,13 @@ $(document).ready(function() {
 
     // Add event listener to next button
     $("#next").click(function() {
-        // if (navigator.mozGetUserMedia) {
-        // } else {
-        //   window.stream.getTracks()[0].stop();
-        // }
-      var dataURL = canvas.toDataURL();
-      $("#prescription_image").val(dataURL);
+      if($(".upload").val() == "") {
+        $(".upload").remove()
+        var dataURL = canvas.toDataURL();
+        $("#prescription_image").val(dataURL);
+      } else {
+        $(".webcam").remove()
+      }
     });
 
     //TODO: Change all javascript to jquery - the mix is too confusing!
