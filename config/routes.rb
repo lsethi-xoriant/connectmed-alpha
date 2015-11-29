@@ -17,7 +17,11 @@ ConnectMed::Application.routes.draw do
     resources :pharmacies
     resources :consults do
       resources :pharmacies
-      resources :prescriptions
+      resources :prescriptions do
+        member do
+          get '/download' => 'prescriptions#download', :as => :download
+        end
+      end
       member do
         get 'left'
         get 'enter'
@@ -25,6 +29,7 @@ ConnectMed::Application.routes.draw do
       end
     end
   end
+
 
 
 

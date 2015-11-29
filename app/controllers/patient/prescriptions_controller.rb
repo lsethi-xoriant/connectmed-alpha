@@ -7,6 +7,10 @@ class Patient::PrescriptionsController < ApplicationController
   end
 
   def show
+    @consult = Consult.find(params[:consult_id])
+    @prescription = Prescription.find(params[:id])
+    puts "this is prescription"
+    puts @prescription.image
   end
 
   def index
@@ -18,6 +22,14 @@ class Patient::PrescriptionsController < ApplicationController
   def edit
   end
 
+  def download
+    @prescription = Prescription.find(params[:id])
+    img = Magick::Image.read(@prescription.image.path).first {format="png"}
+    send_data img.to_blob,
+              :filename => 'Prescription '+@prescription.name,
+              :type => @prescription.image_content_type,
+              :disposition => 'attachment'
+  end
 
   protected
     def json_request?
