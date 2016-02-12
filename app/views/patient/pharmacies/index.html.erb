@@ -42,7 +42,6 @@ $(document).ready(function() {
       center: {lat:-30.559482, lng:22.937},
     });
     service = new google.maps.places.PlacesService(map);
-    service.getDetails(request, callback);
     function callback(placeDetails) {
       console.log(placeDetails)
         var trPharm = $('<tr></tr>').addClass('gradeX footable-even').attr({ style:'display: table-row;'});
@@ -53,6 +52,7 @@ $(document).ready(function() {
         trPharm.append(tdName); trPharm.append(tdAddress); trPharm.append(tdPhone);  trPharm.append(tdWebsite);
         $('tbody').append(trPharm)
     }
+    service.getDetails(request, callback);
   }
 
 
