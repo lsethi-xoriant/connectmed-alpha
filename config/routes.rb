@@ -1,7 +1,7 @@
 ConnectMed::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
-  root to: 'welcome#index'
+  root to: 'landings#index'
 
 # Scopes Routes & Controllers to Patient
   namespace :patient do

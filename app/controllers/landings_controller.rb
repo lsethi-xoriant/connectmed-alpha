@@ -1,4 +1,5 @@
-class WelcomeController < ApplicationController
+class LandingsController < ApplicationController
+
   def index
   end
 
