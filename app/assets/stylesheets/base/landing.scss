@@ -384,6 +384,9 @@ body.landing-page {
     background: #f4f4f4;
     margin-top: 60px;
   }
+  .team {
+    background: #DDDEED image-url("landings/doctor_background2.png") no-repeat center;
+  }
   .team-member {
     text-align: center;
   }
@@ -393,11 +396,12 @@ body.landing-page {
   .social-icon a {
     background: #898AA6;
     color: #fff;
-    padding: 4px 8px;
-    height: 28px;
-    width: 28px;
+    padding-top: 3px;
+    height: 35px;
+    width: 35px;
     display: block;
     border-radius: 50px;
+    font-size: 20px;
   }
   .social-icon a:hover {
     background: darken(#898AA6, 5%);
@@ -455,6 +459,8 @@ body.landing-page {
   }
   section.comments {
     padding-bottom: 80px;
+    background-color: #f9b8b5;
+    color: #fff;
     background-image: image-url("landings/africa_avatars10.png");
   }
 
@@ -484,6 +490,18 @@ body.landing-page {
   }
 
   .flip-content {
+    padding: 20px 5%;
+  }
+
+  .team-box {
+    height: 190px;
+    background: #DDDEED;
+    color: #f68985;
+    font-size: 25px;
+    margin-right: 10px;
+  }
+
+  .team-content {
     padding: 20px 5%;
   }
 
@@ -588,6 +606,12 @@ body.landing-page {
 
   .landings-footer a:hover {
       color: #898AA6;
+  }
+
+  #about-us {
+    height:350px;
+    color: #fff;
+    background: #f9b8b5 image-url('landings/africa_avatars10.png') no-repeat center bottom;
   }
 
 

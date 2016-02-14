@@ -15,11 +15,15 @@ class Patient::PatientsController < ApplicationController
 
   def create
     @patient = Patient.create!(patient_params)
-    patient_sign_in(@patient)
-    redirect_to patient_dashboard_path
+    if params[:patient][:directed_from] == "home"
+      redirect_to("/#create-confirm")
+    else
+      patient_sign_in(@patient)
+      redirect_to patient_dashboard_path
+    end
     rescue ActiveRecord::RecordInvalid => invalid
       flash[:error_messages] = invalid.record.errors.full_messages
-      redirect_to patient_signup_path
+      params[:patient][:directed_from] == "home" ? redirect_to("/#create-error") : redirect_to(patient_signup_path)
   end
 
   def destroy
@@ -55,7 +59,7 @@ class Patient::PatientsController < ApplicationController
   private
 
   def patient_params
-    params.require(:patient).permit(:name, :email, :phone, :age, :gender, :password, :password_confirmation, :password_digest, :remember_token)
+    params.require(:patient).permit(:name, :email, :phone, :age, :gender, :password, :password_confirmation, :password_digest, :remember_token, :source, :directed_from)
   end
 
 

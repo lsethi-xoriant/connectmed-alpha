@@ -2,6 +2,9 @@ ConnectMed::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'landings#index'
+  get '/how-it-works', to: "landings#how_it_works", as: "how_it_works"
+  get '/about-us', to: "landings#about_us", as: "about_us"
+  get '/doctor', to: "landings#doctor_index"
 
 # Scopes Routes & Controllers to Patient
   namespace :patient do
@@ -32,7 +35,6 @@ ConnectMed::Application.routes.draw do
 
 
   get '/doctors/dashboard', to: 'doctors#dashboard', as: 'doctors_dashboard'
-  get '/doctor', to: "welcome#doctor_index"
   namespace :doctor do
     get 'signin', to: "sessions#new", as: 'signin'
     get 'signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to

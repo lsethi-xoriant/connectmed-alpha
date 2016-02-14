@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150908070855) do
     t.string   "phone"
     t.string   "age"
     t.string   "gender"
+    t.string   "source"
     t.string   "password_digest", null: false
     t.string   "remember_token"
     t.datetime "created_at"

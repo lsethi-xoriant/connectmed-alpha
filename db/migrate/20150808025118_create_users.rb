@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone
       t.string :age
       t.string :gender
+      t.string :source
       t.string :password_digest, null:false
       t.string :remember_token
       t.index :remember_token
