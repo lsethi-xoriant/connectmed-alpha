@@ -1,0 +1,443 @@
+<div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+<div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+<div class="navbar-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border-color:#fff">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/"><%= image_tag('logos/fiver_no_tagline4.png',width:'30%',class:"navbar-brand") %></a>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a style="font-weight:100;color:#f68985" href="<%= url_for doctor_signin_path %>">Log In</a></li>
+                        <li class="register-button" style="margin-left:20px"><a id="btn-top" href="<%= url_for doctor_signup_path %>">Apply</a></li>
+                   </ul>
+                </div>
+                </div>
+        </div>
+    </nav>
+</div>
+
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+
+ <div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <div class="container">
+            <div class="carousel-caption blank">
+                <h1>Serve Patients<br/>Anytime, Anywhere</h1>
+                <p>Helping You Do More & Live Better</p>
+                 <a class="btn btn-lg btn-pink register-button" href="#register-form" role="button">Join Our Community</a>
+            </div>
+        </div>
+
+        <div class="header-back one"></div>
+
+    </div>
+</div>
+</div>
+
+<section id="features" class="container">
+<div class="row text-center">
+    <div class="col-sm-12">
+        <h1 style="color:#f68985">How It Works</h1>
+        <div class="navy-line" style="margin-top:0px;margin-bottom:50px; width:50%;"></div>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-sm-4">
+        <i class="fa fa-calendar features-icon" style="font-size:35px; padding-top: 12px;">
+        </i><h2 style="">Request Dr for Now or Later</h2>
+        <p>On-Demand Consults Available<br>8am - 10pm, Weekends</p>
+        <div class="navy-line" style="width:100%;margin-top:0px;margin-bottom:8px;border-bottom: 1px solid #898AA6;"></div>
+        <p>Scheduled Consults Available Throughout the Week</p>
+        <div class="navy-line" style="width:100%;margin-top:0px;margin-bottom:8px;border-bottom: 1px solid #898AA6;"></div>
+        <p>Launches in May 2016</p>
+    </div>
+    <div class="col-sm-4">
+        <i class="fa fa-user-md features-icon" style="font-size:35px; padding-top: 12px;">
+        </i><h2>Have a Consultation</h2>
+        <p>See a Doctor for 20 minutes<br>whilst at home, work, or abroad</p>
+        <div class="navy-line" style="width:100%;margin-top:0px;margin-bottom:8px;border-bottom: 1px solid #898AA6;"></div>
+        <p>Secure online video appointments on your computer, smartphone, or tablet</p>
+    </div>
+    <div class="col-sm-4">
+        <i class="fa fa-medkit features-icon" style="font-size:35px; padding-top: 12px;">
+        </i><h2>Get the Right Treatment</h2>
+        <p>Highest Quality Medical Advice</p>
+        <div class="navy-line" style="width:100%;margin-top:0px;margin-bottom:8px;border-bottom: 1px solid #898AA6;"></div>
+        <p>Receive treatment for over 30 common ailments</p>
+        <div class="navy-line" style="width:100%;margin-top:0px;margin-bottom:8px;border-bottom: 1px solid #898AA6;"></div>
+        <p>Electronic prescriptions instantly sent to your inbox</p>
+    </div>
+</div>
+<div class="row text-center" style="margin-top:20px">
+    <div class="col-sm-12"><a class="btn btn-lg btn-pink" style="color:#fff" href="/how-it-works">Learn More</a></div>
+</div>
+</section>
+
+<section class="comments" style="margin-top: 0;padding-top:50px">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1>What Our Doctors Say</h1>
+            <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;border-bottom: 2px solid #fff;"></div>
+        </div>
+    </div>
+    <div id="inSlider" class="carousel carousel-fade" data-ride="carousel" style="height:100px;">
+<!--         <ol class="carousel-indicators">
+            <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+            <li data-target="#inSlider" data-slide-to="1"></li>
+        </ol>
+ -->     <div class="carousel-inner" role="listbox">
+            <div class="item active" style="background:transparent;" >
+                <div class="row text-center">
+                    <div class="col-sm-1">
+                        <p class="left carousel-control">
+                            <i class="fa fa-quote-left features-icon" style="font-size:25px; padding-top: 18px; opacity:1; background:#f68985"></i>
+                        </p>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2 style="color:#fff">The user experience on the platform is really great, I used it on my ipad and it worked well. I can’t wait for the platform to launch, there are times I get to the doctor just to get a prescription.</h2>
+                    </div>
+                    <div class="col-sm-1">
+                        <p class="left carousel-control">
+                            <i class="fa fa-quote-right features-icon" style="font-size:25px; padding-top: 18px; opacity:1; background:#f68985"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background:transparent;" >
+                <div class="row text-center">
+                    <div class="col-sm-1">
+                        <p class="left carousel-control">
+                            <i class="fa fa-quote-left features-icon" style="font-size:25px; padding-top: 18px; opacity:1; background:#f68985"></i>
+                        </p>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2 style="color:#fff">As a mother, having a way to quickly check whether I need to take my child to a doctor would be extremely useful.</h2>
+                    </div>
+                    <div class="col-sm-1">
+                        <p class="left carousel-control">
+                            <i class="fa fa-quote-right features-icon" style="font-size:25px; padding-top: 18px; opacity:1; background:#f68985"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="container services">
+<div class="row text-center">
+    <div class="col-sm-12">
+        <h1 style="color:#898AA6">Top Conditions We Treat</h1>
+        <p>We treat most common illnesses quickly and effectively through a video doctor visit.</p>
+        <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-sm-2 col-sm-offset-1 flip-box">
+        <div class="flip-content">
+            <h3 >Cold & Flu<h3>
+            <%= image_tag("symptoms/nose3.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>Allergies<h3>
+            <%= image_tag("symptoms/flowers.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>Sore Throat<h3>
+            <%= image_tag("symptoms/throat.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>Eye<h3>
+            <%= image_tag("symptoms/eye.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>Skin<h3>
+            <%= image_tag("symptoms/skin.png") %>
+        </div>
+    </div>
+</div>
+<div class="row text-center" style="margin-top:10px">
+    <div class="col-sm-2 col-sm-offset-1 flip-box">
+        <div class="flip-content">
+            <h3>Minor Injuries<h3>
+            <%= image_tag("symptoms/wound.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>UTIs<h3>
+            <%= image_tag("symptoms/excretory.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>Diarrhea & Vomiting<h3>
+            <%= image_tag("symptoms/belly.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>Depression<h3>
+            <%= image_tag("symptoms/frown.png") %>
+        </div>
+    </div>
+    <div class="col-sm-2 flip-box">
+        <div class="flip-content">
+            <h3>Travel<h3>
+            <%= image_tag("symptoms/airplane.png") %>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="team" class="navy-section team" style="padding-top:60px; padding-bottom: 80px;">
+<div class="container">
+    <div class="row m-b-lg">
+        <div class="col-lg-12 text-center">
+            <h1 style="color:#f68985">Our Doctors</h1>
+            <p style="color: #fff;">Our doctors are Health Professionals Council of South Africa (HPCSA) registered and South African qualified general practice consultants. All doctors are peer selected and reviewed, trained and audited in telemedicine.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-1 wow fadeInDown">
+            <div class="team-member">
+                <img src="<%= image_path('team/allan.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                <h2 style="color:#fff">Dr. Allan-Roy Seiketto</h2>
+                <h4 style="color:#f68985">Medical Director</h4>
+            </div>
+        </div>
+        <div class="col-sm-2 wow fadeInDown">
+            <div class="team-member">
+                <img src="<%= image_path('team/thula.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                <h2 style="color:#fff">Dr. Thula Siluma</h2>
+                <h4 style="color:#f68985">Clinical Lead</h4>
+            </div>
+        </div>
+        <div class="col-sm-2 wow fadeInDown">
+            <div class="team-member">
+                <img src="<%= image_path('team/hameed.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                <h2 style="color:#fff">Dr. Abdul Khan</h2>
+                <h4 style="color:#f68985">Global Health Advisor</h4>
+            </div>
+        </div>
+        <div class="col-sm-2 wow fadeInDown">
+            <div class="team-member">
+                <img src="<%= image_path('team/rachel.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                <h2 style="color:#fff">Rachel<br>Carrell</h2>
+                <h4 style="color:#f68985">Telemedicine Advisor</h4>
+            </div>
+        </div>
+        <div class="col-sm-2 wow fadeInDown">
+            <div class="team-member">
+                <img src="<%= image_path('landings/doctor_purple2.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                <h3 style="color:#fff; margin-top:25px;">Are You a Doctor?</h3>
+                <div class="col-sm-12"><a class="btn btn-lg btn-pink" style="color:#fff; margin-top:5px; font-size: 15px;" href="mailto:recruitment@connectmed.co.za">Join the Team!</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-right">
+    </div>
+</div>
+</section>
+
+<!-- <section class="" style="margin-top:0; padding:30px 0; border-top: 10px 0 solid #f68985; border-bottom: 10px 0 solid #f68985;">
+<div class="container">
+    <div class="row m-b-lg">
+        <div class="col-lg-12 text-center">
+            <h1 style="color:#BBBDDB">Press & Awards</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-1">
+            <a href="http://www.entrepreneurmag.co.za/entrepreneur-today/local-is-lekker-winning-with-chivas-and-the-venture/"><%= image_tag("press/entrepreneur.png", width:"100%") %> </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="http://mustardseedimpact.com/archives/event/emerge15"><%= image_tag("press/mustard_seed.png", width:"100%") %> </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="http://www.justcurious.co.za/chivas-regal/"><%= image_tag("press/chivas.jpg", width:"100%") %> </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="http://www.venturefestoxford.com/venturefest-2015/photos-from-vf2015/"><%= image_tag("press/venturefest.jpg", width:"100%") %> </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="http://oxcaht.org/portfolio-items/connectmed-2/"><%= image_tag("press/caht2.png", width:"100%") %> </a>
+        </div>
+    </div>
+</div>
+</section> -->
+
+<section id="register-form" style="padding-top:40px; padding-bottom: 80px;background: #f7a09d;">
+<div class="container">
+    <div class="row m-b-lg">
+        <div class="col-lg-12 text-center">
+            <h1 style="color:#898AA6">Want Access to ConnectMed Services ASAP?</h1>
+            <p style="color: #fff;">Enter your details below to grab a spot in our early access doctor group - we have limited number of spots left.</p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-4 col-sm-offset-2">
+             <%= form_for [:doctor, @doctor] do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :name, :required => true, :class => 'form-control', :placeholder => 'Name*', :type => 'text'  %>
+                </div>
+                <div class="form-group">
+                    <%= f.text_field :email, :required => true, :class => 'form-control', :placeholder => 'Email*', :type => 'email' %>
+                </div>
+                <div class="form-group">
+                    <%= f.text_field :phone, :class => 'form-control', :placeholder => 'Your Phone', :type => 'text' %>
+                </div>
+        </div>
+        <div class="col-sm-4" style="margin-left:10px">
+                <div class="form-group">
+                    <%= f.password_field :password,  :required => true, :required => true, :class => 'form-control', :placeholder => 'Password*', :type => 'password', :minlength => '6' %>
+                </div>
+                <div class="form-group">
+                    <%= f.password_field :password_confirmation, :required => true, :class => 'form-control', :placeholder => 'Confirm Password*', :type => 'password', equalTo: "#doctor_password" %>
+                </div>
+                <div class="form-group" style="float:left;margin-left:30px;">
+                    <%= label_tag(:age, "Age") %>
+                    <%= f.select(:age, options_for_select([['18', 18], ['19', 19], ['20', 20], ['21', 21], ['22', 22], ['23', 23], ['24', 24], ['25', 25], ['26', 26], ['27', 27], ['28', 28], ['29', 29], ['30', 30], ['31', 31], ['32', 32], ['33', 33], ['34', 34], ['35', 35], ['36', 36], ['37', 37], ['38', 38], ['39', 39], ['40', 40], ['41', 41], ['42', 42], ['43', 43], ['44', 44], ['45', 45], ['46', 46], ['47', 47], ['48', 48], ['49', 49], ['50', 50], ['51', 51], ['52', 52], ['53', 53], ['54', 54], ['55', 55], ['56', 56], ['57', 57], ['58', 58], ['59', 59], ['60', 60], ['61', 61], ['62', 62], ['63', 63], ['64', 64], ['65', 65], ['66', 66], ['67', 67], ['68', 68], ['69', 69], ['70', 70], ['71', 71], ['72', 72], ['73', 73], ['74', 74], ['75', 75]], 18)) %>
+                </div>
+                <div class="form-group">
+                    <%= f.radio_button(:gender, "female") %>
+                    <%= label_tag(:gender_female, "Female") %>
+                    <%= f.radio_button(:gender, "male") %>
+                    <%= label_tag(:gender_male, "Male") %>
+                </div>
+                <div class="form-group">
+                    <%= label_tag(:source, "How'd Hear About Us?") %>
+                    <%= f.select(:source, options_for_select([['Word of Mouth', 1], ['Facebook Ad', 2], ['Other Online Ad', 3], ['Internet Search', 4], ['Physical Ad', 5], ['Other', 6]], 6)) %>
+                </div>
+                <%= f.hidden_field(:directed_from, value:"home", onchange: "alert('Input collected!')") %>
+        </div>
+        <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 text-center">
+                <%= f.submit "Register", :class => 'btn btn-primary block full-width m-b' %>
+            <% end %>
+              <% if flash[:error_messages] %>
+                  <% for m in flash[:error_messages] %>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <%= m %>
+                    </div>
+                  <% end %>
+              <% end %>
+        </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="modal inmodal text-center" id="createModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-body" style="max-height: 500px; overflow-y: auto; color:#f68985">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h1 class="modal-title">Thank You for Signing Up for our Early Doctor Pool!<br></h1>
+                <h4 style="color:#898AA6">You should receive an email confirming your address.<br>We will inform you when our services go live in May and keep you updated on opportunities before then. Please let us know if you have any questions at <a style="color:#f68985" href="mailto:info@connectmed.co.za">info@connectmed.co.za</a>.</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% content_for :javascript do %>
+
+<script type="text/javascript">
+
+
+$(document).ready(function () {
+    // MELISSA JS
+    // If Click Carousel BUtton, go to form
+    $('.register-button').click(function(){
+       $("html, body").animate({ scrollTop: $('#register-form').offset().top - 50}, 1000);
+    })
+
+    //Check redirection
+    var anchor_value;
+    var stripped_url = document.location.toString().split("#");
+    if (stripped_url.length > 1)
+        anchor_value = stripped_url[1];
+    //Checks if Redirected from Register Form Succseefully & If So Show Modal
+    if (anchor_value == "create-confirm")
+        $("#createModal").modal('show');
+    //Checks if redirect from register form with errror then scroll back to form
+    else if (anchor_value == "create-error")
+        $("html, body").animate({ scrollTop: $('#register-form').offset().top + 1000 }, 1000);
+
+    $('body').addClass('landing-page');
+    $('body').attr('id', 'page-top');
+
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 80
+    });
+
+    //TEAMPLATE JS
+    // Page scrolling feature
+    $('a.page-scroll').bind('click', function(event) {
+        var link = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(link.attr('href')).offset().top - 50
+        }, 500);
+        event.preventDefault();
+    });
+
+    var cbpAnimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+    new WOW().init();
+});
+
+
+</script>
+
+<% end %>

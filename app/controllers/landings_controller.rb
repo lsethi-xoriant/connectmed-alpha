@@ -9,6 +9,7 @@ class LandingsController < ApplicationController
   end
 
   def doctor_index
+    @doctor = Doctor.new
   end
 
   def how_it_works
