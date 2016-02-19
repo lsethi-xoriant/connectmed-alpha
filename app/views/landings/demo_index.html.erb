@@ -19,8 +19,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class=""><a class="page-scroll" href="<%= url_for how_it_works_path %>">How It Works</a></li>
                         <li><a href="<%= url_for about_us_path %>">About Us</a></li>
-                         <!-- <li><a href="/doctor">For Doctors</a></li> -->
-                        <li class="register-button" style="margin-left:20px"><a id="btn-top" href="#register-form">Register</a></li>
+                         <li><a href="<%= url_for doctor_index_path %>">For Doctors</a></li>
+                        <li><a style="font-weight:100;color:#f68985" href="<%= url_for patient_signin_path %>">Log In</a></li>
+                        <li class="register-button" style="margin-left:20px"><a id="btn-top" href="<%= url_for patient_signup_path %>">Sign Up</a></li>
                    </ul>
                 </div>
                 </div>

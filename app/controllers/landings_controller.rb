@@ -4,6 +4,10 @@ class LandingsController < ApplicationController
     @patient = Patient.new
   end
 
+  def demo_index
+    @patient = Patient.new
+  end
+
   def doctor_index
   end
 
