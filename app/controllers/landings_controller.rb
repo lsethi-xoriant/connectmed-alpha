@@ -18,4 +18,7 @@ class LandingsController < ApplicationController
   def about_us
   end
 
+  def overview
+  end
+
 end
