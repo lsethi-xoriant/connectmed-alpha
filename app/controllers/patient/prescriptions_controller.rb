@@ -22,11 +22,23 @@ class Patient::PrescriptionsController < ApplicationController
 
   def download
     @prescription = Prescription.find(params[:id])
-    img = Magick::Image.read(@prescription.image.path).first {format="png"}
-    send_data img.to_blob,
+    localpath = @prescription.image.path
+    if !localpath.nil?
+      if @prescription.image_content_type == "application/pdf"    # not sure whether it is right way to check type
+      send_file localpath,
+              :filename => 'Prescription '+@prescription.name,
+              :type => @prescription.image_content_type,
+              :x_sendfile =>  true,
+              :disposition => 'attachment'
+      else
+
+      img = Magick::Image.read(localpath).first {format="png"}
+      send_data img.to_blob,
               :filename => 'Prescription '+@prescription.name,
               :type => @prescription.image_content_type,
               :disposition => 'attachment'
+      end
+    end
   end
 
   protected
