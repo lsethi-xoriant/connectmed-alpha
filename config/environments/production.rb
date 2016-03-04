@@ -25,11 +25,11 @@ ConnectMed::Application.configure do
   config.action_mailer.default_options = {from: 'no-reply@connectmed.co.za'}
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'http://connectmed.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://connectmed.co.za' }
   config.action_mailer.smtp_settings = {
     :user_name  => 'app40950944@heroku.com',
     :password => 'lxcid18r1853',
-    :domain => 'heroku.com',
+    :domain => 'connectmed.co.za',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
