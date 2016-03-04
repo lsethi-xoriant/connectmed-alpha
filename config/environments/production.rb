@@ -19,7 +19,7 @@ ConnectMed::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  # Mailer configuration using SendGrid
+  # Mailer configuration using SendGrid - Tested it worksg
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'no-reply@connectmed.co.za'}
