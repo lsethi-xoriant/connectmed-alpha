@@ -56,7 +56,7 @@ class Patient::PatientsController < ApplicationController
   end
 
   def confirm_email
-      @patient = Patient.find_by_confirmation_token(params[:id])
+      @patient = Patient.find_by_confirm_token(params[:id])
       if @patient
         @patient.email_activate
         puts "Welcome to ConnectMed! Your email has been confirmed.
