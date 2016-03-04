@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'mail_form'
 gem 'simple_form'
 
+#For secrets
+gem 'figaro'
+
 # For VideoChat
 gem 'opentok', '~> 2.3'
 
