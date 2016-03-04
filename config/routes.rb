@@ -23,6 +23,13 @@ ConnectMed::Application.routes.draw do
     patch 'my_account', to: "patients#update"
     get 'dashboard', to: "patients#dashboard", as: "dashboard"
     get 'privacy_policy', to: "patients#privacy_policy", as: "privacy_policy"
+    resources :slots do
+      collection do
+        get 'schedule', to:"slots#schedule", as:"schedule"
+        get 'index_open', to:"slots#index_open"
+        get 'index_open', to:"slots#index_taken"
+      end
+    end
     resources :sessions, only: [:new, :create, :destroy]
     resources :pharmacies
     resources :consults do
