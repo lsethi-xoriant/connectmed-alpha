@@ -67,6 +67,7 @@ class Patient::PatientsController < ApplicationController
   end
 
   def schedule_confirm
+    @patient = current_patient
   end
 
   private

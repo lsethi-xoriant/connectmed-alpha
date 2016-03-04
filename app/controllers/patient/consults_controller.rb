@@ -42,7 +42,7 @@ class Patient::ConsultsController < ApplicationController
           @consult.slot = @slot
           @patient = current_patient
           PatientMailer.scheduled_consult_confirmation(@consult,@slot,@patient).deliver
-          redirect_to('/patient/schedule_confirm')
+          redirect_to schedule_confirm_patient_consult_path(@consult)
         end
       else
         redirect_to patient_new_consult_path
@@ -59,6 +59,11 @@ class Patient::ConsultsController < ApplicationController
     @consult = Consult.find(params[:id])
     @consult.update_attributes(:patient_waiting => true)
     render :json => {:data => "success"}
+  end
+
+  def schedule_confirm
+    @consult = Consult.find(params[:id])
+    @slot = @consult.slot
   end
 
   private
