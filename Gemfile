@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 1.2'
 # For MailForm
 gem 'mail_form'
 gem 'simple_form'
+gem 'sendgrid-rails', '~> 2.0'
 
 #For secrets
 gem 'figaro'

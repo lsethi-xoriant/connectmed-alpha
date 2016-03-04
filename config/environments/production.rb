@@ -23,17 +23,19 @@ ConnectMed::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'no-reply@connectmed.co.za'}
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'http://connectmed.herokuapp.com' }
   config.action_mailer.smtp_settings = {
-    :user_name  => "connectmed",
-    :password => "Gt544562",
+    :user_name  => 'app40950944@heroku.com',
+    :password => 'lxcid18r1853',
     :domain => 'connectmed.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
+  config.action_mailer.register_interceptor(SendGrid::MailInterceptor)
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
