@@ -21,11 +21,42 @@
     </div>
 </div>
 
+<div class="modal inmodal text-center" id="scheduledConsultModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-clock-o modal-icon"></i>
+                <h4 class="modal-title">Your ConnectMed Consultation is Confirmed</h4>
+                <small>The below details have been sent to your email address. We look forward to serving you soon!</small>
+            </div>
+            <div class="modal-body text-left" style="max-height: 350px; overflow-y: auto;">
+                <ul>
+                    <li><strong>Consult Time:  </strong><%= current_patient.consults.last.slot.nil? ? "No time" : current_patient.consults.last.slot.time %></li>
+                    <li><strong>Consult URL:  </strong><%= current_patient.consults.last.nil? ? "No url" : patient_consult_url(current_patient.consults.last) %></li>
+                    <li><strong>Purpose of Visit:  </strong><%= current_patient.consults.last.nil? ? "No purpose" : current_patient.consults.last.purpose_descrip %></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <% content_for :javascript do %>
 
 <script type="text/javascript">
 
 $(function() {
+
+    var anchor_value;
+    var stripped_url = document.location.toString().split("#");
+    if (stripped_url.length > 1)
+        anchor_value = stripped_url[1];
+    //Checks if Redirected from Register Form Succseefully & If So Show Modal
+    if (anchor_value == "scheduled-consult")
+        $("#scheduledConsultModal").modal('show');
 
     setTimeout(function() {
         toastr.options = {

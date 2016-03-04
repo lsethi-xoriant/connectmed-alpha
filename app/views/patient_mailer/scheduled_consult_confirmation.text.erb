@@ -1,0 +1,16 @@
+Hi <%= @patient.name %>,
+
+Thanks for booking a medical consult with ConnectMed! Below are your consult details.
+
+Consult Time:  <%= @slot.time %>
+
+Purpose of Visit: <%=  @consult.purpose_descrip %>
+
+Symptoms: <%=  @consult.symptoms %>
+
+We recommend logging onto the site and navigating to the below URL 15 minutes before your scheduled consult.
+<%= patient_consult_url(@consult) %>
+
+We look forward to making your life healthier, longer, and happier :)
+
+The ConnectMed Team

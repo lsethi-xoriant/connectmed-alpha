@@ -15,6 +15,7 @@ class CreateConsults < ActiveRecord::Migration
       t.integer :doctor_id
       t.integer :patient_id
       t.integer :pharmacy_id
+      t.belongs_to :slot
       t.timestamps
     end
   end

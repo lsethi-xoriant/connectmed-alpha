@@ -5,20 +5,19 @@
       <h1>Available Consultation Slots</h1>
     </div>
     <div class="ibox-content">
-      <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Search in Table & Press Enter">
       <table class="footable table table-stripped default footable-loaded" data-page-size="8" data-filter="#filter" style="overflow-y: auto; width: 100%; height: 350px;">
           <thead>
             <tr>
-              <td class="footable-visible footable-first-column">Time</td>
+              <td class="footable-visible footable-first-column" style="font-size:16px;color:#898AA6"><strong>Time</strong></td>
               <% for date in @dates %>
-                  <td class="footable-visible"><span class="footable-toggle"></span><%= date %></td>
+                  <td class="footable-visible"style="font-size:16px;color:#898AA6"><strong><%= date.strftime("%a %b %d") %></strong></td>
               <% end %>
             </tr>
           </thead>
           <tbody>
             <% for slots_array in @slots_arrays %>
             <tr class="gradeX footable-even" style="display: table-row;">
-              <td class="footable-visible footable-first-column"><%= (@time + @count*30*60).hour.to_s+":"+(@time + @count*30*60).min.to_s %></td>
+              <td class="footable-visible footable-first-column"style="font-size:16px;color:#898AA6"><strong><%= (@time + @count*30*60).strftime("%H:%M") %></strong></td>
               <%= puts "for time "+(@time + @count*30*60).hour.to_s+":"+(@time + @count*30*60).min.to_s %>
               <%= puts"slot1";puts slots_array[0] %>
               <% for date in @dates %>
@@ -27,7 +26,7 @@
                 <% for slot in slots_array %>
                 <%= puts "for slot: "+slot.to_s %>
                   <% if slot.date == date %>
-                    <td class="footable-visible open" id="<%= slot.id %>"><span class="footable-toggle"></span>OPEN</td>
+                    <td class="footable-visible open" id="<%= slot.id %>"><a href="/patient/consults/new#<%= slot.id %>#slot" class="btn btn-lg btn-pink" style="color:#fff">OPEN</a></td>
                     <%= puts "slot.date == date" %>
                     <% found = true; %>
                     <% break %>
@@ -35,7 +34,7 @@
                 <% end %>
                 <!-- If Note Spot found for date & time, then put None-->
                 <% if found == false %>
-                  <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>NONE</td>
+                  <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>Not Available</td>
                 <% end %>
               <% end %>
             </tr>
@@ -60,16 +59,6 @@
 
 <% content_for :javascript do %>
 <script type="text/javascript">
-  $.ajax({
-        method: "GET",
-        url: "/index_open",
-        dataType: "json"
-      }).done(function(slotsJsonArray) {
-          console.log("Response successful")
-          console.log(slotsJsonArray)
-          this.createSlots(slotsJsonArray);
-          this.renderQuestion();
-  }.bind(this));
 
 </script>
 <% end %>

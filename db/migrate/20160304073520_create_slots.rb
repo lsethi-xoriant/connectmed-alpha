@@ -6,7 +6,8 @@ class CreateSlots < ActiveRecord::Migration
       t.integer :hour
       t.integer :minute
       t.boolean :is_open
-      t.integer :doctor_id
+      t.belongs_to :consult
+      t.belongs_to :doctor
       t.timestamps
     end
   end

@@ -157,6 +157,7 @@
                 <div class="i-checks"><label> <input type="checkbox" value="joint_replacements" class="symptom"> <i></i> Joint Replacements </label></div>
             </div>
         </div>
+        <%= f.hidden_field(:slot_id, value:"", onchange: "alert('Input collected!')") %>
     </div>
     <div class="row text-right">
         <div class="col-lg-10 col-lg-offset-2">
@@ -167,6 +168,15 @@
 </div>
 </div>
 <script>
+//Check redirection
+    var top_context = this;
+    var anchor_value;
+    var stripped_url = document.location.toString().split("#");
+    if (stripped_url.length > 1) {
+        slot_id = stripped_url[1];
+        anchor_value = stripped_url[2];
+    }
+
     $(function(){
         $('form').submit(function() {
            var symptomsString = "";
@@ -175,6 +185,10 @@
                 symptomsString = symptomsString.concat($(this).val(),", ");
            });
            $("#consult_symptoms").val(symptomsString);
+             //Checks if Redirected from Register Form Succseefully & If So Show Modal
+            if (top_context.anchor_value == "slot")
+                $("#consult_slot_id").val(Number(top_context.slot_id))
+
             return true; // return false to cancel form action
         });
     });

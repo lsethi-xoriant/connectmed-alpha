@@ -23,21 +23,30 @@ class Patient::ConsultsController < ApplicationController
   end
 
   def create
-    @opentok = OpenTok::OpenTok.new("45495952","42f917d02bfa970f99c4f7f53790e3b06a89e9eb")
-    begin
-      session = @opentok.create_session :archive_mode => :always, :media_mode => :routed
-    rescue
-      session = @opentok.create_session
-    end
-    temp_params = consult_params
-    temp_params[:sessionId] = session.session_id
-    @consult = Consult.new(temp_params)
-    current_patient.consults << @consult
-    if @consult.save
-      redirect_to patient_consult_path(@consult)
-    else
-      redirect_to patient_new_consult_path
-    end
+      @opentok = OpenTok::OpenTok.new("45495952","42f917d02bfa970f99c4f7f53790e3b06a89e9eb")
+      begin
+        session = @opentok.create_session :archive_mode => :always, :media_mode => :routed
+      rescue
+        session = @opentok.create_session
+      end
+      temp_params = consult_params
+      temp_params[:sessionId] = session.session_id
+      @consult = Consult.new(temp_params)
+      current_patient.consults << @consult
+      if @consult.save
+        if consult_params[:slot_id] == ""
+          redirect_to patient_consult_path(@consult)
+        else
+          @slot = Slot.find(consult_params[:slot_id])
+          @slot.update_attributes(:is_open => false)
+          @consult.slot = @slot
+          @patient = current_patient
+          PatientMailer.scheduled_consult_confirmation(@consult,@slot,@patient).deliver
+          redirect_to('/patient/dashboard/#scheduled-consult')
+        end
+      else
+        redirect_to patient_new_consult_path
+      end
   end
 
   def left
@@ -55,6 +64,6 @@ class Patient::ConsultsController < ApplicationController
   private
 
     def consult_params
-      params.require(:consult).permit(:date, :time, :purpose_descrip, :symptoms, :duration, :medications, :allergies)
+      params.require(:consult).permit(:date, :time, :purpose_descrip, :symptoms, :duration, :medications, :allergies, :slot_id)
     end
 end

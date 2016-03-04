@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160304073520) do
     t.integer  "doctor_id"
     t.integer  "patient_id"
     t.integer  "pharmacy_id"
+    t.integer  "slot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160304073520) do
     t.integer  "hour"
     t.integer  "minute"
     t.boolean  "is_open"
+    t.integer  "consult_id"
     t.integer  "doctor_id"
     t.datetime "created_at"
     t.datetime "updated_at"

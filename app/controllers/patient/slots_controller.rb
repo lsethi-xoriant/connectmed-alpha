@@ -1,5 +1,6 @@
 class Patient::SlotsController < ApplicationController
-  before_action :require_patient_signin, :only => :destroy
+  layout "patient_layout"
+  before_filter :require_patient_signin
 
   def index
     render json: Slot.all
@@ -14,6 +15,7 @@ class Patient::SlotsController < ApplicationController
   end
 
   def schedule
+    @consult = Consult.new
     @count = 0;
     @time = Time.new(2002, 10, 31, 9, 0);
     @dates = [Date.today,Date.today+1,Date.today+2,Date.today+3]
