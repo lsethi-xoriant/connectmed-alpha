@@ -2,6 +2,4 @@ Hi <%= @patient.name %>,
 
 Thanks for registering! To confirm your registration click the URL below.
 
-<%= puts "Patient Token"%>
-<%= puts @patient.confirm_token %>
 <%= patient_confirm_email_url(@patient.confirm_token) %>
