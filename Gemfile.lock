@@ -63,6 +63,10 @@ GEM
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -156,9 +160,11 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.1.2)
   bootstrap-sass (= 3.3.0.0)
   coffee-rails (~> 4.0.0)
+  figaro
   font-awesome-rails (= 4.3.0.0)
   foreman
   jbuilder (~> 1.2)
+  letter_opener
   mail_form
   opentok (~> 2.3)
   paperclip (~> 4.1.1)

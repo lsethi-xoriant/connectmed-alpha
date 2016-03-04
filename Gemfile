@@ -50,6 +50,7 @@ end
 
 group :development, :test do
   gem 'foreman'
+  gem 'letter_opener'
 end
 
 group :production do
