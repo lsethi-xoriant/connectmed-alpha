@@ -23,12 +23,12 @@ class User < ActiveRecord::Base
     end
 
     def create_confirmation_token
-      self.confirmation_token = SecureRandom.urlsafe_base64.to_s
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
     end
 
     def email_activate
       self.email_confirmed = true
-      self.confirmation_token = nil
+      self.confirm_token = nil
       save!(:validate => false)
     end
 
