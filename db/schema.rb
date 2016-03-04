@@ -58,15 +58,15 @@ ActiveRecord::Schema.define(version: 20150908070855) do
 
   create_table "users", force: true do |t|
     t.string   "type"
-    t.string   "name",                               null: false
-    t.string   "email",                              null: false
-    t.boolean  "email_confirmed",    default: false
-    t.string   "confirmation_token"
+    t.string   "name",                            null: false
+    t.string   "email",                           null: false
+    t.boolean  "email_confirmed", default: false
+    t.string   "confirm_token"
     t.string   "phone"
     t.string   "age"
     t.string   "gender"
     t.string   "source"
-    t.string   "password_digest",                    null: false
+    t.string   "password_digest",                 null: false
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
