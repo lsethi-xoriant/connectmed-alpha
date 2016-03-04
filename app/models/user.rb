@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   has_secure_password
   before_create :create_remember_token
+  before_create :create_confirmation_token
   validates :password, length: { minimum: 6 }, allow_nil: true
   # before_save { self.email = email.downcase }
 
@@ -19,6 +20,16 @@ class User < ActiveRecord::Base
 
     def create_remember_token
       self.remember_token = User.digest(User.new_remember_token)
+    end
+
+    def create_confirmation_token
+      self.confirmation_token = SecureRandom.urlsafe_base64.to_s
+    end
+
+    def email_activate
+      self.email_confirmed = true
+      self.confirmation_token = nil
+      save!(:validate => false)
     end
 
 end

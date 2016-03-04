@@ -17,6 +17,7 @@ ConnectMed::Application.routes.draw do
     get 'my_account', to: "patients#edit", as: "edit"
     patch 'my_account', to: "patients#update"
     get 'dashboard', to: "patients#dashboard", as: "dashboard"
+    get 'confirm_email', to: "patients#confirm_email"
     get 'privacy_policy', to: "patients#privacy_policy", as: "privacy_policy"
     resources :sessions, only: [:new, :create, :destroy]
     resources :pharmacies

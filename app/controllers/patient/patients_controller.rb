@@ -16,6 +16,7 @@ class Patient::PatientsController < ApplicationController
   def create
     @patient = Patient.create!(patient_params)
     if params[:patient][:directed_from] == "home"
+      PatientMailer.registration_confirmation(@patient).deliver
       redirect_to("/#create-confirm")
     else
       patient_sign_in(@patient)
@@ -54,7 +55,20 @@ class Patient::PatientsController < ApplicationController
     end
   end
 
-
+  def confirm_email
+      @patient = Patient.find_by_confirmation_token(params[:id])
+      if @patient
+        @patient.email_activate
+        puts "Welcome to ConnectMed! Your email has been confirmed.
+        Please sign in to continue."
+        flash[:success] = "Welcome to ConnectMed! Your email has been confirmed.
+        Please sign in to continue."
+        redirect_to patient_signin_path
+      else
+        flash[:error] = "Sorry. Patient does not exist."
+        redirect_to root_url
+      end
+  end
 
   private
 
