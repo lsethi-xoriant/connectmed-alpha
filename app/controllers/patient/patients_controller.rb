@@ -66,6 +66,9 @@ class Patient::PatientsController < ApplicationController
       end
   end
 
+  def schedule_confirm
+  end
+
   private
 
   def patient_params

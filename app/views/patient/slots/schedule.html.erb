@@ -18,16 +18,11 @@
             <% for slots_array in @slots_arrays %>
             <tr class="gradeX footable-even" style="display: table-row;">
               <td class="footable-visible footable-first-column"style="font-size:16px;color:#898AA6"><strong><%= (@time + @count*30*60).strftime("%H:%M") %></strong></td>
-              <%= puts "for time "+(@time + @count*30*60).hour.to_s+":"+(@time + @count*30*60).min.to_s %>
-              <%= puts"slot1";puts slots_array[0] %>
               <% for date in @dates %>
-                <%= puts "for date:"+date.to_s %>
                 <% found = false; %>
                 <% for slot in slots_array %>
-                <%= puts "for slot: "+slot.to_s %>
                   <% if slot.date == date %>
                     <td class="footable-visible open" id="<%= slot.id %>"><a href="/patient/consults/new#<%= slot.id %>#slot" class="btn btn-lg btn-pink" style="color:#fff">OPEN</a></td>
-                    <%= puts "slot.date == date" %>
                     <% found = true; %>
                     <% break %>
                   <% end %>

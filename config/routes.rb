@@ -22,6 +22,7 @@ ConnectMed::Application.routes.draw do
     get 'my_account', to: "patients#edit", as: "edit"
     patch 'my_account', to: "patients#update"
     get 'dashboard', to: "patients#dashboard", as: "dashboard"
+    get 'schedule_confirm', to: "patients#schedule_confirm"
     get 'privacy_policy', to: "patients#privacy_policy", as: "privacy_policy"
     resources :slots do
       collection do

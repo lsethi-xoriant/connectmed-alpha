@@ -10,7 +10,7 @@ class PatientMailer < ActionMailer::Base
     @consult = consult
     @slot = slot
     @patient = patient
-    mail(:to => "#{@patient.name} <#{@patient.email}>", :subject => "ConnectMed Consult Confirmation #{@slot.time}")
+    mail(:to => "#{@patient.name} <#{@patient.email}>", :subject => "ConnectMed Consult Confirmation #{@slot.time.strftime('%a %b %d %H:%M')}")
   end
 
 end

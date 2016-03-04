@@ -167,7 +167,10 @@
     <% end %>
 </div>
 </div>
-<script>
+
+
+<% content_for :javascript do %>
+<script type="text/javascript">
 //Check redirection
     var top_context = this;
     var anchor_value;
@@ -193,4 +196,4 @@
         });
     });
 </script>
-
+<% end %>

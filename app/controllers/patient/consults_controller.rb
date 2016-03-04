@@ -42,7 +42,7 @@ class Patient::ConsultsController < ApplicationController
           @consult.slot = @slot
           @patient = current_patient
           PatientMailer.scheduled_consult_confirmation(@consult,@slot,@patient).deliver
-          redirect_to('/patient/dashboard/#scheduled-consult')
+          redirect_to('/patient/schedule_confirm')
         end
       else
         redirect_to patient_new_consult_path
