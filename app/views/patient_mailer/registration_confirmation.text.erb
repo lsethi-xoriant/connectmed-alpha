@@ -1,0 +1,5 @@
+Hi <%= @patient.name %>,
+
+Thanks for registering! To confirm your registration click the URL below.
+
+<%= confirm_email_patient_url(@patient.confirmation_token) %>
