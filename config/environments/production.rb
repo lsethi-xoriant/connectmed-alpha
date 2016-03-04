@@ -24,6 +24,7 @@ ConnectMed::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'no-reply@connectmed.co.za'}
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'http://connectmed.herokuapp.com' }
   # SMTP settings for gmail
 #   config.action_mailer.smtp_settings = {
 #    :address              => "smtp.gmail.com",
@@ -37,7 +38,7 @@ ConnectMed::Application.configure do
 config.action_mailer.smtp_settings = {
   :user_name  => ENV['sendgrind_username'],
   :password => ENV['sendgrind_password'],
-  :domain => 'yourdomain.com',
+  :domain => 'connectmed.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
