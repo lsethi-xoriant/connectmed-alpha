@@ -1,424 +1,482 @@
+    <!-- Top Nav -->
+    <div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+    <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div></div>
 
-    <!-- Header -->
-    <header class="about">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-heading">We bring <strong>quality, convenient, and affordable healthcare </strong> to South Africa & beyond through <strong>online video consultations</strong> with our expert doctors.</div>
-                <div class="blur"></div>
-                <a href="#problem" class="page-scroll btn btn-xl">Tell Me More</a>
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border-color:#fff">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/"><%= image_tag('logos/fiver_no_tagline4.png',width:'30%',class:"navbar-brand") %></a>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                            <li><a class="page-scroll" href="#problem">Problem</a></li>
+                            <li><a class="page-scroll" href="#product">Product</a></li>
+                            <li><a class="page-scroll" href="#mission">Mission</a></li>
+                            <li><a class="page-scroll" href="#market">Market</a></li>
+                            <li><a class="page-scroll" href="#launch">Launch</a></li>
+                            <li><a class="page-scroll" href="#team">Team</a></li>
+                            <li class="register-button" style="margin-left:20px"><a id="btn-top" href="/">Return Site</a></li>
+                       </ul>
+                    </div>
+                    </div>
             </div>
+        </nav>
+    </div>
+
+    <div id="inSlider" class="carousel carousel-fade" data-ride="carousel" style="height:600px">
+     <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+            <div class="carousel-caption blank">
+                <h3 style="font-size:50px;padding-left:40%;color:#BBBDDB">We bring <span style="color:#fff">quality, convenient, and affordable healthcare </span>to South Africa & beyond through <span style="color:#fff">online video consultations</span> with our expert doctors.<h3>
+            </div>
+            </div>
+            <div class="header-back two" style="height:600px"></div>
         </div>
-    </header>
+    </div>
+    </div>
 
     <!-- Problem Section -->
-    <section id="problem" class="deep">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Problem</h2>
-                    <h3 class="section-subheading text-muted">Accessing quality healthcare is challenging in South Africa and throughout the continent.</h3>
-                </div>
+    <section id="problem" class="container services" style="padding-bottom:10px">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h1 style="color:#f68985">Problem</h1>
+                <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+                <h2 style="font-size:18px">Accessing quality healthcare is challenging in South Africa and throughout the continent.</h2>
             </div>
-            <div class="row text-center">
-                <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-road fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="problem-heading">Inaccessible</h4>
-                    <p class="text-left">Doctors are often only available during work hours & urban sprawl+heavy traffic can make a trip to the doctor take the entire day. Charl, a business consultant in Johannesburg, complained it took her over 4 hours to see his primary care physician just to get a specialist referral. Elani, a working mother, said, while it sometimes proves unnecessary, she misses work & takes her newborn to the doctor for all his ailments, wanting to be sure nothing serious is missed. She's starting to think it might be impossible to continue working and care for her children.</p>
-                </div>
-                <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="problem-heading">Expensive</h4>
-                    <p class="text-left"><a href="http://www.treasury.gov.za/publications/other/epir/health.pdf">According to the South African National Treasury</a>, the per capita expenditure for medical schemes increased 158%, in real terms, from 1990 and 2000 while benefits declined consistently. And the <a href="http://data.worldbank.org/indicator/SH.XPD.PCAP?page=1">World Bank shows</a> that per capita health expenditure has more than doubled since 2000. This is making quality healthcare increasingly unattainable for South Africa's rising middle class. Because of our minimal overhead costs, we are able to pay doctors private care salaries but charge patients significantly less.
-                </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-6">
+                <span class="fa-stack fa-4x" style="color:#898AA6">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-road fa-stack-1x fa-inverse"></i>
+                </span>
+                <h2 style="color:#898AA6">Inaccessible</h2>
+                <p class="text-left" style="font-size:16px">Doctors are often only available during work hours & urban sprawl+heavy traffic can make a trip to the doctor take the entire day. Charl, a business consultant in Johannesburg, complained it took her over 4 hours to see his primary care physician just to get a specialist referral. Elani, a working mother, said, while it sometimes proves unnecessary, she misses work & takes her newborn to the doctor for all his ailments, wanting to be sure nothing serious is missed. She's starting to think it might be impossible to continue working and care for her children.</p>
             </div>
-            <div class="row text-center">
-                <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-exclamation-triangle fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="problem-heading">Sensitive</h4>
-                     <p class="text-left">There are several health issues that patients find difficult to share with friends & family and wish not to discuss with their family doctors. This unfortunately leaves many people without proper care & treatment for their ailments such as:</p>
-                    <ul class="text-left">
-                        <li><strong>Mental Health Issues:</strong> A<a href="http://www.ijmhs.com/content/5/1/8"> Mental Health and Poverty Research Program study</a> found that 16.5% of South African adults suffer from mental illness. For fear of social ostracism, many keep their mental illness secret instead of seeking the much needed medical attention.
-                        <li><strong>Sexually Transmitted Diseases (STDs) & HIV/AIDs: </strong> According to the <a href="http://www.doh.gov.za/">Department of Health</a>, widespread lack of knowledge, resistance, or popular misconceptions regarding STDs are a huge reason why they remain a major health problem. Less than 20% have received sexual education by age 18.
-                        <li><strong>Sexual Violence: </strong>The rate of sexual violence in South Africa is among the highest in the world. According to the <a href="http://www.mrc.ac.za/">South African Medical Research Council (SAMRC)</a> in a <a href="http://www.irinnews.org/report/84909/south-africa-one-in-four-men-rape"> 2009 study</a>, over 40% of South African women are raped at least once in their lifetimes but only 1 in 9 are reported. Women often don't know where to turn for healthcare related to such incidents.</li>
-                    </ul>
-                     <p class="text-left">Our patients can choose to turn video off and not disclose their name to feel safe when discussing their issues with or seeking a specialist referral from one of our doctors.</p>
-                </div>
-                <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-arrow-circle-down fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="problem-heading">Scarce</h4>
-                    <p class="text-left">There are not enough doctors to meet demand. According to the World Health Organization (WHO), in South Africa, there are only 0.77 doctors for every thousand people, compared with an average of 3.5 in developed countries and over two-thirds of existing doctors live in urban areas. There are several ways that our video consultations can help this issue:</p>
-                    <ul class="text-left">
-                        <li><strong>Captures Doctor Idle Time:</strong> 73% of private sector doctors surveyed said they often have openings in their day - perhaps there's a 30min break between patients or a patient has canceled. This "idle" doctor time can be captured by our platform as doctors can just jump online whenever they're free and serve patients who are in need.</li>
-                        <li><strong>Captures Doctor Good Will:</strong> 45% of urban doctors surveyed said they would provide consultations to rural patients at a discounted rate as a form of giving back, but only 3% would if they had to travel to the rural location. This desire to serve can be captured by our platform and provide more resources to rural patients.</li>
-                        <li><strong>Makes Public Sector More Attractive:</strong> 65% of public sector doctors said they'd like to serve on the platform in off hours to earn extra money. Perhaps more doctors would serve in the public sector knowing they have this additionally income option?</li>
-                    </ul>
-                </div>
+            <div class="col-sm-6">
+                <span class="fa-stack fa-4x" style="color:#898AA6">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
+                </span>
+                <h2 style="color:#898AA6">Expensive</h2>
+                <p class="text-left" style="font-size:16px"><a style="color:#f68985;text-decoration: underline" href="http://www.treasury.gov.za/publications/other/epir/health.pdf">According to the South African National Treasury</a>, the per capita expenditure for medical schemes increased 158%, in real terms, from 1990 and 2000 while benefits declined consistently. And the <a style="color:#f68985;text-decoration: underline" href="http://data.worldbank.org/indicator/SH.XPD.PCAP?page=1">World Bank shows</a> that per capita health expenditure has more than doubled since 2000. This is making quality healthcare increasingly unattainable for South Africa's rising middle class. Because of our minimal overhead costs, we are able to pay doctors private care salaries but charge patients significantly less.
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-6">
+                <span class="fa-stack fa-4x" style="color:#898AA6">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-exclamation-triangle fa-stack-1x fa-inverse"></i>
+                </span>
+                <h2 style="color:#898AA6">Sensitive</h2>
+                 <p class="text-left" style="font-size:16px">There are several health issues that patients find difficult to share with friends & family and wish not to discuss with their family doctors. This unfortunately leaves many people without proper care & treatment for their ailments such as:</p>
+                <ul class="text-left" style="font-size:16px; color:#898AA6">
+                    <li><strong>Mental Health Issues:</strong> A<a style="color:#f68985;text-decoration: underline" href="http://www.ijmhs.com/content/5/1/8"> Mental Health and Poverty Research Program study</a> found that 16.5% of South African adults suffer from mental illness. For fear of social ostracism, many keep their mental illness secret instead of seeking the much needed medical attention.
+                    <li><strong>Sexually Transmitted Diseases (STDs) & HIV/AIDs: </strong> According to the <a style="color:#f68985;text-decoration: underline" href="http://www.doh.gov.za/">Department of Health</a>, widespread lack of knowledge, resistance, or popular misconceptions regarding STDs are a huge reason why they remain a major health problem. Less than 20% have received sexual education by age 18.
+                    <li><strong>Sexual Violence: </strong>The rate of sexual violence in South Africa is among the highest in the world. According to the <a style="color:#f68985;text-decoration: underline" href="http://www.mrc.ac.za/">South African Medical Research Council (SAMRC)</a> in a <a style="color:#f68985;text-decoration: underline" style="color:#f68985" href="http://www.irinnews.org/report/84909/south-africa-one-in-four-men-rape"> 2009 study</a>, over 40% of South African women are raped at least once in their lifetimes but only 1 in 9 are reported. Women often don't know where to turn for healthcare related to such incidents.</li>
+                </ul>
+                 <p class="text-left" style="font-size:16px">Our patients can choose to turn video off and not disclose their name to feel safe when discussing their issues with or seeking a specialist referral from one of our doctors.</p>
+            </div>
+            <div class="col-sm-6">
+                <span class="fa-stack fa-4x" style="color:#898AA6">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-arrow-circle-down fa-stack-1x fa-inverse"></i>
+                </span>
+                <h2 style="color:#898AA6">Scarce</h2>
+                <p class="text-left" style="font-size:16px">There are not enough doctors to meet demand. According to the World Health Organization (WHO), in South Africa, there are only 0.77 doctors for every thousand people, compared with an average of 3.5 in developed countries and over two-thirds of existing doctors live in urban areas. There are several ways that our video consultations can help this issue:</p>
+                <ul class="text-left" style="font-size:16px; color:#898AA6">
+                    <li><strong>Captures Doctor Idle Time:</strong> 73% of private sector doctors surveyed said they often have openings in their day - perhaps there's a 30min break between patients or a patient has canceled. This "idle" doctor time can be captured by our platform as doctors can just jump online whenever they're free and serve patients who are in need.</li>
+                    <li><strong>Captures Doctor Good Will:</strong> 45% of urban doctors surveyed said they would provide consultations to rural patients at a discounted rate as a form of giving back, but only 3% would if they had to travel to the rural location. This desire to serve can be captured by our platform and provide more resources to rural patients.</li>
+                    <li><strong>Makes Public Sector More Attractive:</strong> 65% of public sector doctors said they'd like to serve on the platform in off hours to earn extra money. Perhaps more doctors would serve in the public sector knowing they have this additionally income option?</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Product Section -->
-    <section id="product" class="bg-light-gray deep">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Doctor Video Consultations</h2>
-                    <h3 class="section-subheading text-muted">ConnectMed Video Consultations allow patients to see a doctor anytime, anywhere via our online platform.</h3>
-                    <h2 class="text-left">How it Works</h2>
-                    <p class="text-left">You just come to our site, enter your symptoms, and with minimal wait time you'll be talking with a doctor who will diagnose you, provide you with a prescription, and have you on your way within 20 minutes flat. You'll pay per consult at a rate less than the average South African private doctor charges now and you'll get a full refund if you're not completely satisfied.</p>
+    <section id="product" class="container services" style="padding-bottom:50px">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h1 style="color:#f68985">How It Works</h1>
+                <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+                <h2 style="font-size:16px;">ConnectMed provides patients with access to private South African qualified GPs, via a high-quality video on their browsers. Nearly 70% of GP visits in the US & UK can be handled by video consultation and we estimate at least 40% of visits in South Africa can be as well.</h2>
+            </div>
+        </div>
+        <div class="row text-center" style="margin: 25px 0">
+            <div class="col-sm-4">
+                <%= image_tag("how-it-works/step1.png", width:"40%")%>
+                <h2 style="">Book for Now or Later</h2>
+                <p style="font-size:16px;">Using our secure platform, patients can request to see a doctor for a 20 minute consultation immediately or at pre-specified available times. On-Demand consults are currently only available on Saturday & Sunday from 8am - 10pm, while scheduled consults are available throughout the week.</p>
+            </div>
+            <div class="col-sm-4">
+                <%= image_tag("how-it-works/step2.png", width:"40%")%>
+                <h2>Have a Consultation</h2>
+                <p style="font-size:16px;" >Whether at home, in the office or on the go, just choose a convenient place for you. Then set up your computer, tablet, smartphone, or even hold your consultation via telephone. Once your consultation is complete your patient record will be instantly accessible and securely stored in your account for future reference.</p>
+            </div>
+            <div class="col-sm-4">
+                <%= image_tag("how-it-works/step3.png", width:"40%")%>
+                <h2>Get the Right Treatment</h2>
+                <p style="font-size:16px;">Our doctors can provide medical advice, diagnose, treat, prescribe and even refer onto a specialist (accepted by all medical insurers). Medication can be delivered to your door both within the UK and internationally, or a prescription can be instantly sent to your local UK pharmacy.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h2 style="font-size:18px">We treat most common illnesses quickly and effectively through a video doctor visit.</h2>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-2 col-sm-offset-1 flip-box">
+                <div class="flip-content">
+                    <h3>Cold & Flu<h3>
+                    <%= image_tag("symptoms/nose3.png") %>
                 </div>
             </div>
-             <div class="row">
-                <div class="col-lg-1 text-center"></div>
-                <div class="col-lg-10 text-center">
-                    <img src="<%= image_path('deck/HowWorks.png') %>" class="img-responsive text-center" alt="How It Works" width="1000" height="400">
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>Allergies<h3>
+                    <%= image_tag("symptoms/flowers.png") %>
+                </div>
+            </div>
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>Sore Throat<h3>
+                    <%= image_tag("symptoms/throat.png") %>
+                </div>
+            </div>
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>Eye<h3>
+                    <%= image_tag("symptoms/eye.png") %>
+                </div>
+            </div>
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>Skin<h3>
+                    <%= image_tag("symptoms/skin.png") %>
                 </div>
             </div>
         </div>
-        <div class="container">
-             <div class="row">
-                <div class="col-lg-6 text-left">
-                    <h2><br>How We Help</h2>
-                    <p>Our doctors can diagnose over 30 common ailments ranging from cold & flu to urinary tract infections. Our liability analysis and discussions with South African medical bodies also confirms that video-based diagnosis is acceptable to the system, just as it is in the US & UK.</p>
-                    <div id="menu">
-                        <div class="panel list-group">
-                            <a class="list-group-item" data-toggle="open" data-target="#ailments" data-parent="#menu"><strong>Common Ailments</strong><span class="glyphicon glyphicon-heart pull-right"></span></a>
-                            <div id="ailments" class="sublinks collapse in">
-                                  <a class="list-group-item" data-toggle="collapse" data-target="#cold"><span class="glyphicon glyphicon-chevron-right"></span> Cough, Cold, Flu & Allergies</a>
-                                    <p id="cold" class="collapse indent">Upper respiratory infections are the broad category for flu, sinus infections, bronchitis, runny noses, coughs and colds. These common conditions can often be diagnosed through ConnectMed, keeping you out of the doctor’s office and away from unnecessary germs.</p>
-                                  <a class="list-group-item" data-toggle="collapse" data-target="#throat"><span class="glyphicon glyphicon-chevron-right"></span> Sore Throat</a>
-                                    <p id="throat" class="collapse indent">A sore throat is a very common symptom which could be an indicator of a series of ailments, including many that can often be treated via our video consultations. It can be difficult for a patient to know if they have a Cold, Allergies, Strep Throat, or Tonsillitis unless they visit with a doctor. Our doctors are trained to evaluate your symptoms and, depending on the clinical circumstances, diagnose and treat the various causes of a sore throat specifically through a video visit.</p>
-                                <a class="list-group-item" data-toggle="collapse" data-target="#uti"><span class="glyphicon glyphicon-chevron-right"></span> Urinary Tract Infections</a>
-                                    <p id="uti" class="collapse indent">Urinary tract infections (UTIs) are a very common condition. In fact, more often than not, when patients come to a doctor they have already experienced the symptoms and have been diagnosed with this condition before. While physicians will sometimes order a urinalysis, in many cases a urinalysis is not necessary to make a diagnosis. Either way, the physician may want to begin treatment before the urinalysis results come back. This is because a urine culture can take 48 hours before it starts growing any bacteria.</p>
-                                <a class="list-group-item" data-toggle="collapse" data-target="#injuries"><span class="glyphicon glyphicon-chevron-right"></span> Minor Injuries</a>
-                                    <p id="injuries" class="collapse indent">Sports and exercise activities are an important part of any healthy lifestyle. But with increased activity comes the increased risk of injury. In the absence of an obviously severe injury like a broken bone, most doctor’s visits concerning sports injuries are patients looking for reassurance that the injury is not more severe. Sports injuries often fall into either a minor category (ankle sprains, wrist sprains, shoulder or rib soreness) or a severe category (broken bone, severely torn ligament/tendon).</p>
-                                <a class="list-group-item" data-toggle="collapse" data-target="#skin"><span class="glyphicon glyphicon-chevron-right"></span> Skin Conditions</a>
-                                    <p id="skin" class="collapse indent">Common conditions include rashes, STDs, poison ivy, insect bites, cold sores, psoriasis, bites, contact dermatitis, scrapes, allergies, hives, sores and boils.These conditions are most often diagnosable by visual inspection. An important component of dermatological assessment is recognizing patterns, features, signs and symptoms. Using your computer camera through our platform, you can upload multiple photos safely and directly to your physician who can also store them to assess changes over time. The photos are transmitted with lossless compression giving your doctor a precise view of the tissue.</p>
-                            <a class="list-group-item" data-toggle="collapse" data-target="#diarrhea"><span class="glyphicon glyphicon-chevron-right"></span> Diarrhea & Vomiting</a>
-                                <p id="diarrhea" class="collapse indent">Diagnosing the cause and determining appropriate treatment of diarrhea typically begins with very focused clinical questions. Your physician may recommend a special diet, over the counter and/or prescription medications, or follow-up care. Our doctor are often able to determine the cause and provide treatment for vomiting during a video consultation by reviewing your medical history, asking questions, and performing an exam.</p>
-                            <a class="list-group-item" data-toggle="collapse" data-target="#eye"><span class="glyphicon glyphicon-chevron-right"></span> Eye Conditions</a>
-                                <p id="eye" class="collapse indent">Having an issue with one or both eyes can significantly and severely impact a patient’s lifestyle, causing not only pain but the inability to carry out necessary tasks. There are three basic categories: minor issues, moderate issues that require interim care followed by specialist care, and severe issues. Diagnosing the condition and severity often begins with questions about pain, discharge and previous eye damage, and the collection of a patient’s medical history. Then on camera, the physician can have the patient do several eye maneuvers and ask for still photographs to fully assess the eye. </p>
-                            </div>
-                            <a class="list-group-item" data-toggle="collapse" data-target="#referral" data-parent="#menu" ><strong>Specialist Referrals</strong><span class="glyphicon glyphicon-user pull-right"></span></a>
-                                <p id="referral" class="collapse indent">Our doctors can advise you on whether you need a specialist and the type of specialist you should see – saving you guesswork, time and money. It also provides you with privacy allowing you to get a specialists refferal you might feel uncomfortable asking your family doctor for. </p>
-                            <a class="list-group-item" data-toggle="collapse" data-target="#second" data-parent="#menu"><strong>Second Opinion</strong><span class="glyphicon glyphicon-ok-circle pull-right"></span></a>
-                                <p id="second" class="collapse indent">Our doctors can analyze another doctor's diagnosis through a video consultation with you and any test results adiministered by the other doctor so you feel confident about your treatment plan.</p>
-                            <a class="list-group-item" data-toggle="collapse" data-target="#travel" data-parent="#menu"><strong>Travel Clinic</strong><span class="glyphicon glyphicon-plane pull-right"></span></a>
-                                <p id="travel" class="collapse indent">Travel is exciting: new places, new foods, new experiences. Unfortunately travel can also bring with it exposure to pathogens, germs and overall stress on your body. Our doctors can assist in all stages of travel. Whether you are about to travel, are currently traveling or have just returned from travel, ConnectMed video consultations are available wherever you have internet access, which can be very assuring!</p>
-                            <a class="list-group-item" data-toggle="collapse" data-target="#lab" data-parent="#menu"><strong>Lab Results Analysis</strong><span class="glyphicon glyphicon-zoom-in pull-right"></span></a>
-                                <p id="lab" class="collapse indent">Our doctors can analyze your lab results and explain what results mean and how you could take action to improve areas of concern.</p>
-                            <a class="list-group-item" data-toggle="collapse" data-target="#record" data-parent="#menu"><strong>Health Record Storage</strong><span class="glyphicon glyphicon-save pull-right"></span></a>
-                                <p id="record" class="collapse indent">ConnectMed offers you a free EHR (electronic medical record) that stores all of your personal health information in one secure place online. You can use this to keep your medical history up-to-date and share with your other health care providers.</p>
-                        </div>
-                    </div>
+        <div class="row text-center" style="margin-top:10px">
+            <div class="col-sm-2 col-sm-offset-1 flip-box">
+                <div class="flip-content">
+                    <h3>Minor Injuries<h3>
+                    <%= image_tag("symptoms/wound.png") %>
                 </div>
-                <div class="col-lg-6 text-left">
-                    <h2 class="text-left"><br>Why We're Better</h2>
-                    <p>Compared to a local doctor, we're more convenient, higher quality, and more affordable than a local doctor. Compared to US platforms like Healthtap.com & Teledoc.com that have yet to come to the continent, our platform has been optimized to the South African context technically, medically, and culturally.</p>
-                    <img src="<%= image_path('deck/WhyAwesome3.png') %>" class="img-responsive" alt="Why Awesome" height="95%" width="95%">
+            </div>
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>UTIs<h3>
+                    <%= image_tag("symptoms/excretory.png") %>
+                </div>
+            </div>
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>Diarrhea & Vomiting<h3>
+                    <%= image_tag("symptoms/belly.png") %>
+                </div>
+            </div>
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>Depression<h3>
+                    <%= image_tag("symptoms/frown.png") %>
+                </div>
+            </div>
+            <div class="col-sm-2 flip-box">
+                <div class="flip-content">
+                    <h3>Travel<h3>
+                    <%= image_tag("symptoms/airplane.png") %>
                 </div>
             </div>
         </div>
-    </div>
     </section>
 
 <!-- Medical Tools Section -->
-    <section id="medtools">
-        <div class="container">
+    <section class="container services" style="padding-bottom:10px;">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Intelligent Medical Tools</h2>
-                    <h3 class="section-subheading text-muted">We're continuously developing machine learning-based medical tools that will assist in remote care.</h3>
+                <div class="col-sm-12 text-center">
+                    <h1 style="color:#f68985">Intelligent Medical Tools</h1>
+                    <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+                    <h2 style="font-size:18px">We're continuously developing machine learning-based medical tools that will assist in remote care.</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 text-center tool">
-                    <h4>Symptom Check & Triage</h4>
-                    <p class="subheading text-muted">Know what care you need & when.</p>
-                    <img src="<%= image_path('deck/symptomChecker.png') %>" class="img-responsive" alt="Symptom Checker Triage Machine Learning">
-                    <p class="text-muted">We're developing a patient-facing application that advises patients on if and how urgently they need medical care based on their symptoms and history (a.k.a non-emergency triage). We've used UK patient data for initial training of the machine learning model but the algorithm will further be trained on South African patient data produced from our platform, making it even more accurate for the local context.</p>
+                <div class="col-sm-4 text-center tool">
+                    <h2>Symptom Check & Triage</h2>
+                    <p style="font-size:16px;" class="subheading text-muted">Know what care you need & when.</p>
+                    <img src="<%= image_path('deck/symptomChecker.png') %>" class="img-responsive" style="padding:0 0 15px 0" alt="Symptom Checker Triage Machine Learning">
+                    <p style="font-size:16px;" class="text-muted">We're developing a patient-facing application that advises patients on if and how urgently they need medical care based on their symptoms and history (a.k.a non-emergency triage). We've used UK patient data for initial training of the machine learning model but the algorithm will further be trained on South African patient data produced from our platform, making it even more accurate for the local context.</p>
                 </div>
-                <div class="col-md-4 text-center tool">
-                    <h4>Vital Signs Detection</h4>
-                    <p class="subheading text-muted">Get your vitals just from your webcam.</p>
-                    <img src="<%= image_path('deck/pulseDetection.png') %>" class="img-responsive" alt="Pulse Vital Sign Detection Machine Learning">
-                    <p class="text-muted">We're optimizing currently existing machine learning-based algorithms that extract pulse & respiratory rate via facial video footage to work better with all skin tones. This will provide doctors with patient vital sign information during video consultation to aid in their diagnosis. We'll likely also create a patient-facing tool that will allow patients to take their own vital signs for personal interest.</p>
+                <div class="col-sm-4 text-center tool">
+                    <h2>Vital Signs Detection</h2>
+                    <p style="font-size:16px;" class="subheading text-muted">Get your vitals just from your webcam.</p>
+                    <img src="<%= image_path('deck/pulseDetection.png') %>" class="img-responsive" style="padding:0 0 15px 0" alt="Pulse Vital Sign Detection Machine Learning">
+                    <p style="font-size:16px;" class="text-muted">We're optimizing currently existing machine learning-based algorithms that extract pulse & respiratory rate via facial video footage to work better with all skin tones. This will provide doctors with patient vital sign information during video consultation to aid in their diagnosis. We'll likely also create a patient-facing tool that will allow patients to take their own vital signs for personal interest.</p>
                 </div>
-                <div class="col-md-4 text-center tool">
-                    <h4>More Machine Learing Tools</h4>
-                    <p class="subheading text-muted">Many more in development.</p>
-                    <img src="<%= image_path('deck/eyeglass.png') %>" class="img-responsive" alt="Other Machine Learning Tools">
-                    <p class="text-muted">While digitized patient data is generally hard to come by, digitized African patient data is virtually non-existent given the lack of electronic medical records. This is where our platform shows tremendous value - it collects & anonymizes patient information which can be used to develop a multitude of machine learning-based medical tools that are highly accurate and generalizable to any local context.</p>
+                <div class="col-sm-4 text-center tool">
+                    <h2>More Machine Learing Tools</h2>
+                    <p style="font-size:16px;" class="subheading text-muted">Many more in development.</p>
+                    <img src="<%= image_path('deck/eyeglass.png') %>" class="img-responsive" style="padding:0 0 15px 0" alt="Other Machine Learning Tools">
+                    <p style="font-size:16px;" class="text-muted">While digitized patient data is generally hard to come by, digitized African patient data is virtually non-existent given the lack of electronic medical records. This is where our platform shows tremendous value - it collects & anonymizes patient information which can be used to develop a multitude of machine learning-based medical tools that are highly accurate and generalizable to any local context.</p>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Mission Section -->
-    <section id="mission" class="bg-light-gray deep">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Mission</h2>
-                    <h3 class="section-subheading text-muted">We seek to enable all Africans to live healthier, longer, and happier lives - no matter their location or income level.</h3>
-                </div>
+    <section id="mission" class="container services" style="padding-bottom:10px">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 style="color:#f68985">Mission</h1>
+                <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+                <h2 style="font-size:18px">We seek to enable all Africans to live healthier, longer, and happier lives - no matter their location or income level.</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <img src="<%= image_path('deck/mission.png') %>" class="img-responsive" alt="Our Mission" height="401" width="900">
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <img src="<%= image_path('deck/mission.png') %>" class="img-responsive" alt="Our Mission" height="401" width="900">
             </div>
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h3 class="section-subheading text-muted"><br>By first targeting middle & upper income groups, we will generate the trust & traction needed to service lower income populations through the below strategies.</h3>
-                </div>
-            <div class="row">
-                <div class="col-sm-8 text-left">
-                    <h5>Affordable Pricing</h5>
-                    <p>In this context, we will lower the consultation price to an affordable rate, using higher income profits to subsidize service, and are also developing a network of doctors generously willing to accept discounted  payment for serving these communities.</p>
-                    <h5><br>Connectivity Partner</h5>
-                    <p>While <a href="https://www.webafrica.co.za/blog/general/latest-statistics-south-african-internet-penetration/">over 40% of South African households</a> have at least one member with access to Internet at home or elsewhere, it is unlikely that lower income urban and rural patients will have the ability to access ConnectMed services thorough the Web. Therefore, we are in discussions with partner organizations who can provide the connectivity & infrastructure needed through "healthcare hubs".</p>
-                    <h5><br>Optimized Technology</h5>
-                    <p>While our web platform has already been designed with low bandwidth, low computationally powerful machines, and data cost sensitivity optimizations, we are working on further improving this functionality. Additionally we are developing a native Android application given the majority of lower income households have connectivity via mobile phones.</p>
-                </div>
-                <div class="col-sm-3 col-sm-offset-1 text-center">
-                        <img src="<%= image_path('deck/hubs4.png') %>" class="img-responsive img-circle" alt="" width="65%">
-                        <br><br>
-                        <img src="<%= image_path('deck/tech3.png') %>" class="img-responsive img-circle" alt="" width="65%">
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 style="font-size:18px"><br>By first targeting middle & upper income groups, we will generate the trust & traction needed to service lower income populations through the below strategies.</h2>
             </div>
+        <div class="row">
+            <div class="col-sm-8 text-left">
+                <h3 style="color:#f68985">Affordable Pricing</h3>
+                <p style="font-size:16px;">In this context, we will lower the consultation price to an affordable rate, using higher income profits to subsidize service, and are also developing a network of doctors generously willing to accept discounted  payment for serving these communities.</p>
+                <h3 style="color:#f68985"><br>Connectivity Partner</h3>
+                <p style="font-size:16px;">While <a style="color:#f68985;text-decoration: underline" href="https://www.webafrica.co.za/blog/general/latest-statistics-south-african-internet-penetration/">over 40% of South African households</a> have at least one member with access to Internet at home or elsewhere, it is unlikely that lower income urban and rural patients will have the ability to access ConnectMed services thorough the Web. Therefore, we are in discussions with partner organizations who can provide the connectivity & infrastructure needed through "healthcare hubs".</p>
+                <h3 style="color:#f68985"><br>Optimized Technology</h3>
+                <p style="font-size:16px;">While our web platform has already been designed with low bandwidth, low computationally powerful machines, and data cost sensitivity optimizations, we are working on further improving this functionality. Additionally we are developing a native Android application given the majority of lower income households have connectivity via mobile phones.</p>
             </div>
+            <div class="col-sm-3 col-sm-offset-1 text-center">
+                    <img src="<%= image_path('deck/hubs4.png') %>" class="img-responsive img-circle" alt="" width="65%">
+                    <br><br>
+                    <img src="<%= image_path('deck/tech3.png') %>" class="img-responsive img-circle" alt="" width="65%">
+            </div>
+        </div>
         </div>
     </section>
 
     <!-- Market Section -->
-    <section id="market" class="deep">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Business Potential</h2>
-                    <h3 class="section-subheading text-muted" style="margin-bottom:0px;">We are a socially-minded for-profit company headquartered in South Africa with huge business potential.</h3>
-                </div>
-            </div>
-             <div class="row">
-                <h2 class="text-left"><br>Market Size</h2>
-                <div class="col-lg-6 text-center">
-                    <img src="<%= image_path('deck/size.png') %>" class="img-responsive" style="padding-top:20px;" alt="Market Size">
-                </div>
-                <div class="col-lg-6 text-left">
-                    <h5>Starting in South Africa</h5>
-                    <p>Using the <a href="http://www.saarf.co.za/lsm-presentations/2012/LSM%20Presentation%20-%20February%202012.pdf">South African Advertising Research Foundation's 2012 Living Standard Measure (SAARF LSM)</a>, the most widely used marketing research tool in Southern Africa, we've defined our target market as the LSM 7-10 segments which represent households that earn over R10255 (~$830 USD) monthly, live in urban environments, and own or have unlimited access to a computer+internet. This group earns 65% of total income, comprises 20% of the population, and is interested in using telemedicine (over 70% confirmed this in our market surveys).</p>
-                    <h5><br>Expansion to the Continent</h5>
-                    <p>Expansion to other African countries with substantial LSM 7-10 populations like Nigeria and Kenya will naturally follow at least a year after establishing a robust and replicable model in South Africa. Entry into non-Anglophone Africa will also be kicked off with entry into Senegal. The market potential for the continent is over $6 billion and given South Africa's prominence, adoption here will likely mean smooth adoption elsewhere.</p>
-                </div>
-            </div>
-            <div class="row">
-                <h2 class="text-left"><br>Monetization Strategy</h2>
-                <div class="col-lg-6 text-left">
-                    <p><br>While we see our data and machine learning tools being a large revenue generator, we've done revenue & cost projections focusing solely on our doctor video consultations which alone will allow us to break-even in the second year and reach over $10 million USD in profit by Year 5. The consultation price and doctor payment fee were decided upon through customer & doctor surveys and interviews.</p>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <br>
-                    <img src="<%= image_path('deck/pricing4.png') %>" class="img-responsive" style="padding-left:15px;" alt="Pricing" height="85%" width="85%">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 text-left">
-                    <img src="<%= image_path('deck/graph5.png') %>" class="img-responsive" style="padding-left:30px;" alt="Pricing & Projections" height="80%" width="80%">
-                </div>
-                <div class="col-lg-6 text-left">
-                    <img src="<%= image_path('deck/projections5.png') %>" class="img-responsive" style="padding-top:30px; padding-left:5px;" alt="Projections" height="85%" width="85%">
-                </div>
+    <section id="market" class="container services" style="padding-bottom:10px">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 style="color:#f68985">Business Potential</h1>
+                <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+                <h2 style="font-size:18px">We are a socially-minded for-profit company headquartered in South Africa with huge business potential.</h2>
             </div>
         </div>
+         <div class="row">
+            <h2 class="text-left" style="color:#f68985"><br>Market Size</h2>
+            <div class="col-sm-6 text-center">
+                <img src="<%= image_path('deck/size.png') %>" class="img-responsive" style="padding-top:20px;" alt="Market Size">
+            </div>
+            <div class="col-sm-6 text-left">
+                <h3 style="color:#898AA6">Starting in South Africa</h3>
+                <p style="font-size:16px">Using the <a style="color:#f68985;text-decoration: underline" href="http://www.saarf.co.za/lsm-presentations/2012/LSM%20Presentation%20-%20February%202012.pdf">South African Advertising Research Foundation's 2012 Living Standard Measure (SAARF LSM)</a>, the most widely used marketing research tool in Southern Africa, we've defined our target market as the LSM 7-10 segments which represent households that earn over R10255 (~$830 USD) monthly, live in urban environments, and own or have unlimited access to a computer+internet. This group earns 65% of total income, comprises 20% of the population, and is interested in using telemedicine (over 70% confirmed this in our market surveys).</p>
+                <h3 style="color:#898AA6"><br>Expansion to the Continent</h3>
+                <p style="font-size:16px">Expansion to other African countries with substantial LSM 7-10 populations like Nigeria and Kenya will naturally follow at least a year after establishing a robust and replicable model in South Africa. Entry into non-Anglophone Africa will also be kicked off with entry into Senegal. The market potential for the continent is over $6 billion and given South Africa's prominence, adoption here will likely mean smooth adoption elsewhere.</p>
+            </div>
+        </div>
+<!--         <div class="row">
+            <h2 class="text-left" style="color:#f68985"><br>Monetization Strategy</h2>
+            <div class="col-sm-6 text-left">
+                <p style="font-size:16px"><br>While we see our data and machine learning tools being a large revenue generator, we've done revenue & cost projections focusing solely on our doctor video consultations which alone will allow us to break-even in the second year and reach over $10 million USD in profit by Year 5. The consultation price and doctor payment fee were decided upon through customer & doctor surveys and interviews.</p>
+            </div>
+            <div class="col-sm-6 text-center">
+                <br>
+                <img src="<%= image_path('deck/pricing4.png') %>" class="img-responsive" style="padding-left:15px;" alt="Pricing" height="85%" width="85%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-left">
+                <img src="<%= image_path('deck/graph5.png') %>" class="img-responsive" style="padding-left:30px;" alt="Pricing & Projections" height="80%" width="80%">
+            </div>
+            <div class="col-sm-6 text-left">
+                <img src="<%= image_path('deck/projections5.png') %>" class="img-responsive" style="padding-top:30px; padding-left:5px;" alt="Projections" height="85%" width="85%">
+            </div>
+        </div> -->
     </div>
     </section>
 
     <!-- About Section -->
-    <section id="launch" class="bg-light-gray deep">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Launch</h2>
-                    <h3 class="section-subheading text-muted">Through a strong Pilot & Alpha Launch we will be the first movers in South Africa & the continent.</h3>
-                </div>
+    <section id="launch" class="container services" style="padding-bottom:50px">
+        <div class="row">
+            <div class="col-sm-12 text-center" style="margin-bottom:10px">
+                <h1 style="color:#f68985">Launch</h1>
+                <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+                <h2 style="font-size:18px">Through a strong Pilot & Alpha Launch we will be the first movers in South Africa & the continent.</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<%= image_path('deck/pilot.png') %>" alt="Pilot Launch">
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="<%= image_path('deck/pilot.png') %>" alt="Pilot Launch">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h3 style="color:#f68985">Pilot Launch</h3>
+                                <h3 style="color:#f68985" class="subheading">September 2015</h3>
                             </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Pilot Launch</h4>
-                                    <h4 class="subheading">September 2015</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">We completed a limited number of doctor consultations with patients in Johannesburg using our first version web platform. This validated many of the technical & medical hypotheses we had posed.</p>
-                                </div>
+                            <div class="timeline-body">
+                                <p style="font-size:16px">We completed a limited number of doctor consultations with patients in Johannesburg using our first version web platform. This validated many of the technical & medical hypotheses we had posed.</p>
                             </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<%= image_path('deck/funding.png') %>" alt="Raising Seed Funds">
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="<%= image_path('deck/funding.png') %>" alt="Raising Seed Funds">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h3 style="color:#f68985">Raising Seed Funds</h3>
+                                <h3 style="color:#f68985" class="subheading">$250,000 USD In Total</h3>
                             </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Raising Seed Funds</h4>
-                                    <h4 class="subheading">$250,000 USD In Total</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">In order to ensure a strong Alpha and ability to take the momentum forward, we are raising seeds funds to pay for employees (2 developers, 1 sales rep), legal Fees (liability Analysis, corporate setup), insurance (malpractice & liability), and tech infrastructure (servers, data storage, dev software).</p>
-                                </div>
+                            <div class="timeline-body">
+                                <p style="font-size:16px">In order to ensure a strong Alpha and ability to take the momentum forward, we are raising seeds funds to pay for employees (2 developers, 1 sales rep), legal Fees (liability Analysis, corporate setup), insurance (malpractice & liability), and tech infrastructure (servers, data storage, dev software).</p>
                             </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<%= image_path('deck/alpha2.png') %>" alt="Alpha Launch">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="<%= image_path('deck/alpha2.png') %>" alt="Alpha Launch">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h3 style="color:#f68985">Alpha Launch</h3>
+                                <h3 style="color:#f68985" class="subheading">July 2016</h3>
                             </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Alpha Launch</h4>
-                                    <h4 class="subheading">July 2016</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Using our pilot results to highlight the most important product features, we will refine our MVP into an Alpha version. We will also refine operational processes like doctor & patient management and hold a full commercial launch in South Africa.</p>
-                                </div>
+                            <div class="timeline-body">
+                                <p style="font-size:16px">Using our pilot results to highlight the most important product features, we will refine our MVP into an Alpha version. We will also refine operational processes like doctor & patient management and hold a full commercial launch in South Africa.</p>
                             </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>We're Just
-                                    <br>Getting
-                                    <br>Started</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h3 style="margin-top:45px;">We're Just<br>Getting<br>Started</h3>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="deep">
-<div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Team</h2>
-                    <h3 class="section-subheading text-muted">We have the expertise, resources, and networks needed to make ConnectMed a reality across South Africa & beyond.</h3>
+    <section id="team" class="container services" style="padding-bottom:50px">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 style="color:#f68985">Team</h1>
+                <div class="navy-line" style="margin-top:0px;margin-bottom:20px; width:50%;"></div>
+                <h2 style="font-size:18px">We have the expertise, resources, and networks needed to make ConnectMed a reality across South Africa & beyond.</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="team-member">
+                    <img src="<%= image_path('team/melissa.png') %>" class="img-responsive img-circle" alt="Melissa McCoy" width="100%">
+                    <h2 style="font-size:15px">Melissa McCoy</h2>
+                    <p style="font-size:16px">Tech & Ops</p>
+                    <p class="text-muted" style="font-size:13px">Software Engineer & <a style="color:#f68985;text-decoration: underline" href="http://www.rhodeshouse.ox.ac.uk/">Rhodes Scholar</a> with 3 years start-up and engineering experience in Africa & the Americas.</p>
+                    <ul class="list-inline social-buttons">
+                    <li><a style="color:#f68985;text-decoration: underline" href="mailto:melissa@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
+                    <li><a style="color:#f68985;text-decoration: underline" href="https://uk.linkedin.com/in/melissalmccoy"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="team-member">
-                        <img src="<%= image_path('team/melissa.png') %>" class="img-responsive img-circle" alt="Melissa McCoy" width="100%">
-                        <h4 style="font-size:15px">Melissa McCoy</h4>
-                        <p>Tech & Ops</p>
-                        <p class="text-muted" style="font-size:13px">Software Engineer & <a href="http://www.rhodeshouse.ox.ac.uk/">Rhodes Scholar</a> with 3 years start-up and engineering experience in Africa & the Americas.</p>
-                        <ul class="list-inline social-buttons">
-                        <li><a href="mailto:melissa@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
-                        <li><a href="https://uk.linkedin.com/in/melissalmccoy"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
+            <div class="col-sm-2">
+                <div class="team-member">
+                    <img src="<%= image_path('team/zweli.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                    <h2 style="font-size:15px">Zweli Gwebityala</h2>
+                    <p style="font-size:16px">Strategy</p>
+                    <p class="text-muted" style="font-size:13px">Former <a style="color:#f68985;text-decoration: underline" href="http://www.mckinsey.com/global_locations/africa/south_africa">McKinsey & Company</a> consultant with a focus on the technology sector and community development.</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a style="color:#f68985;text-decoration: underline" href="mailto:zweli@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
+                        <li><a style="color:#f68985;text-decoration: underline" href="https://za.linkedin.com/pub/zwelijongile-oyena-gwebityala/15/705/9ab"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
-                <div class="col-sm-2">
-                    <div class="team-member">
-                        <img src="<%= image_path('team/zweli.png') %>" class="img-responsive img-circle" alt="" width="100%">
-                        <h4 style="font-size:15px">Zweli Gwebityala</h4>
-                        <p>Strategy</p>
-                        <p class="text-muted" style="font-size:13px">Former <a href="http://www.mckinsey.com/global_locations/africa/south_africa">McKinsey & Company</a> consultant with a focus on the technology sector and community development.</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="mailto:zweli@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
-                            <li><a href="https://za.linkedin.com/pub/zwelijongile-oyena-gwebityala/15/705/9ab"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="team-member">
+                    <img src="<%= image_path('team/allan.png') %>" class="img-responsive img-circle" width="100%" alt="">
+                    <h2 style="font-size:15px">Allan-Roy Sekeitto</h2>
+                    <p style="font-size:16px">Medical</p>
+                    <p class="text-muted" style="font-size:13px">Orthopaedic Surgeon & Entrepreneur currently practicing at <a style="color:#f68985;text-decoration: underline" href="http://doctors-hospitals-medical-cape-town-south-africa.blaauwberg.net/hospitals_clinics_state_hospitals/helen_joseph_hospital_auckland_park_johannesburg_gauteng_south_africa">Helen Joseph Hospital</a>, one of the largest in SA.</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a style="color:#f68985;text-decoration: underline" href="mailto:allan@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
+                        <li><a style="color:#f68985;text-decoration: underline" href="https://za.linkedin.com/in/allanroysekeitto"><i class="fa fa-linkedin"></i></a>
+                    </ul>
                 </div>
-                <div class="col-sm-2">
-                    <div class="team-member">
-                        <img src="<%= image_path('team/allan.png') %>" class="img-responsive img-circle" width="100%" alt="">
-                        <h4 style="font-size:15px">Allan-Roy Sekeitto</h4>
-                        <p>Medical</p>
-                        <p class="text-muted" style="font-size:13px">Orthopaedic Surgeon & Entrepreneur currently practicing at <a href="http://doctors-hospitals-medical-cape-town-south-africa.blaauwberg.net/hospitals_clinics_state_hospitals/helen_joseph_hospital_auckland_park_johannesburg_gauteng_south_africa">Helen Joseph Hospital</a>, one of the largest in SA.</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="mailto:allan@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
-                            <li><a href="https://za.linkedin.com/in/allanroysekeitto"><i class="fa fa-linkedin"></i></a>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="team-member">
+                    <img src="<%= image_path('team/hangwi.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                    <h2 style="font-size:15px">Hangwi Muambadzi</h2>
+                    <p style="font-size:16px">Finance</p>
+                    <p class="text-muted" style="font-size:13px">Former venture capitalist at <a style="color:#f68985;text-decoration: underline" href="www.edgegrowth.com/">Edge Growth</a> in Johannesburg and financial analyst for <a style="color:#f68985;text-decoration: underline" href="https://www.db.com/">Deutsche Bank</a>.</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a style="color:#f68985;text-decoration: underline" href="mailto:hangwi@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
+                        <li><a style="color:#f68985;text-decoration: underline" href="https://uk.linkedin.com/in/hangwani-hangwi-muambadzi-0b307924"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
-                <div class="col-sm-2">
-                    <div class="team-member">
-                        <img src="<%= image_path('team/hangwi.png') %>" class="img-responsive img-circle" alt="" width="100%">
-                        <h4 style="font-size:15px">Hangwi Muambadzi</h4>
-                        <p>Finance</p>
-                        <p class="text-muted" style="font-size:13px">Former venture capitalist at <a href="www.edgegrowth.com/">Edge Growth</a> in Johannesburg and financial analyst for <a href="https://www.db.com/">Deutsche Bank</a>.</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="mailto:hangwi@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
-                            <li><a href="https://uk.linkedin.com/in/hangwani-hangwi-muambadzi-0b307924"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="team-member">
+                    <img src="<%= image_path('team/mirko.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                    <h2 style="font-size:15px">Mirko Maier</h2>
+                    <p style="font-size:16px">Legal</p>
+                    <p class="text-muted" style="font-size:13px">Recent Law graduate from University of Cape Town, an <a style="color:#f68985;text-decoration: underline" href="http://www.allangrayorbis.org/fellowship-programme/">Allan Gray Fellow</a>, and co-founder of <a style="color:#f68985;text-decoration: underline" href="http://www.phaphamasedi.com/">Phaphama SEDI</a>.</p>
+                    <ul class="list-inline social-buttons">
+                    <li><a style="color:#f68985;text-decoration: underline" href="mailto:mirko@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
+                    <li><a style="color:#f68985;text-decoration: underline" href="https://www.linkedin.com/in/mirko-maier-43756b55"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    </ul>
                 </div>
-                <div class="col-sm-2">
-                    <div class="team-member">
-                        <img src="<%= image_path('team/mirko.png') %>" class="img-responsive img-circle" alt="" width="100%">
-                        <h4 style="font-size:15px">Mirko Maier</h4>
-                        <p>Legal</p>
-                        <p class="text-muted" style="font-size:13px">Recent Law graduate from University of Cape Town, an <a href="http://www.allangrayorbis.org/fellowship-programme/">Allan Gray Fellow</a>, and co-founder of <a href="http://www.phaphamasedi.com/">Phaphama SEDI</a>.</p>
-                        <ul class="list-inline social-buttons">
-                        <li><a href="mailto:mirko@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/mirko-maier-43756b55"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="team-member">
-                        <img src="<%= image_path('team/hong.png') %>" class="img-responsive img-circle" alt="" width="100%">
-                        <h4 style="font-size:15px">Dr. Hong Zhou</h4>
-                        <p>Research</p>
-                        <p class="text-muted" style="font-size:13px">12 years software development & computer science experience at <a href="http://www.slb.com/">Schlumberger</a>, <a href="http://www.eutechnyx.com/">Eutechnyx</a>, & PhD research.</p>
-                        <ul class="list-inline social-buttons">
-                        <li><a href="mailto:hong@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
-                        <li><a href="https://uk.linkedin.com/in/hongzhou76"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="team-member">
+                    <img src="<%= image_path('team/hong.png') %>" class="img-responsive img-circle" alt="" width="100%">
+                    <h2 style="font-size:15px">Dr. Hong Zhou</h2>
+                    <p style="font-size:16px">Research</p>
+                    <p class="text-muted" style="font-size:13px">12 years software development & computer science experience at <a style="color:#f68985;text-decoration: underline" href="http://www.slb.com/">Schlumberger</a>, <a style="color:#f68985;text-decoration: underline" href="http://www.eutechnyx.com/">Eutechnyx</a>, & PhD research.</p>
+                    <ul class="list-inline social-buttons">
+                    <li><a style="color:#f68985;text-decoration: underline" href="mailto:hong@connectmed.co.za"><i class="fa fa-envelope"></i></a></li>
+                    <li><a style="color:#f68985;text-decoration: underline" href="https://uk.linkedin.com/in/hongzhou76"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    </ul>
                 </div>
             </div>
         </div>
         <!-- Clients Aside -->
-        <aside class="clients">
+        <aside class="clients" style="padding-top:40px">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <a href="https://www.ox.ac.uk">
                             <img src="<%= image_path('deck/oxford.png') %>" class="img-responsive img-centered" alt="University of Oxford">
                         </a>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <a href="http://www.oxcaht.org">
                             <img src="<%= image_path('deck/caht2.png') %>" class="img-responsive img-centered" alt="Oxford's Centre for Affordable Healthcare Technology" height="80%" width="80%">
                         </a>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <a href="https://www.linkedin.com/company/devtech-consultants">
                             <img src="<%= image_path('deck/devtech.png') %>" class="img-responsive img-centered" alt="DevTech" height="110%" width="110%">
                         </a>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <a href="http://www.venturefestoxford.com/">
                             <img src="<%= image_path('deck/venturefest.jpg') %>" class="img-responsive img-centered" alt="VentureFest">
                         </a>
@@ -431,35 +489,99 @@
 
 
     <!-- Contact Section-->
-    <section id="contact">
+    <section id="contact" style="padding-bottom:50px">
         <div class="container text-center">
             <div class="row">
-                <h2 class="section-heading">Want to know more? <br><a href="contact">Contact</a> or<a href="mailto:founders@connectmed.co.za"> Email</a> Us</h2>
+                <h1 style="color:#898AA6">Want to know more? <a style="color:#f68985;text-decoration: underline" href="mailto:founders@connectmed.co.za"> Email</a> Us</h1>
             </div>
         </div>
     </section>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<% content_for :javascript do %>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+$(document).ready(function () {
+    $(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+    });
+    // MELISSA JS
+    // If Click Carousel BUtton, go to form
+    $('.register-button').click(function(){
+       $("html, body").animate({ scrollTop: $('#register-form').offset().top - 50}, 1000);
+    })
 
-    <!-- Google Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    //Check redirection
+    var anchor_value;
+    var stripped_url = document.location.toString().split("#");
+    if (stripped_url.length > 1)
+        anchor_value = stripped_url[1];
+    //Checks if Redirected from Register Form Succseefully & If So Show Modal
+    if (anchor_value == "create-confirm")
+        $("#createModal").modal('show');
+    //Checks if redirect from register form with errror then scroll back to form
+    else if (anchor_value == "create-error")
+        $("html, body").animate({ scrollTop: $('#register-form').offset().top + 1000 }, 1000);
 
-      ga('create', 'UA-65443102-1', 'auto');
-      ga('send', 'pageview');
-    </script>
+    $('body').addClass('landing-page');
+    $('body').attr('id', 'page-top');
+
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 80
+    });
+
+    //TEAMPLATE JS
+    // Page scrolling feature
+    $('a.page-scroll').bind('click', function(event) {
+        var link = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(link.attr('href')).offset().top - 50
+        }, 500);
+        event.preventDefault();
+    });
+
+    var cbpAnimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+    new WOW().init();
+});
+
+
+</script>
+
+<% end %>
