@@ -3,7 +3,7 @@ class PatientMailer < ActionMailer::Base
 
   def registration_confirmation(patient)
     @patient = patient
-    mail(:to => "#{@patient.name} <#{@patient.email}>", :subject => "Registration Confirmation")
+    mail(:to => "#{@patient.name} <#{@patient.email}>", :subject => "ConnectMed Registration - Please Confirm Your Email Address")
   end
 
 end

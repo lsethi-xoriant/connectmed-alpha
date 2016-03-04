@@ -10,6 +10,11 @@ ConnectMed::Application.routes.draw do
 
 # Scopes Routes & Controllers to Patient
   namespace :patient do
+    resources :patients do
+      member do
+        get :confirm_email
+      end
+    end
     get 'signin', to: "sessions#new", as: 'signin'
     get 'signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
     get 'signup', to: "patients#new", as: "signup"
@@ -17,7 +22,6 @@ ConnectMed::Application.routes.draw do
     get 'my_account', to: "patients#edit", as: "edit"
     patch 'my_account', to: "patients#update"
     get 'dashboard', to: "patients#dashboard", as: "dashboard"
-    get 'confirm_email', to: "patients#confirm_email"
     get 'privacy_policy', to: "patients#privacy_policy", as: "privacy_policy"
     resources :sessions, only: [:new, :create, :destroy]
     resources :pharmacies

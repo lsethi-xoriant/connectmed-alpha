@@ -1,5 +1,10 @@
 Hi <%= @patient.name %>,
 
-Thanks for registering! To confirm your registration click the URL below.
+Thanks for registering with ConnectMed!
 
-<%= patient_confirm_email_url(@patient.confirm_token) %>
+To confirm your registration click the URL below:
+<%= confirm_email_patient_patient_url(@patient.confirm_token) %>
+
+We look forward to making your life healthier, longer, and happier :)
+
+The ConnectMed Team

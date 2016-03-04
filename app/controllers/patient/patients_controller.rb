@@ -1,6 +1,6 @@
 class Patient::PatientsController < ApplicationController
   layout "patient_layout"
-  before_filter :require_patient_signin, :except => [:new, :create]
+  before_filter :require_patient_signin, :except => [:new, :create, :confirm_email]
 
   def dashboard
   end
@@ -59,14 +59,10 @@ class Patient::PatientsController < ApplicationController
       @patient = Patient.find_by_confirm_token(params[:id])
       if @patient
         @patient.email_activate
-        puts "Welcome to ConnectMed! Your email has been confirmed.
-        Please sign in to continue."
-        flash[:success] = "Welcome to ConnectMed! Your email has been confirmed.
-        Please sign in to continue."
-        redirect_to patient_signin_path
+        redirect_to("/#confirm-email")
+        # redirect_to("/patient/signin#confirm-email") #Use this post launch
       else
-        flash[:error] = "Sorry. Patient does not exist."
-        redirect_to root_url
+        redirect_to("/#confirm-error")
       end
   end
 

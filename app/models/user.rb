@@ -16,6 +16,12 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
+  end
+
   private
 
     def create_remember_token
@@ -24,12 +30,6 @@ class User < ActiveRecord::Base
 
     def create_confirmation_token
       self.confirm_token = SecureRandom.urlsafe_base64.to_s
-    end
-
-    def email_activate
-      self.email_confirmed = true
-      self.confirm_token = nil
-      save!(:validate => false)
     end
 
 end
