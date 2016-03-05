@@ -45,6 +45,9 @@ ConnectMed::Application.routes.draw do
         get 'finish'
         get 'schedule_confirm'
       end
+      collection do
+        get 'scheduled', to: 'consults#scheduled'
+      end
     end
   end
 

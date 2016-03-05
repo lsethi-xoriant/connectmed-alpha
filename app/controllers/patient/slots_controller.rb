@@ -14,7 +14,7 @@ class Patient::SlotsController < ApplicationController
     render json: Slot.where(is_open: false)
   end
 
-  def schedule
+  def index
     @consult = Consult.new
     @count = 0;
     @time = Time.new(2002, 10, 30, 11, 0);
