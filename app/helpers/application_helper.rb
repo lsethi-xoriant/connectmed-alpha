@@ -35,7 +35,7 @@ module ApplicationHelper
 
   def require_patient_signin
     unless patient_signed_in?
-      redirect_to root_path
+      redirect_to('/patient/signin#inaccess')
     end
   end
 

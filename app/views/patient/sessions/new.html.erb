@@ -35,6 +35,18 @@
     </div>
 </div>
 
+<div class="modal inmodal text-center" id="inaccessModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-body" style="max-height: 500px; overflow-y: auto; color:#f68985">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h1 class="modal-title">We're Sorry. Please Sign In.<br></h1>
+                <h4 style="color:#898AA6">You must be sign-ined before being able to access the link you navigate to. Please sign in and then try the link again.</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
 <% content_for :javascript do %>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -46,6 +58,8 @@ $(document).ready(function () {
     //Checks if Redirected from Register Form Succseefully & If So Show Modal
     if (anchor_value == "confirm-email")
         $("#confirmEmailModal").modal('show');
+    if (anchor_value == "inaccess")
+        $("#inaccessModal").modal('show');
 });
 </script>
 <% end %>
