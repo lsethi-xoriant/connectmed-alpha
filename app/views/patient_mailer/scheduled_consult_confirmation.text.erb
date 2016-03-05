@@ -6,11 +6,9 @@ Consult Time:  <%= @slot.time.strftime('%a %b %d %H:%M') %>
 
 Purpose of Visit: <%=  @consult.purpose_descrip %>
 
-Symptoms: <%=  @consult.symptoms %>
-
-We recommend logging onto the site and navigating to the below URL 15 minutes before your scheduled consult.
+At least 5 minutes before your scheduled consult time, please navigate to this link where your consult will take place:
 <%= patient_consult_url(@consult) %>
 
-We look forward to making your life healthier, longer, and happier :)
+Please let us know if we can answer any questions. We look forward to making your life healthier, longer, and happier :)
 
 The ConnectMed Team

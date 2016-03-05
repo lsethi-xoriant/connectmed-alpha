@@ -1,5 +1,5 @@
 class PatientMailer < ActionMailer::Base
-  default from: "no-reply@connectmed.co.za"
+  default from: "info@connectmed.co.za"
 
   def registration_confirmation(patient)
     @patient = patient
