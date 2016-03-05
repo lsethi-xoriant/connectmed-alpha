@@ -27,15 +27,14 @@ ConnectMed::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'http://connectmed.co.za' }
   config.action_mailer.smtp_settings = {
-    :user_name  => ENV['sendgrind_username'],
-    :password => ENV['sendgrind_password'],
+    :port => ENV['MAILGUN_SMTP_PORT'],
+    :address => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name => ENV['MAILGUN_SMTP_LOGIN'],
+    :password => ENV['MAILGUN_SMTP_PASSWORD'],
     :domain => 'connectmed.co.za',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
-  config.action_mailer.register_interceptor(SendGrid::MailInterceptor)
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
