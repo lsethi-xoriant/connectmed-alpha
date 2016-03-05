@@ -27,7 +27,7 @@ class Patient::SlotsController < ApplicationController
     arr6 = Slot.where(hour: 13,minute: 30,is_open:true).order("date")
     arr7 = Slot.where(hour: 14,minute: 0,is_open:true).order("date")
     arr8 = Slot.where(hour: 14,minute: 30,is_open:true).order("date")
-    @slots_arrays = [arr1,arr2,arr3,arr4,arr5,arr6,arr7]
+    @slots_arrays = [arr1,arr2,arr3,arr4,arr5,arr6,arr7,arr8]
   end
 
 end
