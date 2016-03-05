@@ -27,8 +27,8 @@ ConnectMed::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'http://connectmed.co.za' }
   config.action_mailer.smtp_settings = {
-    :user_name  => 'app40950944@heroku.com',
-    :password => 'lxcid18r1853',
+    :user_name  => ENV['sendgrind_username'],
+    :password => ENV['sendgrind_password'],
     :domain => 'connectmed.co.za',
     :address => 'smtp.sendgrid.net',
     :port => 587,
