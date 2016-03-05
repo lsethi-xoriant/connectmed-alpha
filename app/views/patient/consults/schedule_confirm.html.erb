@@ -6,10 +6,9 @@
       <h3>The below details have been sent to your email address.<br>We look forward to serving you soon!</h3>
     </div>
     <div class="ibox-content">
-            <p><strong>Consult Time:  </strong><%= @consult.slot.nil? ? "No time" : @consult.slot.time.strftime('%a %b %d %H:%M') %></p>
+            <p><strong>Consult Time:  </strong><%= @consult.slot.nil? ? "No time" : @consult.slot.time.strftime('%a %b %d %H:%M') %> GMT+2</p>
             <p><strong>Consult URL:  </strong><%= @consult.nil? ? "No url" : patient_consult_url(@consult) %></p>
             <p><strong>Purpose of Visit:  </strong><%= @consult.nil? ? "No purpose" : @consult.purpose_descrip %></p>
-            <p><strong>Symptoms:  </strong><%= @consult.nil? ? "No purpose" : @consult.symptoms %></p>
             <a href="/patient/dashboard" class="btn btn-lg btn-pink" style="color:#fff">Back to Dashboard</a>
     </div>
   </div>

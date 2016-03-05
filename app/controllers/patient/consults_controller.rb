@@ -66,6 +66,12 @@ class Patient::ConsultsController < ApplicationController
     @slot = @consult.slot
   end
 
+  def scheduled
+    @scheduled_consults = current_patient.consults.joins(:slot)
+    puts "Schedule Consults below"
+    puts @scheduled_consults
+  end
+
   private
 
     def consult_params
