@@ -1,0 +1,39 @@
+<div class="wrapper wrapper-content">
+<div class="row animated fadeInLeft">
+  <div class="col-lg-12">
+    <div class="ibox-title">
+      <h1>My Scheduled Appointments</h1>
+    </div>
+    <div class="ibox-content">
+      <table class="footable table table-stripped default footable-loaded" data-page-size="8" data-filter="#filter" style="overflow-y: auto; display: block; width: 100%; height: 350px;">
+          <thead>
+            <tr>
+                <th class="footable-visible footable-first-column footable-sortable">Date<span class="footable-sort-indicator"></span></th>
+                <th class="footable-visible footable-sortable">Time<span class="footable-sort-indicator"></span></th>
+                <th class="footable-visible footable-sortable">Reason For Visit<span class="footable-sort-indicator"></span></th>
+                <th data-hide="phone,tablet" class="footable-visible footable-last-column footable-sortable"><span class="footable-sort-indicator"></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for consult in @scheduled_consults %>
+              <tr class="gradeX footable-even" style="display: table-row;">
+                <td class="footable-visible footable-first-column"><span class="footable-toggle"></span><%= consult.slot.date.strftime("%m/%d/%Y") %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.slot.time.strftime("%I:%M%p") %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.purpose_descrip %></td>
+                <td class="center footable-visible footable-last-column"><span class="footable-toggle"></span><a href="<%= patient_consult_url(consult) %>" class="btn btn-lg btn-pink" style="color:#fff">Enter Consult</a></td>
+              </tr>
+            <% end %>
+           </tbody>
+           <tfoot>
+          <tr>
+              <td colspan="" class="footable-visible">
+              </td>
+          </tr>
+          </tfoot>
+      </table>
+
+
+    </div>
+  </div>
+</div>
+</div>
