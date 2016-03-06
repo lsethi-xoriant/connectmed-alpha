@@ -22,8 +22,8 @@ class PatientMailer < ActionMailer::Base
     mail(:to => "#{@patient.name} <#{@patient.email}>", :subject => "ConnectMed Consultation Followup & Prescription")
   end
 
-  def scheduled_reminder_email(patient,slot,patient)
+  # def scheduled_reminder_email(patient,slot,patient)
 
-  end
+  # end
 
 end
