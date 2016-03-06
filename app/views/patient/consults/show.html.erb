@@ -27,16 +27,17 @@
     var connectionCount = 0;
 
     // Detect whether this browser is IE
-var isNotIE = function isNotIE () {
-  var userAgent = window.navigator.userAgent.toLowerCase(),
-      appName = window.navigator.appName;
-
-  return !( appName === 'Microsoft Internet Explorer' ||                            // IE <= 10
-           (appName === 'Netscape' && userAgent.indexOf('trident') > -1) ); // IE >= 11
-};
+    // var isNotIE = function isNotIE () {
+    //     var userAgent = window.navigator.userAgent.toLowerCase(),
+    //       appName = window.navigator.appName;
+    //     console.log("inside isNotIE")
+    //     console.log(appName === 'Microsoft Internet Explorer')
+    //     return !( appName === 'Microsoft Internet Explorer' ||
+    //            (appName === 'Netscape' && userAgent.indexOf('trident') > -1) );
+    // };
 
     OT.setLogLevel(OT.DEBUG);
-    if (isNotIE() && OT.checkSystemRequirements()) {
+    if (OT.checkSystemRequirements()) {
         // Initiate SEssion
         session = OT.initSession(apiKey, sessionId);
 
