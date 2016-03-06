@@ -17,6 +17,7 @@
             <div id="selfVideobox" style="background-color:white;margin:20px 0px;width:100%,height:150px"></div>
         </div>
 </div>
+<% content_for :javascript do %>
 <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 <script type="text/javascript">
     var apiKey = 45495952;
@@ -43,6 +44,7 @@
 
         //Connect to Session & Create Stream+Publish
         session.connect(token, function (error) {
+            console.log("inside session connect")
             var publisherProperties = {insertMode:"replace", width:"100%",height:150};
             publisher = OT.initPublisher("selfVideobox",publisherProperties);
             session.publish(publisher);
@@ -94,9 +96,9 @@
             session.disconnect();
         })
 
-    } else {
-        console.log("The client does not support WebRTC.");
-    }
+    // } else {
+    //     console.log("The client does not support WebRTC.");
+    // }
 
     // window.onbeforeunload = confirmExit;
     // function confirmExit()
@@ -125,8 +127,7 @@
           }).done(function(data) {
             console.log("Patient Enter" + data)
           });
-    // };
-
+    };
 
 </script>
-
+<% end %>
