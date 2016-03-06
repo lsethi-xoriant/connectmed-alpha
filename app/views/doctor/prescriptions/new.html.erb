@@ -3,10 +3,15 @@
 <div class="row animated fadeInLeft">
     <div class="row">
     <%= form_for [:doctor, @consult, @prescription] do |f| %>
-        <div class="col-lg-8 col-lg-offset-2">
-            <%= image_tag "doctor_circle.png", width: '10%', style: "margin:20px; text-align:center;", class: 'img-responsive' %>
+        <div class="col-sm-1 col-sm-offset-2" style="margin-bottom:20px">
+            <%= image_tag "doctor_circle.png", width: '70%', style: "margin:20px; text-align:center;", class: 'img-responsive' %>
         </div>
-        <div class="col-lg-6 col-lg-offset-2">
+        <div class="col-sm-9 text-left">
+            <h1 style="font-size:35px">Post Consult Details </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-2">
              <%= fields_for(@consult) do |u| %>
                 <div class="form-group">
                     <%= u.label(:treatment_descrip, "Treatment Recommendation (Seen by Patient)") %>
@@ -68,9 +73,22 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-4">
+          <h2>Your Consult Notes</h2>
+          <p><strong><%= @consult.internal_notes == "" ? "No Consult Notes" : @consult.internal_notes %></strong></p>
+          <h2>Consult Details</h2>
+                <p><strong>Patient Name: </strong><%=@consult.patient.name%></p>
+                <p><strong>Patient Age: </strong><%=@consult.patient.age%></p>
+                <p><strong>Patient Gender: </strong><%=@consult.patient.gender%></p>
+                <p><strong>Chief Complaint: </strong><%=@consult.purpose_descrip%></p>
+                <p><strong>Duration Experiencing CC: </strong><%=@consult.duration%></p>
+                <p><strong>Symptoms: </strong><%=@consult.symptoms%></p>
+                <p><strong>Medications: </strong><%=@consult.medications%></p>
+                <p><strong>Allergies: </strong><%=@consult.allergies%></p>
+          </div>
     </div>
     <div class="row text-left">
-        <div class="col-lg-4 col-lg-offset-2">
+        <div class="col-sm-4 col-sm-offset-2">
             <%= f.submit "Next", :id => "next", :class => 'btn btn-primary block m-b' %>
             <% if flash[:error_messages] %>
               <% for m in flash[:error_messages] %>
