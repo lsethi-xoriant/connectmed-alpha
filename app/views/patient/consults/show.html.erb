@@ -26,8 +26,17 @@
     var publisher;
     var connectionCount = 0;
 
+    // Detect whether this browser is IE
+var isNotIE = function isNotIE () {
+  var userAgent = window.navigator.userAgent.toLowerCase(),
+      appName = window.navigator.appName;
+
+  return !( appName === 'Microsoft Internet Explorer' ||                            // IE <= 10
+           (appName === 'Netscape' && userAgent.indexOf('trident') > -1) ); // IE >= 11
+};
+
     OT.setLogLevel(OT.DEBUG);
-    if (OT.checkSystemRequirements() == 1) {
+    if (isNotIE() && OT.checkSystemRequirements()) {
         // Initiate SEssion
         session = OT.initSession(apiKey, sessionId);
 
