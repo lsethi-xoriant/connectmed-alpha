@@ -36,6 +36,9 @@ class Doctor::ConsultsController < ApplicationController
     end
   end
 
+  def finish
+  end
+
   def show
     @consult = Consult.find(params[:id])
     current_doctor.consults << @consult

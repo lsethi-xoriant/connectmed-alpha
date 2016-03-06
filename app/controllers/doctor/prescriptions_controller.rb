@@ -21,6 +21,7 @@ class Doctor::PrescriptionsController < ApplicationController
     @consult.update_attributes!(consult_params)
     @prescription = Prescription.create!(prescription_params)
     @consult.prescriptions << @prescription
+    PatientMailer.consult_followup_email(@consult.patient,@consult,@prescription).deliver
     redirect_to finish_doctor_consult_path(@consult)
     rescue ActiveRecord::RecordInvalid => invalid
       flash[:error_messages] = invalid.record.errors.full_messages

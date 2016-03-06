@@ -61,10 +61,14 @@ class Patient::ConsultsController < ApplicationController
     render :json => {:data => "success"}
   end
 
+  def finish
+  end
+
   def schedule_confirm
     @consult = Consult.find(params[:id])
     @slot = @consult.slot
   end
+
 
   def scheduled
     @scheduled_consults = current_patient.consults.joins(:slot)
