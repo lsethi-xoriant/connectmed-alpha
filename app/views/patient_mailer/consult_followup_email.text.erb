@@ -1,0 +1,19 @@
+Hi <%= @patient.name %>,
+
+We hope you enjoyed your ConnectMed consult! Below are your consult details.
+
+      Date: <%= @consult.created_at.strftime("%m/%d/%Y")+", "+@consult.created_at.strftime("%I:%M%p") %>
+
+      Your Doctor: <%= @consult.doctor.name %>
+
+      Purpose of Visit: <%= @consult.purpose_descrip %>
+
+      Treatment Recommendation: <%= @consult.purpose_descrip %>
+
+      Treatment Description: <%= @consult.treatment_result %>
+
+      Prescription Info: <%= @prescription.name+", "+@prescription.dosage+", "+@prescription.notes  %>
+
+A copy of your prescription is attached. You can also view & download your prescription at <%= patient_consult_prescription_url(@consult,@prescription) %>. These consultation details will always be available to you on your dashboard: <%= patient_consults_url %>. Please let us know if you have any questions. We look forward to making your life healthier, longer, and happier again soon! :)
+
+The ConnectMed Team
