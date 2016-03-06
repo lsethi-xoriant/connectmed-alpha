@@ -5,12 +5,18 @@
         <div class="ibox-title">
            <h1>Prescription</h1>
            <p>For your consulation with <%= @consult.patient.name %> on <%= @consult.created_at.strftime("%m/%d/%Y") %></p>
-            <%= link_to 'Download', download_doctor_consult_prescription_path(@consult.id, @prescription.id), :class =>"btn btn-primary"  %>
         </div>
         <div class="ibox-content">
-          <div class="row text-center">
-            <%= image_tag @prescription.image.url(:thumb) %>
+          <div class="row text-center" style="height:400px;">
+            <% if @prescription.image_content_type == 'application/pdf' %>
+               <iframe src=<%= @prescription.image %> frameborder="0" style="height:400px;width:70%"></iframe>
+            <% else %>
+              <%= image_tag @prescription.image, width:"70%" %>
+            <% end %>
           </div>
+        </div>
+        <div class="ibox-footer text-center">
+            <%= link_to 'Download', download_doctor_consult_prescription_path(@consult.id, @prescription.id), :class =>"btn btn-primary"  %>
         </div>
       </div>
     </div>
