@@ -21,10 +21,10 @@ ConnectMed::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host:'localhost', port: '3000' }
   config.action_mailer.smtp_settings = {
-    :port => 2525,
-    :address => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name => ENV['MAILGUN_SMTP_LOGIN'],
-    :password => ENV['MAILGUN_SMTP_PASSWORD'],
+    :port => 587,
+    :address => 'smtp.sendgrid.net',
+    :user_name => ENV['sendgrind_username'],
+    :password => ENV['sendgrind_password'],
     :domain => 'connectmed.co.za',
     :authentication => :plain,
     :enable_starttls_auto => true
