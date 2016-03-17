@@ -21,4 +21,8 @@ class LandingsController < ApplicationController
   def overview
   end
 
+  def melissa
+    render :layout => "empty"
+  end
+
 end

@@ -7,6 +7,7 @@ ConnectMed::Application.routes.draw do
   get '/doctor', to: "landings#doctor_index", as: "doctor_index"
   get '/demo', to: "landings#demo_index", as: "demo_index"
   get '/overview', to: "landings#overview", as: "overview"
+  get '/melissa', to: "landings#melissa"
 
 # Scopes Routes & Controllers to Patient
   namespace :patient do
