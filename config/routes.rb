@@ -56,6 +56,11 @@ ConnectMed::Application.routes.draw do
 
   get '/doctors/dashboard', to: 'doctors#dashboard', as: 'doctors_dashboard'
   namespace :doctor do
+    resources :doctors do
+      member do
+        get :confirm_email
+      end
+    end
     get 'signin', to: "sessions#new", as: 'signin'
     get 'signout', to: 'sessions#destroy', as: 'signout' #get rather than delete bc of issue with twitter bootstrap link_to
     get 'signup', to: "doctors#new", as: "signup"

@@ -40,7 +40,8 @@ class Patient::PatientsController < ApplicationController
       redirect_to patient_edit_path
       flash[:success_messages] = "Your Account Details Have Been Updated"
     elsif patient_params[:password].empty?
-      current_patient.update_attribute(:name, patient_params[:name])
+      current_patient.update_attribute(:first_name, patient_params[:first_name])
+      current_patient.update_attribute(:last_name, patient_params[:last_name])
       current_patient.update_attribute(:email, patient_params[:email])
       current_patient.update_attribute(:phone_number, patient_params[:phone_number])
       redirect_to patient_edit_path
@@ -73,7 +74,7 @@ class Patient::PatientsController < ApplicationController
   private
 
   def patient_params
-    params.require(:patient).permit(:name, :email, :phone, :age, :gender, :password, :password_confirmation, :password_digest, :remember_token, :source, :directed_from)
+    params.require(:patient).permit(:first_name, :last_name, :email, :phone, :age, :gender, :password, :password_confirmation, :password_digest, :remember_token, :source, :directed_from)
   end
 
 
