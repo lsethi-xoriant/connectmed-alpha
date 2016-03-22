@@ -18,14 +18,14 @@ class Doctor::DoctorsController < ApplicationController
     @doctor = Doctor.create!(doctor_params)
     if params[:doctor][:directed_from] == "home"
       DoctorMailer.registration_confirmation(@doctor).deliver
-      redirect_to("/doctor/#create-confirm")
+      redirect_to("/doctor#create-confirm")
     else
       doctor_sign_in(@doctor)
       redirect_to doctor_dashboard_path
     end
     rescue ActiveRecord::RecordInvalid => invalid
       flash[:error_messages] = invalid.record.errors.full_messages
-      params[:doctor][:directed_from] == "home" ? redirect_to("/doctor/#create-error") : redirect_to(doctor_signup_path)
+      params[:doctor][:directed_from] == "home" ? redirect_to("/doctor#create-error") : redirect_to(doctor_signup_path)
   end
 
   def destroy
@@ -61,10 +61,10 @@ def confirm_email
       @doctor = Doctor.find_by_confirm_token(params[:id])
       if @doctor
         @doctor.email_activate
-        redirect_to("/doctor/#confirm-email")
+        redirect_to("/doctor#confirm-email")
         # redirect_to("/doctor/signin#confirm-email") #Use this post launch
       else
-        redirect_to("/doctor/#confirm-error")
+        redirect_to("/doctorr#confirm-error")
       end
   end
 
