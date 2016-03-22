@@ -1,0 +1,16 @@
+Hi Dr. <%= @doctor.last_name %>,
+
+
+Thanks for your interest in joining our ConnectMed Doctor Community!
+
+To confirm your registration click the URL below:
+<%= confirm_email_doctor_doctor_url(@doctor.confirm_token) %>
+
+We will send instructions on next steps in the process in the next few weeks. Please let me know if you have any questions.
+
+
+Dr. Allan-Roy Seiketto
+
+Chief Medical Officer
+
+ConnectMed
