@@ -202,12 +202,16 @@ body.landing-page {
     height: 530px;
     width: 100%;
   }
-  .header-back.one {
+  .header-back.index {
     background: image-url("tablet4_purple.png")  50% 0 no-repeat;
   }
 
-  .header-back.two {
+  .header-back.overview {
     background: #f7a09d image-url("landings/header11.png") 50% 0 no-repeat;
+  }
+
+  .header-back.doctors {
+    background: image-url("landings/header2.jpg") 50% 0 no-repeat;
   }
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */

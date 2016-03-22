@@ -1,16 +1,16 @@
-Hi <%= @patient.name %>,
+Hi <%= @patient.first_name %>,
 
 We hope you enjoyed your ConnectMed consult! Below are your consult details.
 
       Date: <%= @consult.created_at.strftime("%m/%d/%Y")+", "+@consult.created_at.strftime("%I:%M%p") %>
 
-      Your Doctor: <%= @consult.doctor.name %>
+      Your Doctor: Dr. <%= @consult.doctor.first_name+" "+@consult.doctor.last_name %>
 
       Purpose of Visit: <%= @consult.purpose_descrip %>
 
-      Treatment Recommendation: <%= @consult.purpose_descrip %>
+      Treatment Recommendation: <%= @consult.treatment_result %>
 
-      Treatment Description: <%= @consult.treatment_result %>
+      Treatment Description: <%= @consult.treatment_descrip %>
 
       Prescription Info: <%= @prescription.name+", "+@prescription.dosage+", "+@prescription.notes  %>
 

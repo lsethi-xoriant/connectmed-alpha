@@ -3,7 +3,10 @@
             <a class="" href="/"><%= image_tag "logos/CMLogoVertical5.png", width: '80%', style: "margin-bottom:10px;" %></a>
              <%= form_for [:patient, @patient] do |f| %>
                 <div class="form-group">
-                    <%= f.text_field :name, :required => true, :class => 'form-control', :placeholder => 'Name', :type => 'text'  %>
+                    <%= f.text_field :first_name, :required => true, :class => 'form-control', :placeholder => 'First Name', :type => 'text'  %>
+                </div>
+                <div class="form-group">
+                    <%= f.text_field :last_name, :required => true, :class => 'form-control', :placeholder => 'Last Name', :type => 'text'  %>
                 </div>
                 <div class="form-group">
                     <%= f.text_field :email, :required => true, :class => 'form-control', :placeholder => 'Email', :type => 'email' %>
