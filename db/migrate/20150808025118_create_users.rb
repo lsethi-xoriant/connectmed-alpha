@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :gender
       t.string :source
       t.string :practice_number
+      t.string :status, :default => 'Not Applied'
       t.string :password_digest, null:false
       t.string :remember_token
       t.index :remember_token

@@ -71,9 +71,9 @@ ActiveRecord::Schema.define(version: 20160304073520) do
 
   create_table "users", force: true do |t|
     t.string   "type"
-    t.string   "first_name",                      null: false
-    t.string   "last_name",                       null: false
-    t.string   "email",                           null: false
+    t.string   "first_name",                              null: false
+    t.string   "last_name",                               null: false
+    t.string   "email",                                   null: false
     t.boolean  "email_confirmed", default: false
     t.string   "confirm_token"
     t.string   "phone"
@@ -81,7 +81,8 @@ ActiveRecord::Schema.define(version: 20160304073520) do
     t.string   "gender"
     t.string   "source"
     t.string   "practice_number"
-    t.string   "password_digest",                 null: false
+    t.string   "status",          default: "Not Applied"
+    t.string   "password_digest",                         null: false
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
