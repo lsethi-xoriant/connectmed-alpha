@@ -23,8 +23,8 @@ ConnectMed::Application.configure do
   config.action_mailer.smtp_settings = {
     :port => 587,
     :address => 'smtp.sendgrid.net',
-    :user_name => ENV['sendgrind_username'],
-    :password => ENV['sendgrind_password'],
+    :user_name => "app40950944@heroku.com",
+    :password => "061huyri9478",
     :domain => 'connectmed.co.za',
     :authentication => :plain,
     :enable_starttls_auto => true
