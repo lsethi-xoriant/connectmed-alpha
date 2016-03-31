@@ -7,6 +7,7 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
+
 /* PACE PLUGIN
 -------------------------------------------------- */
 .landing-page.pace .pace-progress {
@@ -401,6 +402,90 @@ body.landing-page {
   .team-member img {
     margin: auto;
   }
+
+   .team-pic:after {
+    content: '\A';
+    position: absolute;
+    width: 100%; height:100%;
+    top:0; left:0;
+    background:rgba(137, 139, 165,0.6);
+    opacity: 0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    padding-top: 60px;
+    font-size: 20px;
+   }
+
+   .team-pic#melissa:hover:after {
+      opacity: 1;
+      content: "Melissa McCoy Director Technology";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+   .team-pic#zweli:hover:after {
+      opacity: 1;
+      content: "Zweli Gwebityala Strategy";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+   .team-pic#allan:hover:after {
+      opacity: 1;
+      content: "Allan-Roy Sekeitto Medicine";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+    .team-pic#hangwi:hover:after {
+      opacity: 1;
+      content: "Hangwi Muambadzi Finance";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+    .team-pic#mirko:hover:after {
+      opacity: 1;
+      content: "Mirko Maier Marketing & Sales";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+    .team-pic#zaidat:hover:after {
+      opacity: 1;
+      content: "Zaidat Ibrahim African Markets";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+    .team-pic#juan:hover:after {
+      opacity: 1;
+      content: "Juan Herrera Latam Markets";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+    .team-pic#hong:hover:after {
+      opacity: 1;
+      content: "Hong Zhou Research";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+    .team-pic#thula:hover:after {
+      opacity: 1;
+      content: "Thula Siluma Clinical";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
+    .team-pic#rowan:hover:after {
+      opacity: 1;
+      content: "Rowan Nicholls Recruitment";
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #fff;
+    }
+
   .social-icon a {
     background: #898AA6;
     color: #fff;
