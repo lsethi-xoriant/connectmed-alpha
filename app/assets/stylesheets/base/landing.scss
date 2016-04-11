@@ -410,8 +410,8 @@ body.landing-page {
     top:0; left:0;
     background:rgba(137, 139, 165,0.6);
     opacity: 0;
-    transition: all 1s;
-    -webkit-transition: all 1s;
+    transition: all .5s;
+    -webkit-transition: all .5s;
     padding-top: 60px;
     font-size: 20px;
    }
