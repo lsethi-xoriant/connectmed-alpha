@@ -11,7 +11,7 @@
         <div class="col-xs-3 col-md-3 text-left">
         <h2>Consult Details</h2>
             <ul>
-              <li><p><strong>Patient Name: </strong><%=@consult.patient.name%></p></li>
+              <li><p><strong>Patient Name: </strong><%=@consult.patient.first_name+" "+@consult.patient.last_name%></p></li>
               <li><p><strong>Patient Age: </strong><%=@consult.patient.age%></p></li>
               <li><p><strong>Patient Gender: </strong><%=@consult.patient.gender%></p></li>
               <li><p><strong>Chief Complaint: </strong><%=@consult.purpose_descrip%></p></li>

@@ -29,7 +29,7 @@
               <tr class="gradeX footable-even" style="display: table-row;">
                 <td class="footable-visible footable-first-column"><span class="footable-toggle"></span><%= consult.created_at.strftime("%m/%d/%Y") %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%= consult.created_at.strftime("%I:%M%p") %></td>
-                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.doctor  ==  nil ? "Doctor Not Seen" : consult.patient.name %></td>
+                <td class="footable-visible"><span class="footable-toggle"></span><%= consult.doctor  ==  nil ? "Doctor Not Seen" : consult.patient.first_name+" "+consult.patient.last_name %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%= consult.purpose_descrip %></td>
                 <td class="footable-visible"><span class="footable-toggle"></span><%=
                   if consult.doctor  ==  nil

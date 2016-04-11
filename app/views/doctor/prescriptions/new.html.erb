@@ -77,7 +77,7 @@
           <h2>Your Consult Notes</h2>
           <p><strong><%= @consult.internal_notes == "" ? "No Consult Notes" : @consult.internal_notes %></strong></p>
           <h2>Consult Details</h2>
-                <p><strong>Patient Name: </strong><%=@consult.patient.name%></p>
+                <p><strong>Patient Name: </strong><%=@consult.patient.first_name+" "+@consult.patient.last_name%></p>
                 <p><strong>Patient Age: </strong><%=@consult.patient.age%></p>
                 <p><strong>Patient Gender: </strong><%=@consult.patient.gender%></p>
                 <p><strong>Chief Complaint: </strong><%=@consult.purpose_descrip%></p>

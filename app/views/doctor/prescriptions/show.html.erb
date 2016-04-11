@@ -4,7 +4,7 @@
     <div class="ibox">
         <div class="ibox-title">
            <h1>Prescription</h1>
-           <p>For your consulation with <%= @consult.patient.name %> on <%= @consult.created_at.strftime("%m/%d/%Y") %></p>
+           <p>For your consulation with <%= @consult.patient.first_name+" "+@consult.patient.last_name%> on <%= @consult.created_at.strftime("%m/%d/%Y") %></p>
         </div>
         <div class="ibox-content">
           <div class="row text-center" style="height:400px;">

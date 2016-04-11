@@ -8,8 +8,12 @@
         <div class="ibox-content">
           <%= form_for(current_doctor, url: {action: "update"}) do |f| %>
                 <div class="form-group">
-                    <%= label_tag(:name) %>
-                    <%= f.text_field :name, :class => 'form-control', :required => true, :placeholder => current_doctor.name, :type => 'text'  %>
+                    <%= label_tag(:first_name) %>
+                    <%= f.text_field :first_name, :class => 'form-control', :required => true, :placeholder => current_doctor.first_name, :type => 'text'  %>
+                </div>
+                <div class="form-group">
+                    <%= label_tag(:last_name) %>
+                    <%= f.text_field :last_name, :class => 'form-control', :required => true, :placeholder => current_doctor.last_name, :type => 'text'  %>
                 </div>
                 <div class="form-group">
                     <%= label_tag(:email) %>
