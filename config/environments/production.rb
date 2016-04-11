@@ -29,8 +29,8 @@ ConnectMed::Application.configure do
   config.action_mailer.smtp_settings = {
     :port => 587,
     :address => 'smtp.sendgrid.net',
-    :user_name => ENV['sendgrid_username'],
-    :password => ENV['sendgrid_password'],
+    :user_name => Figaro.env.sendgrid_username,
+    :password => Figaro.env.sendgrid_password,
     :domain => 'connectmed.co.za',
     :authentication => :plain,
     :enable_starttls_auto => true
